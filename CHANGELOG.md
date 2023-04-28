@@ -12,7 +12,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 --->
 
 # 🆕 Changelog
->All notable changes to this project !WEBSITE! will be documented in this file.
+>All notable changes to the website will be documented in this file.
 
 
 ## | [0.0.1] - 2023-03-31
