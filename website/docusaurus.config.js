@@ -34,7 +34,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-              'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/website/docs/',
+              'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-website/-/tree/main/website/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
@@ -42,7 +42,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         blog: {
           showReadingTime: true,
           editUrl:
-              'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/website/blog/',
+              'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-website/-/tree/main/website',
         },
         pages: {
           path: 'src/pages',
@@ -105,7 +105,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             },
             {to: '/blog', label: 'Blog', position: 'left'},
             {
-              href: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/',
+              href: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/',
               label: 'Source',
               position: 'right',
             },
@@ -146,7 +146,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               items: [
                 {
                   label: 'Contributors',
-                  href: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/-/graphs/main',
+                  href: 'https://zivgitlab.uni-muenster.de/groups/ml-de/teaching/ps-housetech/-/contribution_analytics',
                 },
               ],
             },
