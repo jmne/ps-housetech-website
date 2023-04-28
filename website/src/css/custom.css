@@ -1,0 +1,241 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+:root {
+  --palette-charade: #21222c;
+  --palette-gray: #32343e;
+  --palette-green: #66bb6a;
+  --palette-midnight: #141725;
+  --palette-pale-blue: #b1b5d3;
+  --palette-pink: #4662d1;
+  --palette-pink-darker: #2f58be;
+  --palette-rock: rgb(var(--palette-rock-raw));
+  --palette-rock-raw: 38,40,51;
+  --palette-sky: #81d3f9;
+  --palette-turquoise: #0cc0df;
+  --palette-black-10: rgba(0,0,0,.1);
+  --palette-white: #fff;
+  --palette-white-03: hsla(0,0%,100%,.03);
+  --palette-white-05: hsla(0,0%,100%,.05);
+  --palette-white-10: hsla(0,0%,100%,.1);
+  --palette-white-20: hsla(0,0%,100%,.2);
+  --palette-white-30: hsla(0,0%,100%,.3);
+  --palette-white-40: hsla(0,0%,100%,.4);
+  --palette-white-60: hsla(0,0%,100%,.6);
+  --palette-white-darker: #d9d9d9;
+  --palette-yellow: #ffd54f;
+  --image-shadow: 0 15px 61px 5px rgba(20,23,37,.94);
+  --transition-bezier: cubic-bezier(0.17,0.67,0.83,0.67);
+  --transition-fastest: 100ms;
+  --font-family-base: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,Cantarell,Helvetica,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Android Emoji",EmojiSymbols,"EmojiOne Mozilla","Twemoji Mozilla","Segoe UI Symbol","Noto Color Emoji";
+  --font-size-small: 15px;
+  --font-size-normal: 16px;
+  --font-size-large: 17px;
+  --font-size-big-1: 22px;
+  --font-size-big-2: 24px;
+  --font-size-big-3: 32px;
+  --font-size-big-4: 46px;
+  --font-size-big-5: 64px;
+  --ifm-background-color: var(--palette-charade);
+  --ifm-blockquote-color: var(--palette-pale-blue);
+  --ifm-code-background: var(--palette-gray);
+  --ifm-code-color: var(--palette-white);
+  --ifm-code-font-size: var(--font-size-small);
+  --ifm-color-emphasis-300: var(--palette-pale-blue);
+  --ifm-color-primary: var(--palette-pink);
+  --ifm-color-primary-dark: #323ac9;
+  --ifm-color-primary-darker: var(--palette-pink-darker);
+  --ifm-color-primary-darkest: #273e9c;
+  --ifm-color-primary-light: #5c7fd7;
+  --ifm-color-primary-lighter: #68b1d9;
+  --ifm-color-primary-lightest: #91ece5;
+  --ifm-color-info: var(--palette-sky);
+  --ifm-color-success: var(--palette-green);
+  --ifm-color-warning: var(--palette-yellow);
+  --ifm-dropdown-background-color: var(--palette-rock);
+  --ifm-font-color-base: var(--palette-white);
+  --ifm-font-family-base: var(--font-family-base);
+  --ifm-font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --ifm-font-size-base: var(--font-size-small);
+  --ifm-global-border-radius: 8px;
+  --ifm-h1-font-size: var(--font-size-big-4);
+  --ifm-h2-font-size: var(--font-size-big-2);
+  --ifm-h3-font-size: var(--font-size-big-1);
+  --ifm-h4-font-size: var(--font-size-large);
+  --ifm-heading-margin-bottom: 1.5rem;
+  --ifm-hr-border-color: var(--palette-white-20);
+  --ifm-link-color: var(--palette-turquoise);
+  --ifm-list-paragraph-margin: 0.5rem;
+  --ifm-menu-link-sublist-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJyZ2JhKDAsMCwwLDAuNSkiIGQ9Ik03LjQxIDE1LjQxIDEyIDEwLjgzbDQuNTkgNC41OEwxOCAxNGwtNi02LTYgNnoiLz48L3N2Zz4=);
+  --ifm-navbar-background-color: var(--palette-charade);
+  --ifm-navbar-height: 65px;
+  --ifm-navbar-item-padding-horizontal: 20px;
+  --ifm-navbar-shadow: 0 1px 0 0 var(--palette-white-10);
+  --ifm-pre-background: var(--palette-midnight);
+  --ifm-table-cell-padding: 0.15rem 1rem;
+  --ifm-toc-border-color: var(--palette-white-10);
+  --ifm-heading-line-height: 1.5;
+  --theme-text-color: var(--ifm-font-color-base);
+  --theme-navbar-inner-padding: 2rem;
+  --theme-navbar-background-color: rgba(33,34,44,.8);
+  --theme-input-bg-color: #44475a;
+  --theme-input-text-color: #b1b5d3;
+  --theme-section-odd-bg-color: var(--palette-rock);
+  --theme-card-text-color: var(--palette-white);
+  --theme-card-title-color: var(--palette-white);
+  --theme-card-bg-color: var(--palette-rock);
+  --theme-card-bg-color-hover: #2f313f;
+  --theme-card-border-color: rgba(var(--palette-rock),0.5);
+  --theme-card-border-radius: 8px;
+  --theme-card-secondary-bg-color: #21222c;
+  --theme-card-illustration-bg-color: var(--palette-midnight);
+  --theme-attention-card-bg-color: var(--palette-gray);
+  --theme-attention-card-text-color: var(--palette-white);
+  --theme-team-article-title-color: var(--palette-white);
+  --theme-community-border: 1px solid var(--palette-white);
+  --theme-section-title-color: var(--palette-white);
+  --theme-contribute-text-color: var(--palette-white);
+  --theme-alert-info-background-color: #b1b5d3;
+  --theme-alert-info-heading-text-color: #000;
+  --theme-alert-info-text-color: var(--palette-pale-blue);
+  --theme-button-primary-background-color: var(--palette-pink);
+  --theme-button-primary-text-color: var(--palette-white);
+  --theme-button-primary-hover-background-color: var(--palette-pink-darker);
+  --theme-button-secondary-background-color: var(--palette-white);
+  --theme-button-secondary-text-color: var(--palette-charade);
+  --theme-button-secondary-hover-background-color: var(--palette-white-darker);
+  --theme-button-tertiary-background-color: var(--palette-white-10);
+  --theme-button-tertiary-text-color: var(--palette-white);
+  --theme-button-tertiary-hover-background-color: var(--palette-white-20);
+  --theme-tutorial-post-card-border: 1px solid transparent;
+  --theme-tutorial-post-card-hover-border: 1px solid var(--palette-white);
+  --theme-screenshot-background-color: var(--palette-charade);
+  --z-index-navbar: 100;
+  --z-index-dialog: 101
+}
+
+html[data-theme=dark] {
+  --ifm-background-color: var(--palette-charade);
+  --ifm-color-emphasis-300: var(--palette-pale-blue);
+  --ifm-menu-link-sublist-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJyZ2JhKDAsMCwwLDAuNSkiIGQ9Ik03LjQxIDE1LjQxIDEyIDEwLjgzbDQuNTkgNC41OEwxOCAxNGwtNi02LTYgNnoiLz48L3N2Zz4=)
+}
+
+html[data-theme=light] {
+  --palette-pale-blue: #52556b;
+  --palette-rock: #262833;
+  --palette-gray: #4b4e5d;
+  --palette-dark-03: rgba(0,0,0,.03);
+  --palette-dark-05: rgba(0,0,0,.05);
+  --palette-dark-10: rgba(0,0,0,.1);
+  --palette-dark-20: rgba(0,0,0,.2);
+  --palette-dark-30: rgba(0,0,0,.3);
+  --palette-dark-40: rgba(0,0,0,.4);
+  --palette-dark-80: rgba(0,0,0,.8);
+  --palette-white-darker: #d9d9d9;
+  --palette-yellow: #ffd54f;
+  --ifm-background-color: #fff;
+  --ifm-font-color-base: #333;
+  --ifm-navbar-background-color: #fff;
+  --ifm-dropdown-background-color: var(--palette-white);
+  --ifm-navbar-shadow: 0 1px 0 0 var(--palette-dark-10);
+  --ifm-toc-border-color: var(--palette-dark-10);
+  --ifm-link-color: #0aa6c2;
+  --ifm-code-background: #dadada;
+  --ifm-code-color: var(--palette-charade);
+  --docsearch-footer-background: var(--ifm-background-color);
+  --docsearch-key-gradient: linear-gradient(-26.5deg,var(--palette-gray) 0%,var(--palette-rock) 100%);
+  --docsearch-key-shadow: 0 3px 3px var(--palette-dark-30);
+  --image-shadow: 0 10px 20px 5px var(--palette-dark-20);
+  --theme-text-color: var(--ifm-font-color-base);
+  --theme-navbar-background-color: hsla(0,0%,98%,.8);
+  --theme-section-odd-bg-color: #f0f1f5;
+  --theme-input-bg-color: #f0f1f5;
+  --theme-input-text-color: #555b88;
+  --theme-card-bg-color: #f0f1f5;
+  --theme-card-bg-color-hover: #e1e3eb;
+  --theme-card-text-color: #21222c;
+  --theme-card-title-color: #21222c;
+  --theme-card-secondary-bg-color: #dde0e9;
+  --theme-card-secondary-text-color: #21222c;
+  --theme-attention-card-bg-color: #f0f1f5;
+  --theme-card-illustration-bg-color: transparent;
+  --theme-team-article-title-color: var(--theme-alert-info-heading-text-color);
+  --theme-community-border: 1px solid var(--palette-dark-80);
+  --theme-section-title-color: var(--palette-dark-80);
+  --theme-contribute-text-color: var(--palette-dark-80);
+  --theme-button-primary-background-color: var(--palette-pink);
+  --theme-button-primary-text-color: var(--palette-white);
+  --theme-button-primary-hover-background-color: var(--palette-pink-darker);
+  --theme-button-secondary-background-color: var(--palette-dark-10);
+  --theme-button-secondary-text-color: var(--palette-charade);
+  --theme-button-secondary-hover-background-color: var(--palette-dark-30);
+  --theme-button-tertiary-background-color: var(--palette-dark-30);
+  --theme-button-tertiary-text-color: var(--palette-white);
+  --theme-button-tertiary-hover-background-color: var(--palette-dark-40);
+  --theme-tutorial-post-card-border: 1px solid transparent;
+  --theme-tutorial-post-card-hover-border: 1px solid var(--palette-dark-10);
+  --theme-screenshot-background-color: #fff
+}
+
+html[data-theme=dark] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-primary-darker);
+  --docsearch-container-background: rgba(0,0,0,.5);
+  --docsearch-modal-background: var(--ifm-background-color);
+  --docsearch-searchbox-background: var(--palette-white-10);
+  --docsearch-searchbox-focus-background: var(--palette-midnight);
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--palette-white-darker);
+  --docsearch-hit-background: var(--palette-rock);
+  --docsearch-footer-background: var(--ifm-background-color);
+  --docsearch-key-gradient: linear-gradient(-26.5deg,var(--palette-gray) 0%,var(--palette-rock) 100%)
+}
+
+nav {
+  --ifm-font-size-base: var(--font-size-large);
+  --ifm-link-color: var(--palette-pink)
+}
+
+.navbar__logo{
+  height: 3rem !important;
+}
+
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 3;
+  --ifm-h3-vertical-rhythm-top: 2;
+  --ifm-heading-vertical-rhythm-top: 2;
+  --ifm-heading-vertical-rhythm-bottom: 0.4;
+  --ifm-paragraph-margin-bottom: 0.5rem;
+  --ifm-table-background: var(--palette-white-03);
+  --ifm-table-border-color: var(--palette-charade);
+  --ifm-table-border-width: 1px;
+  --ifm-table-head-background: var(--palette-gray);
+  --ifm-table-head-color: var(--palette-white);
+  --ifm-table-stripe-background: var(--palette-white-03)
+}
+
+html[data-theme=light] .markdown {
+  --ifm-table-head-background: #f6f8fa;
+  --ifm-table-head-color: #24292f;
+  --ifm-table-border-color: #d0d7de;
+  --ifm-table-stripe-background: #f6f8fa
+}
+
+html[data-theme=light] .markdown img[src$=".svg"][alt*=chart],html[data-theme=light] .markdown img[src*="data:image/svg+xml"][alt*=chart] {
+  -webkit-filter: invert(1) hue-rotate(200deg);
+  filter: invert(1) hue-rotate(200deg)
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}

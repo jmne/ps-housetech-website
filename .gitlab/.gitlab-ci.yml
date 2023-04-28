@@ -1,0 +1,18 @@
+pages:
+  image: node
+  stage: deploy
+  needs: []
+  script:
+    - cd website
+    - yarn install
+    - npx docusaurus --version
+    - yarn build
+    - mv ./build ../public
+  artifacts:
+    paths:
+      - public
+    expire_in: 2 weeks
+  rules:
+    - if: $CI_COMMIT_BRANCH != "website"
+      when: never
+    - when: always
