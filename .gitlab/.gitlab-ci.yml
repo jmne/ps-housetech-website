@@ -13,6 +13,6 @@ pages:
       - public
     expire_in: 2 weeks
   rules:
-    - if: $CI_COMMIT_BRANCH != "website"
+    - if: $CI_COMMIT_BRANCH != "main"
       when: never
     - when: always
