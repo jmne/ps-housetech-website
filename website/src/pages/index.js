@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 
@@ -23,6 +22,8 @@ function HomepageContent() {
             <div className="container">
                 <div className="text--center padding-horiz--md margin-top--xl">
                     <h2>⌛ WIP ⌛</h2>
+                    <p>Check back later for more content!</p>
+                    <p>🙂</p>
                 </div>
             </div>
     );
