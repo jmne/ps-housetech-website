@@ -18,3 +18,19 @@ pages:
     - if: $CI_COMMIT_BRANCH != "main"
       when: never
     - when: always
+
+pages-dev:
+  image: node
+  stage: deploy
+  needs: []
+  script:
+    - cd website
+    - yarn install
+    - npx docusaurus --version
+    - yarn docusaurus clean-api-docs all
+    - yarn docusaurus gen-api-docs all
+    - yarn build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: never
+    - when: always
