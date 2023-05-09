@@ -2,6 +2,7 @@
   "name": "housetech",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "gen-docs": "docusaurus gen-api-docs all",
