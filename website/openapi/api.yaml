@@ -1,3 +1,5 @@
+# To edit this file efficiently, use the Swagger Editor (https://editor.swagger.io/).
+
 openapi: 3.0.0
 info:
   title: PS-HouseTech-Backend API
