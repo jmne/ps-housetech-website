@@ -24,6 +24,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         language: ["en", "de"],
       }),
     ],
+    "docusaurus-theme-openapi-docs",
   ],
 
   presets: [
@@ -38,6 +39,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
+          docLayoutComponent: "@theme/DocPage",
+          docItemComponent: "@theme/ApiItem",
         },
         blog: {
           showReadingTime: true,
@@ -98,15 +101,25 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           },
           items: [
             {
-              type: 'doc',
-              docId: 'intro',
+              type: 'dropdown',
+              label: 'Documentation',
               position: 'left',
-              label: 'Docs',
+              to: '/docs/intro',
+              items: [
+                {
+                  to: '/docs/intro',
+                  label: 'Introduction',
+                },
+                {
+                  to: '/docs/api/ps-housetech-backend-api',
+                  label: 'API',
+                },
+              ],
             },
             {to: '/blog', label: 'Blog', position: 'left'},
             {
               href: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/',
-              label: 'Source',
+              label: 'SOURCE',
               position: 'right',
             },
           ],
@@ -120,6 +133,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 {
                   label: 'Introduction',
                   to: '/docs/intro',
+                },
+                {
+                  label: 'API',
+                  to: '/docs/api/ps-housetech-backend-api',
                 },
               ],
             },
@@ -174,6 +191,23 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       '@docusaurus/plugin-ideal-image',
       {
         quality: 90,
+      },
+    ],
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
+        config: {
+          api: {
+            specPath: "openapi/api.yaml", // path or URL to the OpenAPI spec
+            outputDir: "docs/api",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          }
+        }
       },
     ],
     () => ({
