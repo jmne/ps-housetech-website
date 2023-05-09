@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: PS-HouseTech-Backend API
+  description: These are the docs for the PS-HouseTech-Backend API.
+  version: 0.1.0
+servers:
+  - url: http://ps-housetech.uni-muenster.de/
+    description: Production Server (you need to be in the Uni Muenster network)
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Check if the backend is working properly.
+      responses:
+        '200':
+          description: Returns a string with the current health status.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example: "healthy"

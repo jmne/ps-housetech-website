@@ -71,6 +71,8 @@ website/changelog
 
 website/_dogfooding/_swizzle_theme_tests
 
+website/docs/api
+
 CrowdinTranslations_*.zip
 
 website/i18n/**/*
