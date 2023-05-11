@@ -145,10 +145,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                   label: 'Introduction',
                   to: '/docs/intro',
                 },
-                {
-                  label: 'API',
-                  to: '/docs/api/ps-housetech-backend-api',
-                },
               ],
             },
             {
