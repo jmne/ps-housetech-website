@@ -6,8 +6,6 @@ pages:
     - cd website
     - yarn install
     - npx docusaurus --version
-    - yarn docusaurus clean-api-docs all
-    - yarn docusaurus gen-api-docs all
     - yarn build
     - mv ./build ../public
   artifacts:
