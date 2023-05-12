@@ -24,7 +24,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         language: ["en", "de"],
       }),
     ],
-    "docusaurus-theme-openapi-docs",
+    // "docusaurus-theme-openapi-docs",
   ],
 
   presets: [
@@ -39,8 +39,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
-          docLayoutComponent: "@theme/DocPage",
-          docItemComponent: "@theme/ApiItem",
+          /*docLayoutComponent: "@theme/DocPage",
+          docItemComponent: "@theme/ApiItem",*/
         },
         blog: {
           showReadingTime: true,
@@ -68,6 +68,21 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
       }),
     ],
+     /* [
+        'redocusaurus',
+        {
+          // Plugin Options for loading OpenAPI files
+          specs: [
+            {
+              spec: 'openapi/api.yaml',
+              route: '/api/',
+            },
+          ],
+          theme: {
+            primaryColor: '#1890ff',
+          },
+        },
+      ],*/
   ],
 
   themeConfig:
@@ -110,10 +125,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                   to: '/docs/intro',
                   label: 'Introduction',
                 },
-                {
-                  to: '/docs/api/ps-housetech-backend-api',
-                  label: 'API',
-                },
               ],
             },
             {to: '/blog', label: 'Blog', position: 'left'},
@@ -133,10 +144,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 {
                   label: 'Introduction',
                   to: '/docs/intro',
-                },
-                {
-                  label: 'API',
-                  to: '/docs/api/ps-housetech-backend-api',
                 },
               ],
             },
@@ -193,7 +200,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         quality: 90,
       },
     ],
-    [
+    /*[
       "docusaurus-plugin-openapi-docs",
       {
         id: "openapi",
@@ -209,7 +216,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           }
         }
       },
-    ],
+    ],*/
     () => ({
       postBuild() {
         console.log('Plugin build finished');
