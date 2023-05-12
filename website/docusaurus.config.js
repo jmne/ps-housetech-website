@@ -24,7 +24,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         language: ["en", "de"],
       }),
     ],
-    // "docusaurus-theme-openapi-docs",
   ],
 
   presets: [
@@ -39,8 +38,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
-          /*docLayoutComponent: "@theme/DocPage",
-          docItemComponent: "@theme/ApiItem",*/
         },
         blog: {
           showReadingTime: true,
@@ -68,21 +65,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
       }),
     ],
-     /* [
-        'redocusaurus',
-        {
-          // Plugin Options for loading OpenAPI files
-          specs: [
-            {
-              spec: 'openapi/api.yaml',
-              route: '/api/',
-            },
-          ],
-          theme: {
-            primaryColor: '#1890ff',
-          },
-        },
-      ],*/
   ],
 
   themeConfig:
@@ -124,6 +106,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 {
                   to: '/docs/intro',
                   label: 'Introduction',
+                },
+                {
+                  to: "/docs/cris", // adjust the location depending on your baseURL (see configuration)
+                  label: "CRIS Schema", // change the label with yours
                 },
               ],
             },
@@ -200,23 +186,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         quality: 90,
       },
     ],
-    /*[
-      "docusaurus-plugin-openapi-docs",
+    [
+      "@graphql-markdown/docusaurus",
       {
-        id: "openapi",
-        docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
-        config: {
-          api: {
-            specPath: "openapi/api.yaml", // path or URL to the OpenAPI spec
-            outputDir: "docs/api",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          }
-        }
+        schema: "./api/cris.graphql",
+        rootPath: "./",
+        baseURL: "docs/cris",
+        homepage: "./docs/cris/cris.md",
+        loaders: {
+          GraphQLFileLoader: "@graphql-tools/graphql-file-loader"
+        },
       },
-    ],*/
+    ],
     () => ({
       postBuild() {
         console.log('Plugin build finished');
