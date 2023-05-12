@@ -193,6 +193,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         rootPath: "./",
         baseURL: "docs/cris",
         homepage: "./docs/cris/cris.md",
+        docOptions: {
+          pagination: false,
+          toc: false,
+          index: true,
+        },
         loaders: {
           GraphQLFileLoader: "@graphql-tools/graphql-file-loader"
         },

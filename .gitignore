@@ -81,6 +81,7 @@ website/i18n/**/*
 
 .netlify
 
+/website/docs/cris/
 !/website/docs/cris/_category_.json
 
 !/website/docs/cris/cris.md
