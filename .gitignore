@@ -80,3 +80,9 @@ website/i18n/**/*
 #!website/i18n/fr/**/*
 
 .netlify
+
+!/website/docs/cris/_category_.json
+
+!/website/docs/cris/cris.md
+
+!/website/docs/cris/sidebar-schema.js
