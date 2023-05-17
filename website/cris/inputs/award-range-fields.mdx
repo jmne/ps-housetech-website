@@ -1,0 +1,87 @@
+---
+id: award-range-fields
+title: AwardRangeFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input AwardRangeFields {
+  id: Range
+  status: Range
+  identifierC4: Range
+  typeOfAwardId: Range
+  yearFirstAward: Range
+  yearLastAward: Range
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>id</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>status</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>identifierC4</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>typeOfAwardId</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>yearFirstAward</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardRangeFields.<b>yearLastAward</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`AwardListSelectFilter`](/cris/inputs/award-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`AwardListSelectMustNot`](/cris/inputs/award-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PrizeRangeFields`](/cris/inputs/prize-range-fields)  <Badge class="secondary" text="input"/>
+

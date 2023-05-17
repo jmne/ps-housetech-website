@@ -1,0 +1,377 @@
+---
+id: publication-match-fields
+title: PublicationMatchFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PublicationMatchFields {
+  id: Match
+  status: Match
+  articleNumber: Match
+  articleNumberWwu: Match
+  authorIsOrganisation: Match
+  bookTitle: Match
+  broadcastShow: Match
+  broadcastStation: Match
+  cfAbstr: Match
+  cfCityTown: Match
+  cfEdition: Match
+  cfEndPage: Match
+  cfIsbn: Match
+  cfIssn: Match
+  cfIssue: Match
+  cfLang: cfLangMatchFields
+  cfLangOfTranslatedTitle: cfLangMatchFields
+  cfResPublDate: Match
+  cfSeries: Match
+  cfStartPage: Match
+  cfTitle: Match
+  cfTotalPages: Match
+  cfUri: Match
+  cfVol: Match
+  comments: Match
+  conferenceVenue: Match
+  country: CountryMatchFields
+  distributedBy: Match
+  doi: Match
+  editorIsOrganisation: Match
+  editorList: Match
+  externalOrInternal: Match
+  externalOrInternalId: Match
+  graduationOrga: Match
+  graduationType: Match
+  graduationYear: Match
+  isiId: Match
+  isPreprint: Match
+  journal: JournalMatchFields
+  journalName: Match
+  keywords: Match
+  nameOfConference: Match
+  numberOfPages: Match
+  objectOfRecension: Match
+  pagesRange: Match
+  peerReviewed: Match
+  peerReviewedId: Match
+  publicationType: Match
+  publicationTypeId: Match
+  publisher: Match
+  publisherDetails: PublisherMatchFields
+  publStatus: Match
+  publStatusId: Match
+  publYear: Match
+  pubmedId: Match
+  scopusId: Match
+  sourceOfInfo: Match
+  srcAuthors: Match
+  storageMedium: Match
+  titleInOtherLanguage: Match
+  typeOfThesis: Match
+  volumeOfSeries: Match
+  websiteName: Match
+  identifierC4: Match
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>id</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>status</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>articleNumber</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>articleNumberWwu</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>authorIsOrganisation</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>bookTitle</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>broadcastShow</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>broadcastStation</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfAbstr</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfCityTown</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfEdition</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfEndPage</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfIsbn</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfIssn</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfIssue</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfLang</b></code>](#)<Bullet />[`cfLangMatchFields`](/cris/inputs/cf-lang-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfLangOfTranslatedTitle</b></code>](#)<Bullet />[`cfLangMatchFields`](/cris/inputs/cf-lang-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfResPublDate</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfSeries</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfStartPage</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfTitle</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfTotalPages</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfUri</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>cfVol</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>comments</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>conferenceVenue</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>country</b></code>](#)<Bullet />[`CountryMatchFields`](/cris/inputs/country-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>distributedBy</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>doi</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>editorIsOrganisation</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>editorList</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>externalOrInternal</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>externalOrInternalId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>graduationOrga</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>graduationType</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>graduationYear</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>isiId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>isPreprint</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>journal</b></code>](#)<Bullet />[`JournalMatchFields`](/cris/inputs/journal-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>journalName</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>keywords</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>nameOfConference</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>numberOfPages</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>objectOfRecension</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>pagesRange</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>peerReviewed</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>peerReviewedId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publicationType</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publicationTypeId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publisher</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publisherDetails</b></code>](#)<Bullet />[`PublisherMatchFields`](/cris/inputs/publisher-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publStatus</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publStatusId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>publYear</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>pubmedId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>scopusId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>sourceOfInfo</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>srcAuthors</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>storageMedium</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>titleInOtherLanguage</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>typeOfThesis</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>volumeOfSeries</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>websiteName</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationMatchFields.<b>identifierC4</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PublicationListSelectFilter`](/cris/inputs/publication-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PublicationListSelectMustNot`](/cris/inputs/publication-list-select-must-not)  <Badge class="secondary" text="input"/>
+

@@ -1,0 +1,152 @@
+---
+id: data-node
+title: DataNode
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+union DataNode = AcademicEducation | Appointment | Area | Award | Card | cfLang | Country | DoctoralCourse | DoctoralStudy | Function | FunctionAndMembership | FundingSource | Habilitation | Journal | Organisation | Person | Picture | Prize | Project | Publication | Publisher | ResearchFocus | Talk | WorkExperience
+```
+
+
+
+
+### Possible types
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>AcademicEducation</b></code>](/cris/objects/academic-education) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Appointment</b></code>](/cris/objects/appointment) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Area</b></code>](/cris/objects/area) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Award</b></code>](/cris/objects/award) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Card</b></code>](/cris/objects/card) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>cfLang</b></code>](/cris/objects/cf-lang) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Country</b></code>](/cris/objects/country) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>DoctoralCourse</b></code>](/cris/objects/doctoral-course) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>DoctoralStudy</b></code>](/cris/objects/doctoral-study) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Function</b></code>](/cris/objects/function) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>FunctionAndMembership</b></code>](/cris/objects/function-and-membership) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>FundingSource</b></code>](/cris/objects/funding-source) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Habilitation</b></code>](/cris/objects/habilitation) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Journal</b></code>](/cris/objects/journal) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Organisation</b></code>](/cris/objects/organisation) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Person</b></code>](/cris/objects/person) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Picture</b></code>](/cris/objects/picture) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Prize</b></code>](/cris/objects/prize) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Project</b></code>](/cris/objects/project) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Publication</b></code>](/cris/objects/publication) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Publisher</b></code>](/cris/objects/publisher) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>ResearchFocus</b></code>](/cris/objects/research-focus) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>Talk</b></code>](/cris/objects/talk) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DataNode.<b>WorkExperience</b></code>](/cris/objects/work-experience) <Badge class="secondary" text="object"/>
+> 
+> 
+
+
+
+### Returned by
+
+[`nodes`](/cris/queries/nodes)  <Badge class="secondary" text="query"/>
+

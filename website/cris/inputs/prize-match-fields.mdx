@@ -1,0 +1,187 @@
+---
+id: prize-match-fields
+title: PrizeMatchFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PrizeMatchFields {
+  id: Match
+  status: Match
+  amountOfPrize: Match
+  award: AwardMatchFields
+  awardee: Match
+  awardingCommittee: Match
+  category: Match
+  comment: Match
+  currency: Match
+  dateOfAnnouncement: Match
+  dateOfAwarding: Match
+  description: Match
+  endDateScholarship: Match
+  identifierC4: Match
+  inputType: Match
+  inputTypeId: Match
+  name: Match
+  occasionOfAwardCeremony: Match
+  placement: Match
+  startDateScholarship: Match
+  typeOfAward: Match
+  typeOfAwardId: Match
+  urlAwardPressClip: Match
+  urlWwuPressClip: Match
+  venueOfAwardCeremony: Match
+  yearOfPrize: Match
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>id</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>status</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>amountOfPrize</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>award</b></code>](#)<Bullet />[`AwardMatchFields`](/cris/inputs/award-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>awardee</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>awardingCommittee</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>category</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>comment</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>currency</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>dateOfAnnouncement</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>dateOfAwarding</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>description</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>endDateScholarship</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>identifierC4</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>inputType</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>inputTypeId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>name</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>occasionOfAwardCeremony</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>placement</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>startDateScholarship</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>typeOfAward</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>typeOfAwardId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>urlAwardPressClip</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>urlWwuPressClip</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>venueOfAwardCeremony</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeMatchFields.<b>yearOfPrize</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PrizeListSelectFilter`](/cris/inputs/prize-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PrizeListSelectMustNot`](/cris/inputs/prize-list-select-must-not)  <Badge class="secondary" text="input"/>
+

@@ -1,0 +1,228 @@
+---
+id: organisation-node
+title: OrganisationNode
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type OrganisationNode implements Node {
+  cfAcro: String
+  cfCityTown: String
+  cfName: String
+  cfPostCode: String
+  cfUri: String
+  country: CountryNode
+  descriptionOrgProfile: String
+  email: String
+  facebookAccount: String
+  fax: String
+  gndId: String
+  gridId: String
+  id: ID!
+  identifierC4: Int
+  intOrExt: String
+  intOrExtId: Int
+  isniId: String
+  linkedinAccount: String
+  locId: String
+  nameInHomeLang: String
+  nameShort: String
+  phone: String
+  rorId: String
+  status: Int
+  streetAndNo: String
+  twitterAccount: String
+  typeOfOrga: String
+  viafId: Int
+  wikidataId: String
+  wikipedia: String
+  wwuOrgaIdOld: String
+  xingAccount: String
+  youtubeAccount: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>cfAcro</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>cfCityTown</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>cfName</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>cfPostCode</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>cfUri</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>country</b></code>](#)<Bullet />[`CountryNode`](/cris/objects/country-node) <Badge class="secondary" text="object"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>descriptionOrgProfile</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>email</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>facebookAccount</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>fax</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>gndId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>gridId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>id</b></code>](#)<Bullet />[`ID!`](/cris/scalars/id) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>identifierC4</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>intOrExt</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>intOrExtId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>isniId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>linkedinAccount</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>locId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>nameInHomeLang</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>nameShort</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>phone</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>rorId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>status</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>streetAndNo</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>twitterAccount</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>typeOfOrga</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>viafId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>wikidataId</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>wikipedia</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>wwuOrgaIdOld</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>xingAccount</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OrganisationNode.<b>youtubeAccount</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Interfaces
+
+#### [`Node`](/cris/interfaces/node) <Badge class="secondary" text="interface"/>
+> 
+> 
+
+
+
+### Member of
+
+[`AppointmentNode`](/cris/objects/appointment-node)  <Badge class="secondary" text="object"/><Bullet />[`CardOrganisationsEdge`](/cris/objects/card-organisations-edge)  <Badge class="secondary" text="object"/><Bullet />[`DoctoralStudyOrganisationsEdge`](/cris/objects/doctoral-study-organisations-edge)  <Badge class="secondary" text="object"/><Bullet />[`HabilitationOrganisationsEdge`](/cris/objects/habilitation-organisations-edge)  <Badge class="secondary" text="object"/><Bullet />[`OrgaHasChildOrgaEdge`](/cris/objects/orga-has-child-orga-edge)  <Badge class="secondary" text="object"/><Bullet />[`Organisation`](/cris/objects/organisation)  <Badge class="secondary" text="object"/><Bullet />[`OrganisationList`](/cris/objects/organisation-list)  <Badge class="secondary" text="object"/><Bullet />[`OrganisationTree`](/cris/objects/organisation-tree)  <Badge class="secondary" text="object"/><Bullet />[`PersonOrganisationsEdge`](/cris/objects/person-organisations-edge)  <Badge class="secondary" text="object"/><Bullet />[`ProjectExtOrganisationsEdge`](/cris/objects/project-ext-organisations-edge)  <Badge class="secondary" text="object"/><Bullet />[`ProjectOrganisationsEdge`](/cris/objects/project-organisations-edge)  <Badge class="secondary" text="object"/>
+

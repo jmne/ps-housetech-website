@@ -1,0 +1,112 @@
+---
+id: project-wildcard-fields
+title: ProjectWildcardFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input ProjectWildcardFields {
+  cfAbstr: Wildcard
+  cfAcro: Wildcard
+  cfKeyw: Wildcard
+  cfTitle: Wildcard
+  cfUri: Wildcard
+  fundingBody: Wildcard
+  fundingPeriod: Wildcard
+  fundRefNo: Wildcard
+  projectStatus: Wildcard
+  teaser: Wildcard
+  typeOfProject: Wildcard
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>cfAbstr</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>cfAcro</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>cfKeyw</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>cfTitle</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>cfUri</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>fundingBody</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>fundingPeriod</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>fundRefNo</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>projectStatus</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>teaser</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ProjectWildcardFields.<b>typeOfProject</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`ProjectListSelectFilter`](/cris/inputs/project-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`ProjectListSelectMustNot`](/cris/inputs/project-list-select-must-not)  <Badge class="secondary" text="input"/>
+

@@ -1,0 +1,82 @@
+---
+id: publication-list-select-must-not
+title: PublicationListSelectMustNot
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PublicationListSelectMustNot {
+  match: PublicationMatchFields
+  range: PublicationRangeFields
+  wildcard: PublicationWildcardFields
+  phrase: PublicationPhraseFields
+  queryString: QueryString
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationListSelectMustNot.<b>match</b></code>](#)<Bullet />[`PublicationMatchFields`](/cris/inputs/publication-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationListSelectMustNot.<b>range</b></code>](#)<Bullet />[`PublicationRangeFields`](/cris/inputs/publication-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationListSelectMustNot.<b>wildcard</b></code>](#)<Bullet />[`PublicationWildcardFields`](/cris/inputs/publication-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationListSelectMustNot.<b>phrase</b></code>](#)<Bullet />[`PublicationPhraseFields`](/cris/inputs/publication-phrase-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationListSelectMustNot.<b>queryString</b></code>](#)<Bullet />[`QueryString`](/cris/inputs/query-string) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PublicationListSelect`](/cris/inputs/publication-list-select)  <Badge class="secondary" text="input"/>
+

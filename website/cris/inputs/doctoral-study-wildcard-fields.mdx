@@ -1,0 +1,117 @@
+---
+id: doctoral-study-wildcard-fields
+title: DoctoralStudyWildcardFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input DoctoralStudyWildcardFields {
+  awardingFaculty: Wildcard
+  candidateName: Wildcard
+  courseOfStudyExt: Wildcard
+  description: Wildcard
+  doctoralCourse: DoctoralCourseWildcardFields
+  doctorateDegree: Wildcard
+  doctorateDegreeExt: Wildcard
+  finishedIntExt: Wildcard
+  namesOfReviewers: Wildcard
+  statusOfDocStudies: Wildcard
+  supervisorName: Wildcard
+  typeOfDoctoralThesis: Wildcard
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>awardingFaculty</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>candidateName</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>courseOfStudyExt</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>description</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>doctoralCourse</b></code>](#)<Bullet />[`DoctoralCourseWildcardFields`](/cris/inputs/doctoral-course-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>doctorateDegree</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>doctorateDegreeExt</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>finishedIntExt</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>namesOfReviewers</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>statusOfDocStudies</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>supervisorName</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralStudyWildcardFields.<b>typeOfDoctoralThesis</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`DoctoralStudyListSelectFilter`](/cris/inputs/doctoral-study-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyListSelectMustNot`](/cris/inputs/doctoral-study-list-select-must-not)  <Badge class="secondary" text="input"/>
+

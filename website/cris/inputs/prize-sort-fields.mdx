@@ -1,0 +1,112 @@
+---
+id: prize-sort-fields
+title: PrizeSortFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PrizeSortFields {
+  id: SortField
+  status: SortField
+  amountOfPrize: SortField
+  award: AwardSortFields
+  dateOfAnnouncement: SortField
+  dateOfAwarding: SortField
+  endDateScholarship: SortField
+  name: SortField
+  sequence: SortField
+  startDateScholarship: SortField
+  yearOfPrize: SortField
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>id</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>status</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>amountOfPrize</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>award</b></code>](#)<Bullet />[`AwardSortFields`](/cris/inputs/award-sort-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>dateOfAnnouncement</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>dateOfAwarding</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>endDateScholarship</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>name</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>sequence</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>startDateScholarship</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeSortFields.<b>yearOfPrize</b></code>](#)<Bullet />[`SortField`](/cris/inputs/sort-field) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`prizeList`](/cris/queries/prize-list)  <Badge class="secondary" text="query"/>
+

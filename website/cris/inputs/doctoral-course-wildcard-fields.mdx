@@ -1,0 +1,62 @@
+---
+id: doctoral-course-wildcard-fields
+title: DoctoralCourseWildcardFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input DoctoralCourseWildcardFields {
+  name: Wildcard
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>DoctoralCourseWildcardFields.<b>name</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`DoctoralCourseListSelectFilter`](/cris/inputs/doctoral-course-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralCourseListSelectMustNot`](/cris/inputs/doctoral-course-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyWildcardFields`](/cris/inputs/doctoral-study-wildcard-fields)  <Badge class="secondary" text="input"/>
+

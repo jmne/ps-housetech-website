@@ -1,0 +1,89 @@
+---
+id: talk-list
+title: talkList
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+talkList(
+  first: Int = 10
+  after: StringOrInt = 
+  select: TalkListSelect
+  locale: LocaleParameter = de_DE
+  paginationMode: PaginationMode = cursor
+  sort: [TalkSortFields] = [[object Object]]
+): TalkListWrapper
+```
+
+
+
+
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>select</b></code>](#)<Bullet />[`TalkListSelect`](/cris/inputs/talk-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>locale</b></code>](#)<Bullet />[`LocaleParameter`](/cris/enums/locale-parameter) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>talkList.<b>sort</b></code>](#)<Bullet />[`[TalkSortFields]`](/cris/inputs/talk-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+### Type
+
+#### [`TalkListWrapper`](/cris/objects/talk-list-wrapper) <Badge class="secondary" text="object"/>
+> 
+> 
+
+
+

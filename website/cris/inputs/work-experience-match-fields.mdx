@@ -1,0 +1,107 @@
+---
+id: work-experience-match-fields
+title: WorkExperienceMatchFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input WorkExperienceMatchFields {
+  id: Match
+  status: Match
+  endMonth: Match
+  endYear: Match
+  identifierC4: Match
+  isPointOfTime: Match
+  name: Match
+  startMonth: Match
+  startYear: Match
+  url: Match
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>id</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>status</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>endMonth</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>endYear</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>identifierC4</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>isPointOfTime</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>name</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>startMonth</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>startYear</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkExperienceMatchFields.<b>url</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`WorkExperienceListSelectFilter`](/cris/inputs/work-experience-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`WorkExperienceListSelectMustNot`](/cris/inputs/work-experience-list-select-must-not)  <Badge class="secondary" text="input"/>
+

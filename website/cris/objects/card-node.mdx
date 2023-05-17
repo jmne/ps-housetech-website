@@ -1,0 +1,133 @@
+---
+id: card-node
+title: CardNode
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type CardNode implements Node {
+  id: ID!
+  status: Int
+  cfEndDate: String
+  cfUri: String
+  consultationHours: String
+  email: String
+  fax: String
+  identifierC4: Int
+  individualJobDesc: String
+  jobTitle: String
+  phone: String
+  phoneLaboratory: String
+  roomNumber: String
+  roomNumberLaboratory: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>id</b></code>](#)<Bullet />[`ID!`](/cris/scalars/id) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>status</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>cfEndDate</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>cfUri</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>consultationHours</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>email</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>fax</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>identifierC4</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>individualJobDesc</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>jobTitle</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>phone</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>phoneLaboratory</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>roomNumber</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardNode.<b>roomNumberLaboratory</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Interfaces
+
+#### [`Node`](/cris/interfaces/node) <Badge class="secondary" text="interface"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Card`](/cris/objects/card)  <Badge class="secondary" text="object"/><Bullet />[`CardList`](/cris/objects/card-list)  <Badge class="secondary" text="object"/><Bullet />[`DoctoralStudyCardsEdge`](/cris/objects/doctoral-study-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`DoctoralStudyCardsSequenceEdge`](/cris/objects/doctoral-study-cards-sequence-edge)  <Badge class="secondary" text="object"/><Bullet />[`HabilitationCardsEdge`](/cris/objects/habilitation-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`OrganisationCardsEdge`](/cris/objects/organisation-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`PersonCardsEdge`](/cris/objects/person-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`PrizeCardsEdge`](/cris/objects/prize-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`PrizeDoctoralStudiesEdge`](/cris/objects/prize-doctoral-studies-edge)  <Badge class="secondary" text="object"/><Bullet />[`ProjectCardsEdge`](/cris/objects/project-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`ProjectCardsSequenceEdge`](/cris/objects/project-cards-sequence-edge)  <Badge class="secondary" text="object"/><Bullet />[`PublicationCardsEdge`](/cris/objects/publication-cards-edge)  <Badge class="secondary" text="object"/><Bullet />[`TalkCardsEdge`](/cris/objects/talk-cards-edge)  <Badge class="secondary" text="object"/>
+

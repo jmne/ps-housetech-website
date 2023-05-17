@@ -1,0 +1,77 @@
+---
+id: query-string
+title: QueryString
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input QueryString {
+  query: String!
+  defaultField: String
+  defaultOperator: DefaultOperator
+  fields: [String]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>QueryString.<b>query</b></code>](#)<Bullet />[`String!`](/cris/scalars/string) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>QueryString.<b>defaultField</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>QueryString.<b>defaultOperator</b></code>](#)<Bullet />[`DefaultOperator`](/cris/enums/default-operator) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>QueryString.<b>fields</b></code>](#)<Bullet />[`[String]`](/cris/scalars/string) <Badge class="secondary" text="list"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`AcademicEducationListSelectFilter`](/cris/inputs/academic-education-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`AcademicEducationListSelectMustNot`](/cris/inputs/academic-education-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`AppointmentListSelectFilter`](/cris/inputs/appointment-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`AppointmentListSelectMustNot`](/cris/inputs/appointment-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`AreaListSelectFilter`](/cris/inputs/area-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`AreaListSelectMustNot`](/cris/inputs/area-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`AwardListSelectFilter`](/cris/inputs/award-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`AwardListSelectMustNot`](/cris/inputs/award-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`CardListSelectFilter`](/cris/inputs/card-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`CardListSelectMustNot`](/cris/inputs/card-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`cfLangListSelectFilter`](/cris/inputs/cf-lang-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`cfLangListSelectMustNot`](/cris/inputs/cf-lang-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`CountryListSelectFilter`](/cris/inputs/country-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`CountryListSelectMustNot`](/cris/inputs/country-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralCourseListSelectFilter`](/cris/inputs/doctoral-course-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralCourseListSelectMustNot`](/cris/inputs/doctoral-course-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyListSelectFilter`](/cris/inputs/doctoral-study-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyListSelectMustNot`](/cris/inputs/doctoral-study-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`FunctionAndMembershipListSelectFilter`](/cris/inputs/function-and-membership-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`FunctionAndMembershipListSelectMustNot`](/cris/inputs/function-and-membership-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`FunctionListSelectFilter`](/cris/inputs/function-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`FunctionListSelectMustNot`](/cris/inputs/function-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`FundingSourceListSelectFilter`](/cris/inputs/funding-source-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`FundingSourceListSelectMustNot`](/cris/inputs/funding-source-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`HabilitationListSelectFilter`](/cris/inputs/habilitation-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`HabilitationListSelectMustNot`](/cris/inputs/habilitation-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`JournalListSelectFilter`](/cris/inputs/journal-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`JournalListSelectMustNot`](/cris/inputs/journal-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`OrganisationListSelectFilter`](/cris/inputs/organisation-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`OrganisationListSelectMustNot`](/cris/inputs/organisation-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PersonListSelectFilter`](/cris/inputs/person-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PersonListSelectMustNot`](/cris/inputs/person-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PictureListSelectFilter`](/cris/inputs/picture-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PictureListSelectMustNot`](/cris/inputs/picture-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PrizeListSelectFilter`](/cris/inputs/prize-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PrizeListSelectMustNot`](/cris/inputs/prize-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`ProjectListSelectFilter`](/cris/inputs/project-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`ProjectListSelectMustNot`](/cris/inputs/project-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PublicationListSelectFilter`](/cris/inputs/publication-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PublicationListSelectMustNot`](/cris/inputs/publication-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PublisherListSelectFilter`](/cris/inputs/publisher-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PublisherListSelectMustNot`](/cris/inputs/publisher-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`ResearchFocusListSelectFilter`](/cris/inputs/research-focus-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`ResearchFocusListSelectMustNot`](/cris/inputs/research-focus-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`TalkListSelectFilter`](/cris/inputs/talk-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`TalkListSelectMustNot`](/cris/inputs/talk-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`WorkExperienceListSelectFilter`](/cris/inputs/work-experience-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`WorkExperienceListSelectMustNot`](/cris/inputs/work-experience-list-select-must-not)  <Badge class="secondary" text="input"/>
+

@@ -1,0 +1,133 @@
+---
+id: publication-connections
+title: PublicationConnections
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type PublicationConnections {
+  cards(
+    first: Int = 10
+    after: String = ""
+    sort: [CardSortFields] = [[object Object]]
+  ): PublicationCardsConnection
+  doctoralStudies(
+    first: Int = 10
+    after: String = ""
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PublicationDoctoralStudiesConnection
+  habilitations(
+    first: Int = 10
+    after: String = ""
+    sort: [HabilitationSortFields] = [[object Object]]
+  ): PublicationHabilitationsConnection
+  projects(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields] = [[object Object]]
+  ): PublicationProjectsConnection
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.<b>cards</b></code>](#)<Bullet />[`PublicationCardsConnection`](/cris/objects/publication-cards-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.cards.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.cards.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.cards.<b>sort</b></code>](#)<Bullet />[`[CardSortFields]`](/cris/inputs/card-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.<b>doctoralStudies</b></code>](#)<Bullet />[`PublicationDoctoralStudiesConnection`](/cris/objects/publication-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.doctoralStudies.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.doctoralStudies.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.doctoralStudies.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.<b>habilitations</b></code>](#)<Bullet />[`PublicationHabilitationsConnection`](/cris/objects/publication-habilitations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.habilitations.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.habilitations.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.habilitations.<b>sort</b></code>](#)<Bullet />[`[HabilitationSortFields]`](/cris/inputs/habilitation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.<b>projects</b></code>](#)<Bullet />[`PublicationProjectsConnection`](/cris/objects/publication-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.projects.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.projects.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PublicationConnections.projects.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Publication`](/cris/objects/publication)  <Badge class="secondary" text="object"/>
+

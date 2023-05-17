@@ -1,0 +1,67 @@
+---
+id: locale-parameter
+title: LocaleParameter
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+enum LocaleParameter {
+  de_DE
+  en_GB
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>LocaleParameter.<b>de_DE</b></code>](#) 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LocaleParameter.<b>en_GB</b></code>](#) 
+> 
+> 
+
+
+
+### Member of
+
+[`academicEducation`](/cris/queries/academic-education)  <Badge class="secondary" text="query"/><Bullet />[`academicEducationList`](/cris/queries/academic-education-list)  <Badge class="secondary" text="query"/><Bullet />[`appointment`](/cris/queries/appointment)  <Badge class="secondary" text="query"/><Bullet />[`appointmentList`](/cris/queries/appointment-list)  <Badge class="secondary" text="query"/><Bullet />[`area`](/cris/queries/area)  <Badge class="secondary" text="query"/><Bullet />[`areaList`](/cris/queries/area-list)  <Badge class="secondary" text="query"/><Bullet />[`award`](/cris/queries/award)  <Badge class="secondary" text="query"/><Bullet />[`awardList`](/cris/queries/award-list)  <Badge class="secondary" text="query"/><Bullet />[`card`](/cris/queries/card)  <Badge class="secondary" text="query"/><Bullet />[`cardList`](/cris/queries/card-list)  <Badge class="secondary" text="query"/><Bullet />[`cfLang`](/cris/queries/cf-lang)  <Badge class="secondary" text="query"/><Bullet />[`cfLangList`](/cris/queries/cf-lang-list)  <Badge class="secondary" text="query"/><Bullet />[`country`](/cris/queries/country)  <Badge class="secondary" text="query"/><Bullet />[`countryList`](/cris/queries/country-list)  <Badge class="secondary" text="query"/><Bullet />[`doctoralCourse`](/cris/queries/doctoral-course)  <Badge class="secondary" text="query"/><Bullet />[`doctoralCourseList`](/cris/queries/doctoral-course-list)  <Badge class="secondary" text="query"/><Bullet />[`doctoralStudy`](/cris/queries/doctoral-study)  <Badge class="secondary" text="query"/><Bullet />[`doctoralStudyList`](/cris/queries/doctoral-study-list)  <Badge class="secondary" text="query"/><Bullet />[`facility`](/cris/queries/facility)  <Badge class="secondary" text="query"/><Bullet />[`function`](/cris/queries/function)  <Badge class="secondary" text="query"/><Bullet />[`functionAndMembership`](/cris/queries/function-and-membership)  <Badge class="secondary" text="query"/><Bullet />[`functionAndMembershipList`](/cris/queries/function-and-membership-list)  <Badge class="secondary" text="query"/><Bullet />[`functionList`](/cris/queries/function-list)  <Badge class="secondary" text="query"/><Bullet />[`fundingSource`](/cris/queries/funding-source)  <Badge class="secondary" text="query"/><Bullet />[`fundingSourceList`](/cris/queries/funding-source-list)  <Badge class="secondary" text="query"/><Bullet />[`habilitation`](/cris/queries/habilitation)  <Badge class="secondary" text="query"/><Bullet />[`habilitationList`](/cris/queries/habilitation-list)  <Badge class="secondary" text="query"/><Bullet />[`journal`](/cris/queries/journal)  <Badge class="secondary" text="query"/><Bullet />[`journalList`](/cris/queries/journal-list)  <Badge class="secondary" text="query"/><Bullet />[`nodes`](/cris/queries/nodes)  <Badge class="secondary" text="query"/><Bullet />[`organisation`](/cris/queries/organisation)  <Badge class="secondary" text="query"/><Bullet />[`organisationList`](/cris/queries/organisation-list)  <Badge class="secondary" text="query"/><Bullet />[`person`](/cris/queries/person)  <Badge class="secondary" text="query"/><Bullet />[`personList`](/cris/queries/person-list)  <Badge class="secondary" text="query"/><Bullet />[`picture`](/cris/queries/picture)  <Badge class="secondary" text="query"/><Bullet />[`pictureList`](/cris/queries/picture-list)  <Badge class="secondary" text="query"/><Bullet />[`prize`](/cris/queries/prize)  <Badge class="secondary" text="query"/><Bullet />[`prizeList`](/cris/queries/prize-list)  <Badge class="secondary" text="query"/><Bullet />[`project`](/cris/queries/project)  <Badge class="secondary" text="query"/><Bullet />[`projectList`](/cris/queries/project-list)  <Badge class="secondary" text="query"/><Bullet />[`publication`](/cris/queries/publication)  <Badge class="secondary" text="query"/><Bullet />[`publicationList`](/cris/queries/publication-list)  <Badge class="secondary" text="query"/><Bullet />[`publisher`](/cris/queries/publisher)  <Badge class="secondary" text="query"/><Bullet />[`publisherList`](/cris/queries/publisher-list)  <Badge class="secondary" text="query"/><Bullet />[`researchFocus`](/cris/queries/research-focus)  <Badge class="secondary" text="query"/><Bullet />[`researchFocusList`](/cris/queries/research-focus-list)  <Badge class="secondary" text="query"/><Bullet />[`talk`](/cris/queries/talk)  <Badge class="secondary" text="query"/><Bullet />[`talkList`](/cris/queries/talk-list)  <Badge class="secondary" text="query"/><Bullet />[`workExperience`](/cris/queries/work-experience)  <Badge class="secondary" text="query"/><Bullet />[`workExperienceList`](/cris/queries/work-experience-list)  <Badge class="secondary" text="query"/>
+

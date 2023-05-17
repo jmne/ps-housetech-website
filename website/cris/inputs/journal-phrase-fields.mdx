@@ -1,0 +1,112 @@
+---
+id: journal-phrase-fields
+title: JournalPhraseFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input JournalPhraseFields {
+  abbreviation: Phrase
+  conditions: Phrase
+  copyright: Phrase
+  eissn: Phrase
+  issn: Phrase
+  issnl: Phrase
+  name: Phrase
+  postPrint: Phrase
+  prePrint: Phrase
+  publisher: Phrase
+  roMeoColour: Phrase
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>abbreviation</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>conditions</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>copyright</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>eissn</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>issn</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>issnl</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>name</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>postPrint</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>prePrint</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>publisher</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>JournalPhraseFields.<b>roMeoColour</b></code>](#)<Bullet />[`Phrase`](/cris/inputs/phrase) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`JournalListSelectFilter`](/cris/inputs/journal-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`JournalListSelectMustNot`](/cris/inputs/journal-list-select-must-not)  <Badge class="secondary" text="input"/><Bullet />[`PublicationPhraseFields`](/cris/inputs/publication-phrase-fields)  <Badge class="secondary" text="input"/>
+

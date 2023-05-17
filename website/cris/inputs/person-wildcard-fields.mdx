@@ -1,0 +1,157 @@
+---
+id: person-wildcard-fields
+title: PersonWildcardFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PersonWildcardFields {
+  academiaEdu: Wildcard
+  academicTitle: Wildcard
+  birthName: Wildcard
+  cfFamilyNames: Wildcard
+  cfFirstNames: Wildcard
+  familyNamePref: Wildcard
+  firstNamePref: Wildcard
+  googleScholarId: Wildcard
+  linkedinAccount: Wildcard
+  nameInfix: Wildcard
+  orcid: Wildcard
+  postpositionedTitle: Wildcard
+  researcherId: Wildcard
+  researchgateAccount: Wildcard
+  salutation: Wildcard
+  scopusAuthorId: Wildcard
+  skypeAccount: Wildcard
+  twitterAccount: Wildcard
+  xingAccount: Wildcard
+  zivUserAccount: Wildcard
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>academiaEdu</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>academicTitle</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>birthName</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>cfFamilyNames</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>cfFirstNames</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>familyNamePref</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>firstNamePref</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>googleScholarId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>linkedinAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>nameInfix</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>orcid</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>postpositionedTitle</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>researcherId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>researchgateAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>salutation</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>scopusAuthorId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>skypeAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>twitterAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>xingAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonWildcardFields.<b>zivUserAccount</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PersonListSelectFilter`](/cris/inputs/person-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PersonListSelectMustNot`](/cris/inputs/person-list-select-must-not)  <Badge class="secondary" text="input"/>
+

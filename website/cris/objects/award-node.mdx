@@ -1,0 +1,128 @@
+---
+id: award-node
+title: AwardNode
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type AwardNode implements Node {
+  id: ID!
+  status: Int
+  awardingCommittee: String
+  description: String
+  identifierC4: Int
+  isAwardedByWwu: Boolean
+  name: String
+  sponsor: String
+  typeOfAward: String
+  typeOfAwardId: Int
+  url: String
+  yearFirstAward: Int
+  yearLastAward: Int
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>id</b></code>](#)<Bullet />[`ID!`](/cris/scalars/id) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>status</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>awardingCommittee</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>description</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>identifierC4</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>isAwardedByWwu</b></code>](#)<Bullet />[`Boolean`](/cris/scalars/boolean) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>name</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>sponsor</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>typeOfAward</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>typeOfAwardId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>url</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>yearFirstAward</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AwardNode.<b>yearLastAward</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Interfaces
+
+#### [`Node`](/cris/interfaces/node) <Badge class="secondary" text="interface"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Award`](/cris/objects/award)  <Badge class="secondary" text="object"/><Bullet />[`AwardList`](/cris/objects/award-list)  <Badge class="secondary" text="object"/><Bullet />[`PrizeAwardsEdge`](/cris/objects/prize-awards-edge)  <Badge class="secondary" text="object"/><Bullet />[`PrizeNode`](/cris/objects/prize-node)  <Badge class="secondary" text="object"/>
+

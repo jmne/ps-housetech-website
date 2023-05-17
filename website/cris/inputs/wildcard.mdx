@@ -1,0 +1,62 @@
+---
+id: wildcard
+title: Wildcard
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input Wildcard {
+  value: String!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Wildcard.<b>value</b></code>](#)<Bullet />[`String!`](/cris/scalars/string) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`AcademicEducationWildcardFields`](/cris/inputs/academic-education-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`AppointmentWildcardFields`](/cris/inputs/appointment-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`AreaWildcardFields`](/cris/inputs/area-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`AwardWildcardFields`](/cris/inputs/award-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`CardWildcardFields`](/cris/inputs/card-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`cfLangWildcardFields`](/cris/inputs/cf-lang-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`CountryWildcardFields`](/cris/inputs/country-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralCourseWildcardFields`](/cris/inputs/doctoral-course-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyWildcardFields`](/cris/inputs/doctoral-study-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`FunctionAndMembershipWildcardFields`](/cris/inputs/function-and-membership-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`FunctionWildcardFields`](/cris/inputs/function-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`FundingSourceWildcardFields`](/cris/inputs/funding-source-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`HabilitationWildcardFields`](/cris/inputs/habilitation-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`JournalWildcardFields`](/cris/inputs/journal-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`OrganisationWildcardFields`](/cris/inputs/organisation-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`PersonWildcardFields`](/cris/inputs/person-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`PictureWildcardFields`](/cris/inputs/picture-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`PrizeWildcardFields`](/cris/inputs/prize-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`ProjectWildcardFields`](/cris/inputs/project-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`PublicationWildcardFields`](/cris/inputs/publication-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`PublisherWildcardFields`](/cris/inputs/publisher-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`ResearchFocusWildcardFields`](/cris/inputs/research-focus-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`TalkWildcardFields`](/cris/inputs/talk-wildcard-fields)  <Badge class="secondary" text="input"/><Bullet />[`WorkExperienceWildcardFields`](/cris/inputs/work-experience-wildcard-fields)  <Badge class="secondary" text="input"/>
+

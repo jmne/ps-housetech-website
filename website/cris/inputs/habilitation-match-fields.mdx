@@ -1,0 +1,142 @@
+---
+id: habilitation-match-fields
+title: HabilitationMatchFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input HabilitationMatchFields {
+  id: Match
+  status: Match
+  awardingFaculty: Match
+  awardingFacultyId: Match
+  candidateName: Match
+  description: Match
+  endDate: Match
+  finishedIntExt: Match
+  finishedIntExtId: Match
+  habilitationStatus: Match
+  habilitationStatusId: Match
+  identifierC4: Match
+  isWorkingTitle: Match
+  startDate: Match
+  supervisorName: Match
+  title: Match
+  veniaLegendi: Match
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>id</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>status</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>awardingFaculty</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>awardingFacultyId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>candidateName</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>description</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>endDate</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>finishedIntExt</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>finishedIntExtId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>habilitationStatus</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>habilitationStatusId</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>identifierC4</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>isWorkingTitle</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>startDate</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>supervisorName</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>title</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationMatchFields.<b>veniaLegendi</b></code>](#)<Bullet />[`Match`](/cris/inputs/match) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`HabilitationListSelectFilter`](/cris/inputs/habilitation-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`HabilitationListSelectMustNot`](/cris/inputs/habilitation-list-select-must-not)  <Badge class="secondary" text="input"/>
+

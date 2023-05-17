@@ -1,0 +1,152 @@
+---
+id: prize-connections
+title: PrizeConnections
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type PrizeConnections {
+  awards(
+    first: Int = 10
+    after: String = ""
+    sort: [AwardSortFields] = [[object Object]]
+  ): PrizeAwardsConnection
+  cards(
+    first: Int = 10
+    after: String = ""
+    sort: [CardSortFields] = [[object Object]]
+  ): PrizeCardsConnection
+  doctoralStudies(
+    first: Int = 10
+    after: String = ""
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PrizeDoctoralStudiesConnection
+  habilitations(
+    first: Int = 10
+    after: String = ""
+    sort: [HabilitationSortFields] = [[object Object]]
+  ): PrizeHabilitationsConnection
+  projects(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields] = [[object Object]]
+  ): PrizeProjectsConnection
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.<b>awards</b></code>](#)<Bullet />[`PrizeAwardsConnection`](/cris/objects/prize-awards-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.awards.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.awards.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.awards.<b>sort</b></code>](#)<Bullet />[`[AwardSortFields]`](/cris/inputs/award-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.<b>cards</b></code>](#)<Bullet />[`PrizeCardsConnection`](/cris/objects/prize-cards-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.cards.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.cards.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.cards.<b>sort</b></code>](#)<Bullet />[`[CardSortFields]`](/cris/inputs/card-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.<b>doctoralStudies</b></code>](#)<Bullet />[`PrizeDoctoralStudiesConnection`](/cris/objects/prize-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.doctoralStudies.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.doctoralStudies.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.doctoralStudies.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.<b>habilitations</b></code>](#)<Bullet />[`PrizeHabilitationsConnection`](/cris/objects/prize-habilitations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.habilitations.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.habilitations.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.habilitations.<b>sort</b></code>](#)<Bullet />[`[HabilitationSortFields]`](/cris/inputs/habilitation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.<b>projects</b></code>](#)<Bullet />[`PrizeProjectsConnection`](/cris/objects/prize-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.projects.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.projects.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PrizeConnections.projects.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Prize`](/cris/objects/prize)  <Badge class="secondary" text="object"/>
+

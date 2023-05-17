@@ -1,0 +1,317 @@
+---
+id: publication-wildcard-fields
+title: PublicationWildcardFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PublicationWildcardFields {
+  articleNumber: Wildcard
+  articleNumberWwu: Wildcard
+  bookTitle: Wildcard
+  broadcastShow: Wildcard
+  broadcastStation: Wildcard
+  cfAbstr: Wildcard
+  cfCityTown: Wildcard
+  cfEdition: Wildcard
+  cfEndPage: Wildcard
+  cfIsbn: Wildcard
+  cfIssn: Wildcard
+  cfIssue: Wildcard
+  cfLang: cfLangWildcardFields
+  cfLangOfTranslatedTitle: cfLangWildcardFields
+  cfSeries: Wildcard
+  cfStartPage: Wildcard
+  cfTitle: Wildcard
+  cfUri: Wildcard
+  cfVol: Wildcard
+  comments: Wildcard
+  conferenceVenue: Wildcard
+  country: CountryWildcardFields
+  distributedBy: Wildcard
+  doi: Wildcard
+  editorList: Wildcard
+  externalOrInternal: Wildcard
+  graduationOrga: Wildcard
+  graduationType: Wildcard
+  graduationYear: Wildcard
+  isiId: Wildcard
+  isPreprint: Wildcard
+  journal: JournalWildcardFields
+  journalName: Wildcard
+  keywords: Wildcard
+  nameOfConference: Wildcard
+  numberOfPages: Wildcard
+  objectOfRecension: Wildcard
+  pagesRange: Wildcard
+  peerReviewed: Wildcard
+  publicationType: Wildcard
+  publisher: Wildcard
+  publisherDetails: PublisherWildcardFields
+  publStatus: Wildcard
+  pubmedId: Wildcard
+  scopusId: Wildcard
+  sourceOfInfo: Wildcard
+  srcAuthors: Wildcard
+  storageMedium: Wildcard
+  titleInOtherLanguage: Wildcard
+  typeOfThesis: Wildcard
+  volumeOfSeries: Wildcard
+  websiteName: Wildcard
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>articleNumber</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>articleNumberWwu</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>bookTitle</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>broadcastShow</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>broadcastStation</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfAbstr</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfCityTown</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfEdition</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfEndPage</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfIsbn</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfIssn</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfIssue</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfLang</b></code>](#)<Bullet />[`cfLangWildcardFields`](/cris/inputs/cf-lang-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfLangOfTranslatedTitle</b></code>](#)<Bullet />[`cfLangWildcardFields`](/cris/inputs/cf-lang-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfSeries</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfStartPage</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfTitle</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfUri</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>cfVol</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>comments</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>conferenceVenue</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>country</b></code>](#)<Bullet />[`CountryWildcardFields`](/cris/inputs/country-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>distributedBy</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>doi</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>editorList</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>externalOrInternal</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>graduationOrga</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>graduationType</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>graduationYear</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>isiId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>isPreprint</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>journal</b></code>](#)<Bullet />[`JournalWildcardFields`](/cris/inputs/journal-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>journalName</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>keywords</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>nameOfConference</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>numberOfPages</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>objectOfRecension</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>pagesRange</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>peerReviewed</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>publicationType</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>publisher</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>publisherDetails</b></code>](#)<Bullet />[`PublisherWildcardFields`](/cris/inputs/publisher-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>publStatus</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>pubmedId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>scopusId</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>sourceOfInfo</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>srcAuthors</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>storageMedium</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>titleInOtherLanguage</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>typeOfThesis</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>volumeOfSeries</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationWildcardFields.<b>websiteName</b></code>](#)<Bullet />[`Wildcard`](/cris/inputs/wildcard) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PublicationListSelectFilter`](/cris/inputs/publication-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PublicationListSelectMustNot`](/cris/inputs/publication-list-select-must-not)  <Badge class="secondary" text="input"/>
+

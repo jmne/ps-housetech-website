@@ -1,0 +1,132 @@
+---
+id: publication-range-fields
+title: PublicationRangeFields
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input PublicationRangeFields {
+  id: Range
+  status: Range
+  identifierC4: Range
+  cfLang: cfLangRangeFields
+  cfLangOfTranslatedTitle: cfLangRangeFields
+  cfResPublDate: Range
+  cfTotalPages: Range
+  country: CountryRangeFields
+  externalOrInternalId: Range
+  journal: JournalRangeFields
+  peerReviewedId: Range
+  publicationTypeId: Range
+  publisherDetails: PublisherRangeFields
+  publStatusId: Range
+  publYear: Range
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>id</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>status</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>identifierC4</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>cfLang</b></code>](#)<Bullet />[`cfLangRangeFields`](/cris/inputs/cf-lang-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>cfLangOfTranslatedTitle</b></code>](#)<Bullet />[`cfLangRangeFields`](/cris/inputs/cf-lang-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>cfResPublDate</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>cfTotalPages</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>country</b></code>](#)<Bullet />[`CountryRangeFields`](/cris/inputs/country-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>externalOrInternalId</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>journal</b></code>](#)<Bullet />[`JournalRangeFields`](/cris/inputs/journal-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>peerReviewedId</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>publicationTypeId</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>publisherDetails</b></code>](#)<Bullet />[`PublisherRangeFields`](/cris/inputs/publisher-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>publStatusId</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PublicationRangeFields.<b>publYear</b></code>](#)<Bullet />[`Range`](/cris/inputs/range) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`PublicationListSelectFilter`](/cris/inputs/publication-list-select-filter)  <Badge class="secondary" text="input"/><Bullet />[`PublicationListSelectMustNot`](/cris/inputs/publication-list-select-must-not)  <Badge class="secondary" text="input"/>
+

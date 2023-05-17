@@ -1,0 +1,67 @@
+---
+id: match
+title: Match
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input Match {
+  query: String!
+  operator: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Match.<b>query</b></code>](#)<Bullet />[`String!`](/cris/scalars/string) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Match.<b>operator</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`AcademicEducationMatchFields`](/cris/inputs/academic-education-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`AppointmentMatchFields`](/cris/inputs/appointment-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`AreaMatchFields`](/cris/inputs/area-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`AwardMatchFields`](/cris/inputs/award-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`CardMatchFields`](/cris/inputs/card-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`cfLangMatchFields`](/cris/inputs/cf-lang-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`CountryMatchFields`](/cris/inputs/country-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralCourseMatchFields`](/cris/inputs/doctoral-course-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`DoctoralStudyMatchFields`](/cris/inputs/doctoral-study-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`FacilityMatchFields`](/cris/inputs/facility-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`FunctionAndMembershipMatchFields`](/cris/inputs/function-and-membership-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`FunctionMatchFields`](/cris/inputs/function-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`FundingSourceMatchFields`](/cris/inputs/funding-source-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`HabilitationMatchFields`](/cris/inputs/habilitation-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`JournalMatchFields`](/cris/inputs/journal-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`OrganisationMatchFields`](/cris/inputs/organisation-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`PersonMatchFields`](/cris/inputs/person-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`PictureMatchFields`](/cris/inputs/picture-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`PrizeMatchFields`](/cris/inputs/prize-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`ProjectMatchFields`](/cris/inputs/project-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`PublicationMatchFields`](/cris/inputs/publication-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`PublisherMatchFields`](/cris/inputs/publisher-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`ResearchFocusMatchFields`](/cris/inputs/research-focus-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`TalkMatchFields`](/cris/inputs/talk-match-fields)  <Badge class="secondary" text="input"/><Bullet />[`WorkExperienceMatchFields`](/cris/inputs/work-experience-match-fields)  <Badge class="secondary" text="input"/>
+

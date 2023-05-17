@@ -1,0 +1,148 @@
+---
+id: habilitation-node
+title: HabilitationNode
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type HabilitationNode implements Node {
+  id: ID!
+  status: Int
+  awardingFaculty: String
+  awardingFacultyId: Int
+  candidateName: String
+  description: String
+  endDate: String
+  finishedIntExt: String
+  finishedIntExtId: Int
+  habilitationStatus: String
+  habilitationStatusId: Int
+  identifierC4: Int
+  isWorkingTitle: Boolean
+  startDate: String
+  supervisorName: String
+  title: String
+  veniaLegendi: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>id</b></code>](#)<Bullet />[`ID!`](/cris/scalars/id) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>status</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>awardingFaculty</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>awardingFacultyId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>candidateName</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>description</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>endDate</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>finishedIntExt</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>finishedIntExtId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>habilitationStatus</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>habilitationStatusId</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>identifierC4</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>isWorkingTitle</b></code>](#)<Bullet />[`Boolean`](/cris/scalars/boolean) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>startDate</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>supervisorName</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>title</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HabilitationNode.<b>veniaLegendi</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+### Interfaces
+
+#### [`Node`](/cris/interfaces/node) <Badge class="secondary" text="interface"/>
+> 
+> 
+
+
+
+### Member of
+
+[`CardHabilitytionsEdge`](/cris/objects/card-habilitytions-edge)  <Badge class="secondary" text="object"/><Bullet />[`Habilitation`](/cris/objects/habilitation)  <Badge class="secondary" text="object"/><Bullet />[`HabilitationList`](/cris/objects/habilitation-list)  <Badge class="secondary" text="object"/><Bullet />[`OrganisationHabilitationsEdge`](/cris/objects/organisation-habilitations-edge)  <Badge class="secondary" text="object"/><Bullet />[`PersonHabilitationsEdge`](/cris/objects/person-habilitations-edge)  <Badge class="secondary" text="object"/><Bullet />[`PrizeHabilitationsEdge`](/cris/objects/prize-habilitations-edge)  <Badge class="secondary" text="object"/><Bullet />[`ProjectHabilitationsEdge`](/cris/objects/project-habilitations-edge)  <Badge class="secondary" text="object"/><Bullet />[`PublicationHabilitationsEdge`](/cris/objects/publication-habilitations-edge)  <Badge class="secondary" text="object"/>
+

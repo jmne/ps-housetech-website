@@ -1,0 +1,82 @@
+---
+id: cf-lang-list-select-must-not
+title: cfLangListSelectMustNot
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+input cfLangListSelectMustNot {
+  match: cfLangMatchFields
+  range: cfLangRangeFields
+  wildcard: cfLangWildcardFields
+  phrase: cfLangPhraseFields
+  queryString: QueryString
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>cfLangListSelectMustNot.<b>match</b></code>](#)<Bullet />[`cfLangMatchFields`](/cris/inputs/cf-lang-match-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>cfLangListSelectMustNot.<b>range</b></code>](#)<Bullet />[`cfLangRangeFields`](/cris/inputs/cf-lang-range-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>cfLangListSelectMustNot.<b>wildcard</b></code>](#)<Bullet />[`cfLangWildcardFields`](/cris/inputs/cf-lang-wildcard-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>cfLangListSelectMustNot.<b>phrase</b></code>](#)<Bullet />[`cfLangPhraseFields`](/cris/inputs/cf-lang-phrase-fields) <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>cfLangListSelectMustNot.<b>queryString</b></code>](#)<Bullet />[`QueryString`](/cris/inputs/query-string) <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`cfLangListSelect`](/cris/inputs/cf-lang-list-select)  <Badge class="secondary" text="input"/>
+

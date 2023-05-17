@@ -1,0 +1,762 @@
+---
+id: person-connections
+title: PersonConnections
+hide_table_of_contents: true
+pagination_next: null
+pagination_prev: null
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={'badge badge--' + props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+No description
+
+
+```graphql
+type PersonConnections {
+  cards(
+    first: Int = 10
+    after: StringOrInt = 
+    select: CardListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [CardSortFields] = [[object Object]]
+  ): PersonCardsConnection
+  doctoralStudies(
+    first: Int = 10
+    after: StringOrInt = 
+    select: DoctoralStudyListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PersonDoctoralStudiesConnection
+  doctoralStudiesHavingPersonAsSupervisor(
+    first: Int = 10
+    after: String = ""
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PersonDoctoralStudiesConnection
+  doctoralStudiesHavingPersonAsCandidate(
+    first: Int = 10
+    after: String = ""
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PersonDoctoralStudiesConnection
+  doctoralStudiesHavingPersonAsReviewer(
+    first: Int = 10
+    after: String = ""
+    sort: [DoctoralStudySortFields] = [[object Object]]
+  ): PersonDoctoralStudiesConnection
+  habilitations(
+    first: Int = 10
+    after: StringOrInt = 
+    select: HabilitationListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [HabilitationSortFields] = [[object Object]]
+  ): PersonHabilitationsConnection
+  habilitationsHavingPersonAsCandidate(
+    first: Int = 10
+    after: String = ""
+    sort: [HabilitationSortFields] = [[object Object]]
+  ): PersonHabilitationsConnection
+  habilitationsHavingPersonAsSupervisor(
+    first: Int = 10
+    after: String = ""
+    sort: [HabilitationSortFields] = [[object Object]]
+  ): PersonHabilitationsConnection
+  pictures(
+    first: Int = 10
+    after: StringOrInt = 
+    select: PictureListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+  ): PersonPicturesConnection
+  prizes(
+    first: Int = 10
+    after: StringOrInt = 
+    select: PrizeListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [PrizeSortFields] = [[object Object]]
+  ): PersonPrizesConnection
+  publications(
+    first: Int = 10
+    after: StringOrInt = 
+    select: PublicationListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [PublicationSortFields] = [[object Object]]
+  ): PersonPublicationsConnection
+  academicEducations(
+    first: Int = 10
+    after: StringOrInt = 
+    select: AcademicEducationListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [AcademicEducationSortFields] = [[object Object]]
+  ): PersonAcademicEducationsConnection
+  researchFocuses(
+    first: Int = 10
+    after: StringOrInt = 
+    select: ResearchFocusListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [ResearchFocusSortFields] = [[object Object]]
+  ): PersonResearchFocusesConnection
+  talks(
+    first: Int = 10
+    after: StringOrInt = 
+    select: TalkListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [TalkSortFields] = [[object Object]]
+  ): PersonTalksConnection
+  functionsAndMemberships(
+    first: Int = 10
+    after: StringOrInt = 
+    select: FunctionAndMembershipListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [FunctionAndMembershipSortFields] = [[object Object]]
+  ): PersonFunctionsAndMembershipsConnection
+  workExperiences(
+    first: Int = 10
+    after: StringOrInt = 
+    select: WorkExperienceListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [WorkExperienceSortFields] = [[object Object]]
+  ): PersonWorkExperiencesConnection
+  appointments(
+    first: Int = 10
+    after: StringOrInt = 
+    select: AppointmentListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [AppointmentSortFields] = [[object Object]]
+  ): PersonAppointmentsConnection
+  topPublications(
+    first: Int = 10
+    after: String = ""
+    sort: [PublicationSortFields] = [[object Object]]
+  ): PersonTopPublicationsConnection
+  topProjects(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields] = [[object Object]]
+  ): PersonTopProjectsConnection
+  projects(
+    first: Int = 10
+    after: StringOrInt = 
+    select: ProjectListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [ProjectSortFields] = [[object Object]]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsAdministrativeManager(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields] = [[object Object]]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsLeader(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsStudentAssistant(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsCoi(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsScientificStaff(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsPi(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsSpeaker(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  projectsHavingPersonAsTechnicalStaff(
+    first: Int = 10
+    after: String = ""
+    sort: [ProjectSortFields]
+  ): PersonProjectsConnection
+  topPrizes(
+    first: Int = 10
+    after: String = ""
+    sort: [PrizeSortFields]
+  ): PersonTopPrizesConnection
+  organisations(
+    first: Int = 10
+    after: StringOrInt = 
+    select: OrganisationListSelect = [object Object]
+    paginationMode: PaginationMode = cursor
+    sort: [OrganisationSortFields]
+  ): PersonOrganisationsConnection
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>cards</b></code>](#)<Bullet />[`PersonCardsConnection`](/cris/objects/person-cards-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.cards.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.cards.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.cards.<b>select</b></code>](#)<Bullet />[`CardListSelect`](/cris/inputs/card-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.cards.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.cards.<b>sort</b></code>](#)<Bullet />[`[CardSortFields]`](/cris/inputs/card-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>doctoralStudies</b></code>](#)<Bullet />[`PersonDoctoralStudiesConnection`](/cris/objects/person-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudies.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudies.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudies.<b>select</b></code>](#)<Bullet />[`DoctoralStudyListSelect`](/cris/inputs/doctoral-study-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudies.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudies.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>doctoralStudiesHavingPersonAsSupervisor</b></code>](#)<Bullet />[`PersonDoctoralStudiesConnection`](/cris/objects/person-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsSupervisor.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsSupervisor.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsSupervisor.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>doctoralStudiesHavingPersonAsCandidate</b></code>](#)<Bullet />[`PersonDoctoralStudiesConnection`](/cris/objects/person-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsCandidate.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsCandidate.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsCandidate.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>doctoralStudiesHavingPersonAsReviewer</b></code>](#)<Bullet />[`PersonDoctoralStudiesConnection`](/cris/objects/person-doctoral-studies-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsReviewer.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsReviewer.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.doctoralStudiesHavingPersonAsReviewer.<b>sort</b></code>](#)<Bullet />[`[DoctoralStudySortFields]`](/cris/inputs/doctoral-study-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>habilitations</b></code>](#)<Bullet />[`PersonHabilitationsConnection`](/cris/objects/person-habilitations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitations.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitations.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitations.<b>select</b></code>](#)<Bullet />[`HabilitationListSelect`](/cris/inputs/habilitation-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitations.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitations.<b>sort</b></code>](#)<Bullet />[`[HabilitationSortFields]`](/cris/inputs/habilitation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>habilitationsHavingPersonAsCandidate</b></code>](#)<Bullet />[`PersonHabilitationsConnection`](/cris/objects/person-habilitations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsCandidate.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsCandidate.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsCandidate.<b>sort</b></code>](#)<Bullet />[`[HabilitationSortFields]`](/cris/inputs/habilitation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>habilitationsHavingPersonAsSupervisor</b></code>](#)<Bullet />[`PersonHabilitationsConnection`](/cris/objects/person-habilitations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsSupervisor.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsSupervisor.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.habilitationsHavingPersonAsSupervisor.<b>sort</b></code>](#)<Bullet />[`[HabilitationSortFields]`](/cris/inputs/habilitation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>pictures</b></code>](#)<Bullet />[`PersonPicturesConnection`](/cris/objects/person-pictures-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.pictures.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.pictures.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.pictures.<b>select</b></code>](#)<Bullet />[`PictureListSelect`](/cris/inputs/picture-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.pictures.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>prizes</b></code>](#)<Bullet />[`PersonPrizesConnection`](/cris/objects/person-prizes-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.prizes.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.prizes.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.prizes.<b>select</b></code>](#)<Bullet />[`PrizeListSelect`](/cris/inputs/prize-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.prizes.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.prizes.<b>sort</b></code>](#)<Bullet />[`[PrizeSortFields]`](/cris/inputs/prize-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>publications</b></code>](#)<Bullet />[`PersonPublicationsConnection`](/cris/objects/person-publications-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.publications.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.publications.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.publications.<b>select</b></code>](#)<Bullet />[`PublicationListSelect`](/cris/inputs/publication-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.publications.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.publications.<b>sort</b></code>](#)<Bullet />[`[PublicationSortFields]`](/cris/inputs/publication-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>academicEducations</b></code>](#)<Bullet />[`PersonAcademicEducationsConnection`](/cris/objects/person-academic-educations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.academicEducations.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.academicEducations.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.academicEducations.<b>select</b></code>](#)<Bullet />[`AcademicEducationListSelect`](/cris/inputs/academic-education-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.academicEducations.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.academicEducations.<b>sort</b></code>](#)<Bullet />[`[AcademicEducationSortFields]`](/cris/inputs/academic-education-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>researchFocuses</b></code>](#)<Bullet />[`PersonResearchFocusesConnection`](/cris/objects/person-research-focuses-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.researchFocuses.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.researchFocuses.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.researchFocuses.<b>select</b></code>](#)<Bullet />[`ResearchFocusListSelect`](/cris/inputs/research-focus-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.researchFocuses.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.researchFocuses.<b>sort</b></code>](#)<Bullet />[`[ResearchFocusSortFields]`](/cris/inputs/research-focus-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>talks</b></code>](#)<Bullet />[`PersonTalksConnection`](/cris/objects/person-talks-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.talks.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.talks.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.talks.<b>select</b></code>](#)<Bullet />[`TalkListSelect`](/cris/inputs/talk-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.talks.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.talks.<b>sort</b></code>](#)<Bullet />[`[TalkSortFields]`](/cris/inputs/talk-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>functionsAndMemberships</b></code>](#)<Bullet />[`PersonFunctionsAndMembershipsConnection`](/cris/objects/person-functions-and-memberships-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.functionsAndMemberships.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.functionsAndMemberships.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.functionsAndMemberships.<b>select</b></code>](#)<Bullet />[`FunctionAndMembershipListSelect`](/cris/inputs/function-and-membership-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.functionsAndMemberships.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.functionsAndMemberships.<b>sort</b></code>](#)<Bullet />[`[FunctionAndMembershipSortFields]`](/cris/inputs/function-and-membership-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>workExperiences</b></code>](#)<Bullet />[`PersonWorkExperiencesConnection`](/cris/objects/person-work-experiences-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.workExperiences.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.workExperiences.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.workExperiences.<b>select</b></code>](#)<Bullet />[`WorkExperienceListSelect`](/cris/inputs/work-experience-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.workExperiences.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.workExperiences.<b>sort</b></code>](#)<Bullet />[`[WorkExperienceSortFields]`](/cris/inputs/work-experience-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>appointments</b></code>](#)<Bullet />[`PersonAppointmentsConnection`](/cris/objects/person-appointments-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.appointments.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.appointments.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.appointments.<b>select</b></code>](#)<Bullet />[`AppointmentListSelect`](/cris/inputs/appointment-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.appointments.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.appointments.<b>sort</b></code>](#)<Bullet />[`[AppointmentSortFields]`](/cris/inputs/appointment-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>topPublications</b></code>](#)<Bullet />[`PersonTopPublicationsConnection`](/cris/objects/person-top-publications-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPublications.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPublications.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPublications.<b>sort</b></code>](#)<Bullet />[`[PublicationSortFields]`](/cris/inputs/publication-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>topProjects</b></code>](#)<Bullet />[`PersonTopProjectsConnection`](/cris/objects/person-top-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topProjects.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topProjects.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topProjects.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projects</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projects.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projects.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projects.<b>select</b></code>](#)<Bullet />[`ProjectListSelect`](/cris/inputs/project-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projects.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projects.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsAdministrativeManager</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsAdministrativeManager.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsAdministrativeManager.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsAdministrativeManager.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsLeader</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsLeader.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsLeader.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsLeader.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsStudentAssistant</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsStudentAssistant.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsStudentAssistant.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsStudentAssistant.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsCoi</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsCoi.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsCoi.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsCoi.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsScientificStaff</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsScientificStaff.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsScientificStaff.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsScientificStaff.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsPi</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsPi.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsPi.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsPi.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsSpeaker</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsSpeaker.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsSpeaker.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsSpeaker.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>projectsHavingPersonAsTechnicalStaff</b></code>](#)<Bullet />[`PersonProjectsConnection`](/cris/objects/person-projects-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsTechnicalStaff.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsTechnicalStaff.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.projectsHavingPersonAsTechnicalStaff.<b>sort</b></code>](#)<Bullet />[`[ProjectSortFields]`](/cris/inputs/project-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>topPrizes</b></code>](#)<Bullet />[`PersonTopPrizesConnection`](/cris/objects/person-top-prizes-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPrizes.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPrizes.<b>after</b></code>](#)<Bullet />[`String`](/cris/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.topPrizes.<b>sort</b></code>](#)<Bullet />[`[PrizeSortFields]`](/cris/inputs/prize-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PersonConnections.<b>organisations</b></code>](#)<Bullet />[`PersonOrganisationsConnection`](/cris/objects/person-organisations-connection) <Badge class="secondary" text="object"/>
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.organisations.<b>first</b></code>](#)<Bullet />[`Int`](/cris/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.organisations.<b>after</b></code>](#)<Bullet />[`StringOrInt`](/cris/scalars/string-or-int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.organisations.<b>select</b></code>](#)<Bullet />[`OrganisationListSelect`](/cris/inputs/organisation-list-select) <Badge class="secondary" text="input"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.organisations.<b>paginationMode</b></code>](#)<Bullet />[`PaginationMode`](/cris/enums/pagination-mode) <Badge class="secondary" text="enum"/>
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PersonConnections.organisations.<b>sort</b></code>](#)<Bullet />[`[OrganisationSortFields]`](/cris/inputs/organisation-sort-fields) <Badge class="secondary" text="list"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+
+
+### Member of
+
+[`Person`](/cris/objects/person)  <Badge class="secondary" text="object"/>
+
