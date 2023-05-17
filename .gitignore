@@ -82,6 +82,9 @@ website/i18n/**/*
 .netlify
 
 cris
-!cris/cris.graphql
+!cris.graphql
+!einleitung.md
+!sidebar-schema.js
 api
-!api/sidebar-api.js
+!sidebar-api.js
+!openapi.yaml
