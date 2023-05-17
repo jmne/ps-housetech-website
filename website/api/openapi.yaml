@@ -10,7 +10,7 @@ info:
     name: MIT-Lizenz
     url: https://de.wikipedia.org/wiki/MIT-Lizenz
 servers:
-  - url: http://ps-housetech.uni-muenster.de
+  - url: http://ps-housetech.uni-muenster.de?lang={lang}
     description: Production Server (you need to be in the Uni Muenster network)
     variables:
       lang:
