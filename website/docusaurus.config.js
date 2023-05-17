@@ -104,18 +104,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               type: 'dropdown',
               label: 'Documentation',
               position: 'left',
-              to: '/docs/intro',
+              to: '/docs/einleitung',
               items: [
                 {
-                  to: '/docs/intro',
+                  to: '/docs/einleitung',
                   label: 'Introduction',
                 },
                 {
-                  to: "/api",
+                  to: "/api/einleitung",
                   label: "API Docs",
                 },
                 {
-                  to: "/cris",
+                  to: "/cris/einleitung",
                   label: "CRIS Schema",
                 },
               ],
@@ -136,7 +136,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               items: [
                 {
                   label: 'Introduction',
-                  to: '/docs/intro',
+                  to: '/docs/einleitung',
                 },
               ],
             },
@@ -216,10 +216,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     [
       "@graphql-markdown/docusaurus",
       {
-        schema: "./api/cris.graphql",
+        schema: "./cris/cris.graphql",
         rootPath: "./",
         baseURL: "cris",
-        homepage: "./cris/cris.md",
+        homepage: "./cris/einleitung.md",
         docOptions: {
           pagination: false,
           toc: false,

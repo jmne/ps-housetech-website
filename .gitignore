@@ -81,9 +81,7 @@ website/i18n/**/*
 
 .netlify
 
-/website/docs/cris/
-!/website/docs/cris/_category_.json
-
-!/website/docs/cris/cris.md
-
-!/website/docs/cris/sidebar-schema.js
+cris
+!cris/cris.graphql
+api
+!api/sidebar-api.js

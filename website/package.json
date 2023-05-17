@@ -14,7 +14,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "clean-api": "docusaurus clean-api-docs all",
-    "gen-api": "docusaurus gen-api-docs all"
+    "gen-api": "docusaurus gen-api-docs all",
+    "graphql": "docusaurus graphql-to-doc"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
