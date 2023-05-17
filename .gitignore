@@ -81,10 +81,10 @@ website/i18n/**/*
 
 .netlify
 
-cris
+website/cris/*
 !cris.graphql
 !einleitung.md
 !sidebar-schema.js
-api
+website/api/*
 !sidebar-api.js
 !openapi.yaml

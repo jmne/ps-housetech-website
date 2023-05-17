@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: Einleitung
+  version: 0.1.0
+  description: These are the docs for the PS HouseTech Backend API.
+  contact:
+    name: PS HouseTech
+    url: https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/
+  license:
+    name: MIT-Lizenz
+    url: https://de.wikipedia.org/wiki/MIT-Lizenz
+servers:
+  - url: http://ps-housetech.uni-muenster.de
+    description: Production Server (you need to be in the Uni Muenster network)
+    variables:
+      lang:
+        default: de
+        enum:
+          - de
+          - en
+        description: Sprache mit der API Anfragen beantwortet werden.
+paths:
+  /api/health-check-flask:
+    summary: Health Check - Flask
+    description: Überprüfen ob das Flask-Backend funktioniert.
+    get:
+      summary: Health Check - Flask
+      description: Status des Flask-Backend abfragen.
+      operationId: status-flask
+      responses:
+        '200':
+          description: Status des Services.
+          content:
+            application/json:
+              examples:
+                Status:
+                  value: '{"status": "running"}'
+      tags:
+        - health-check
+  /api/health-check-nginx:
+    summary: Health Check - Nginx
+    description: Überprüfen ob Nginx funktioniert.
+    get:
+      summary: Health Check - Nginx
+      description: Status von Nginx abfragen.
+      operationId: status-nginx
+      responses:
+        '200':
+          description: Status des Services.
+          content:
+            application/json:
+              examples:
+                Status:
+                  value: '{"status": "running"}'
+      tags:
+        - health-check
+  /api/health-check-next:
+    summary: Health Check - Next
+    description: Überprüfen ob Next funktioniert.
+    get:
+      summary: Health Check - Next
+      description: Status von Next abfragen.
+      operationId: status-next
+      responses:
+        '200':
+          description: Status des Services.
+          content:
+            application/json:
+              examples:
+                Status:
+                  value: '{"status": "running"}'
+      tags:
+        - health-check
+  /api/bus:
+    summary: Bus Data - Stadtwerke Münster
+    description: Abfragen der Bus Daten von den Stadtwerken Münster.
+    get:
+      summary: Bus Daten - Stadtwerke
+      description: Abfragen der Bus Daten von den Stadtwerken Münster.
+      operationId: bus-data
+      responses:
+        '200':
+          description: >-
+            Abfragen der Bus Daten von den Stadtwerken Münster für Haltestellen
+            am Leo-Campus.
+          content:
+            application/json:
+              examples:
+                Bus Data:
+                  value:
+                    properties:
+                      richtung: string
+                      nr: string
+                      lbez: string
+                      typ: string
+                      kbez: string
+                    geometry:
+                      coordinates:
+                        - 0
+      tags:
+        - bus-data
+  /api:
+    summary: Redirect - API Docs
+    description: Weiterleitung zu der API Dokumentation.
+    head:
+      summary: API Dokumentation
+      description: Weiterleitung zu der API Dokumentation
+      operationId: redirect-api
+      responses:
+        '302':
+          description: Weiterleitung zu der API Dokumentation
+tags:
+  - name: health-check
+    description: Überprüfen ob Services ordentlich funktionieren.
+  - name: bus-data
+    description: Abfragen der Bus Daten von den Stadtwerken Münster.
+  - name: default
+    description: Weitere Abfragen
