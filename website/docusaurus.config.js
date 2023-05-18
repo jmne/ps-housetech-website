@@ -24,6 +24,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         language: ["en", "de"],
       }),
     ],
+    "docusaurus-theme-openapi-docs",
   ],
 
   presets: [
@@ -32,7 +33,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          path: 'docs',
+          routeBasePath: 'docs',
           editUrl:
               'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-website/-/tree/main/website/',
           showLastUpdateAuthor: true,
@@ -101,15 +103,19 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               type: 'dropdown',
               label: 'Documentation',
               position: 'left',
-              to: '/docs/intro',
+              to: '/docs/einleitung',
               items: [
                 {
-                  to: '/docs/intro',
+                  to: '/docs/einleitung',
                   label: 'Introduction',
                 },
                 {
-                  to: "/docs/cris", // adjust the location depending on your baseURL (see configuration)
-                  label: "CRIS Schema", // change the label with yours
+                  to: "/api/einleitung",
+                  label: "API Docs",
+                },
+                {
+                  to: "/cris/einleitung",
+                  label: "CRIS Schema",
                 },
               ],
             },
@@ -129,7 +135,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               items: [
                 {
                   label: 'Introduction',
-                  to: '/docs/intro',
+                  to: '/docs/einleitung',
                 },
               ],
             },
@@ -181,6 +187,24 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
   plugins: [
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'api',
+        routeBasePath: "api",
+        docLayoutComponent: "@theme/DocPage",
+        docItemComponent: "@theme/ApiItem",
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cris',
+        path: 'cris',
+        routeBasePath: "cris",
+      },
+    ],
+    [
       '@docusaurus/plugin-ideal-image',
       {
         quality: 90,
@@ -189,10 +213,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     [
       "@graphql-markdown/docusaurus",
       {
-        schema: "./api/cris.graphql",
+        schema: "./cris/cris.graphql",
         rootPath: "./",
-        baseURL: "docs/cris",
-        homepage: "./docs/cris/cris.md",
+        baseURL: "cris",
+        homepage: "./cris/einleitung.md",
         docOptions: {
           pagination: false,
           toc: false,
@@ -201,6 +225,24 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         loaders: {
           GraphQLFileLoader: "@graphql-tools/graphql-file-loader"
         },
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api",
+        docsPluginId: "api",
+        config: {
+          api: {
+            specPath: "api/openapi.yaml",
+            outputDir: "api",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              sidebarCollapsible: true,
+              sidebarCollapsed: true,
+            },
+          },
+        }
       },
     ],
     () => ({
