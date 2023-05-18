@@ -35,7 +35,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           path: 'docs',
           routeBasePath: 'docs',
-          sidebarPath: require.resolve('./docs/sidebar-docs.js'),
           editUrl:
               'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-website/-/tree/main/website/',
           showLastUpdateAuthor: true,
@@ -193,7 +192,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         id: 'api',
         path: 'api',
         routeBasePath: "api",
-        sidebarPath: require.resolve('./api/sidebar-api.js'),
         docLayoutComponent: "@theme/DocPage",
         docItemComponent: "@theme/ApiItem",
       },
@@ -204,7 +202,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         id: 'cris',
         path: 'cris',
         routeBasePath: "cris",
-        sidebarPath: require.resolve('./cris/sidebar-schema.js'),
       },
     ],
     [
@@ -239,6 +236,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           api: {
             specPath: "api/openapi.yaml",
             outputDir: "api",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              sidebarCollapsible: true,
+              sidebarCollapsed: true,
+            },
           },
         }
       },

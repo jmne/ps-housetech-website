@@ -10,7 +10,7 @@ info:
     name: MIT-Lizenz
     url: https://de.wikipedia.org/wiki/MIT-Lizenz
 servers:
-  - url: http://ps-housetech.uni-muenster.de?lang={lang}
+  - url: http://ps-housetech.uni-muenster.de/
     description: Production Server (you need to be in the Uni Muenster network)
     variables:
       lang:
@@ -109,10 +109,15 @@ paths:
       responses:
         '302':
           description: Weiterleitung zu der API Dokumentation
+      tags:
+        - weitere-abfragen
 tags:
   - name: health-check
     description: Überprüfen ob Services ordentlich funktionieren.
   - name: bus-data
     description: Abfragen der Bus Daten von den Stadtwerken Münster.
-  - name: default
+  - name: weitere-abfragen
     description: Weitere Abfragen
+externalDocs:
+  url: /docs
+  description: Dokumentation von PS HouseTech.
