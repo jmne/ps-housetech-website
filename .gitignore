@@ -84,7 +84,6 @@ website/i18n/**/*
 website/cris/*
 !cris.graphql
 !einleitung.md
-!sidebar-schema.js
+!sidebar.js
 website/api/*
-!sidebar-api.js
 !openapi.yaml
