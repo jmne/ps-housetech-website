@@ -9,4 +9,4 @@ Die E-Paper von Waveshare in Verbindung mit den ESP-32 zeigen jetzt nach erfolgr
 
 Als Nächstes werden wir versuchen das ganze Bild anzuzeigen. Dafür müssen wir wahrscheinlich wieder etwas anpassen. Außerdem können wir schon überlegen wie das später Funktionieren soll. Wahrscheinlich hat jeder E-Ink einen eigenen Link, der das Passende Bild für seinen Raum enthält. Es gäbe also eine eigene Seite pro Raum. Und der Code müsste vor den hochladen auf den ESP jeweils mit dem richtigen Link für den jeweiligen Raum angepasst werden. 
 
-![Bild1](./bild.png)
+![Bild1](./Stringhandling.jpg)
