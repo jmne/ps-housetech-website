@@ -11,8 +11,8 @@ Herzlich willkommen zu unserem ersten Blogbeitrag! Heute möchte ich mit euch da
 
 GitLab CI/CD bietet uns die Möglichkeit, automatisierte Tests in unsere Continuous Integration- und Continuous Deployment-Pipelines einzubinden. Wir haben unsere CI/CD-Pipeline so konfiguriert, dass sie bei jeder Code-Änderung in unserem Repository automatisch gestartet wird. Dadurch können wir sicherstellen, dass unser Code stets auf Herz und Nieren geprüft wird, bevor er in die Produktion geht.
 
-<center><img src="./workflow.png" /></center>
-<center>Beispielhafter CI/CD Workflow <cite>(Quelle: gitlab.com)</cite></center>
+![Workflow](./workflow.png)
+_Beispielhafter CI/CD Workflow (Quelle: gitlab.com)_
 
 ### Backend-Tests mit Poetry, Pre-commit und Pytest
 
