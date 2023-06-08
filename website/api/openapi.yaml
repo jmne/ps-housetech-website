@@ -99,6 +99,37 @@ paths:
                         - 0
       tags:
         - bus-data
+  /api/calendar:
+    summary: Calendar Data - Exchange Server
+    description: Get access to Exchange Server and retrieve Exchange Calendar
+    get:
+      summary: Calendar Data - Exchange Server
+      description: >-
+        access to exchange server of each room in Leonardo Campus
+        Wirtschaftsinformatik Building and fetch the calendar events of each
+        room
+      operationId: exchange-data
+      responses:
+        '200':
+          description: >-
+           retrieve exchange calendar data of room in Leonardo Campus 
+            Wirtschaftsinformatik Building
+          content:
+            application/json:
+              examples:
+                calendar data:
+                  value:
+                    properties:
+                      title: string
+                      organizer_name: string
+                      organizer_email: string
+                      location: string
+                      duration: string
+                      start: string
+                      end: string
+
+      tags:
+        - exchange-data
   /api:
     summary: Redirect - API Docs
     description: Weiterleitung zu der API Dokumentation.
