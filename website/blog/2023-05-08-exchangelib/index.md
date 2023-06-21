@@ -9,9 +9,12 @@ tags: [Exchange Server, Blog, Exchange Calendar, exchangelib, python]
 ## exchangelib
 
 Exchangelib ist eine Python-Library, die eine Schnittstelle für den Zugriff auf und die Arbeit mit EWS bietet. EWS ist sowohl ein Messaging-Protokoll als auch ein API zum Suchen und Verbinden mit EWS/Exchange Server Hosts und bietet eine Library von Funktionen für die Arbeit mit Host Applications und Benutzerdaten.
+
 ![enter image description here](https://cdn.activestate.com/wp-content/uploads/2021/07/Exchange-Server-pipeline.png)
+
 _Exchange Server pipeline Quelle: [ActiveState](https://www.activestate.com/resources/quick-reads/how-to-install-and-use-exchangelib-python/)_
-###  Zugriff auf Exchange-Server in einem Raum und Secret File im GitLab
+
+### Zugriff auf Exchange-Server in einem Raum und Secret File im GitLab
 Als erstes müssen wir das exchangelib  Package installieren:
 ` pip install exchangelib `
 Benutzernamen, Passwörter und E-Mail-Adressen sind wichtige private Informationen, die wir nicht direkt in den Code aufnehmen können, da sonst die Gefahr besteht, dass sie veröffentlicht werden. Daher erstellen wir eine Secret Datei `secrets.env` in Gitlab, um diese Informationen zu speichern, und rufen diese Datei dann in unserem Code auf:
