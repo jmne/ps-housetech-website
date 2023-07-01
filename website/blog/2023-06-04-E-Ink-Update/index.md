@@ -1,6 +1,6 @@
 ---
-slug: update-blog-post-2
-title: Update Blog Post - 2
+slug: E-Ink
+title: E-Ink Display
 authors: ulrich
 tags: [E-Ink, Blog, Entwicklungen]
 ---

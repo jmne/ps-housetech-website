@@ -1,6 +1,6 @@
 ---
 slug: exchangelib
-title: Update Blog Post - 2
+title: Exchangelib Blog Update
 authors: jingyi
 tags: [Exchange Server, Blog, Exchange Calendar, exchangelib, python]
 ---
