@@ -112,8 +112,8 @@ paths:
       responses:
         '200':
           description: >-
-           retrieve exchange calendar data of room in Leonardo Campus 
-            Wirtschaftsinformatik Building
+            retrieve exchange calendar data of room in Leonardo Campus 
+             Wirtschaftsinformatik Building
           content:
             application/json:
               examples:
@@ -149,6 +149,16 @@ tags:
     description: Abfragen der Bus Daten von den Stadtwerken Münster.
   - name: weitere-abfragen
     description: Weitere Abfragen
+x-tagGroups:
+  - name: Health Check
+    tags:
+      - health-check
+  - name: bus-data
+    tags:
+      - bus-data
+  - name: weitere-abfragen
+    tags:
+      - weitere-abfragen
 externalDocs:
   url: /docs
   description: Dokumentation von PS HouseTech.

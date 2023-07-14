@@ -12,35 +12,24 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "clean-api": "docusaurus clean-api-docs all",
-    "gen-api": "docusaurus gen-api-docs all",
-    "graphql": "docusaurus graphql-to-doc"
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
     "@docusaurus/plugin-ideal-image": "^2.4.1",
+    "docusaurus-plugin-image-zoom": "^1.0.1",
     "@easyops-cn/docusaurus-search-local": "^0.35.0",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
-    "@graphql-markdown/docusaurus": "^1.18.1",
-    "@graphql-tools/graphql-file-loader": "^7.5.17",
-    "graphql": "^16.6.0",
-    "docusaurus-plugin-openapi-docs": "^2.0.0-beta.3",
-    "docusaurus-theme-openapi-docs": "^2.0.0-beta.3",
+    "docusaurus-preset-openapi": "^0.6.4",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "url-loader": "^4.1.1"
-  },
-  "overrides": {
-    "react-live": ">=3.1.1 <4.0.0"
-  },
-  "resolutions": {
-    "react-live": ">=3.1.1 <4.0.0"
   },
   "browserslist": {
     "production": [

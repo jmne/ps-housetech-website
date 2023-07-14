@@ -3,6 +3,7 @@ jan:
   title: Student
   url: https://zivgitlab.uni-muenster.de/jmenne
   image_url: https://zivgitlab.uni-muenster.de/uploads/-/system/user/avatar/8501/avatar.png?width=96
+  email: jmenne@uni-muenster.de
 ulrich:
   name: Ulrich
   title: Student
@@ -11,7 +12,6 @@ jingyi:
     name: Jingyi
     title: Student
     url: https://zivgitlab.uni-muenster.de/j_zhan12
-    image_url: https://cdn.activestate.com/wp-content/uploads/2021/07/Exchange-Server-pipeline.png
 kevin:
     name: Kevin
     title: Student
