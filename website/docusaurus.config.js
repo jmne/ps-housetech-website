@@ -29,11 +29,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     presets: [
         [
             "docusaurus-preset-openapi",
-            /** @type {import('docusaurus-preset-openapi').Options} */
-            ({
+            {
                 api: {
                     path: "api/openapi.yaml",
                     routeBasePath: "/api",
+                    // ... other OpenAPI-Generator options
+                    sidebarCollapsible: true,
+                    sidebarCollapsed: true,
+                    apiLayoutComponent: "@theme/ApiPage",
+                    apiItemComponent: "@theme/ApiItem",
                 },
                 docs: {
                     path: 'docs',
@@ -73,7 +77,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
-            }),
+            },
         ],
     ],
 
