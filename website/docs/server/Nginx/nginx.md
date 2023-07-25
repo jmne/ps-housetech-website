@@ -70,26 +70,7 @@ server {
 }
 ```
 
-Passen Sie `server_name` und `root` entsprechend an Ihre Umgebung an.
-
-## Schritt 3: Konfiguration von Nginx für das Backend
-
-Erstellen Sie eine Nginx-Konfigurationsdatei für das Backend, z. B. `backend.conf`, und konfigurieren Sie Nginx, um die Anfragen an das Backend weiterzuleiten:
-
-```nginx
-server {
-    listen 80;
-    server_name api.example.com;  # Ersetzen Sie dies durch Ihre Backend-Domain oder IP
-
-    location / {
-        proxy_pass http://localhost:5000;  # Ersetzen Sie den Port, auf dem das Backend läuft
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-```
-
-## Schritt 4: Überprüfen der Nginx-Konfiguration
+## Schritt 3: Überprüfen der Nginx-Konfiguration
 
 Überprüfen der Nginx-Konfiguration auf mögliche Syntaxfehler:
 
@@ -97,7 +78,7 @@ server {
 sudo nginx -t
 ```
 
-## Schritt 5: Neustart von Nginx
+## Schritt 4: Neustart von Nginx
 
 Nginx neu starten, um die Änderungen zu übernehmen:
 
