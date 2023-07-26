@@ -1,6 +1,6 @@
 ---
 slug: E-Ink+Raspberry-News-blog-post
-title: E-Ink+Raspberry-News
+title: E-Ink + Raspberry-News
 authors: ulrich
 tags: [E-Ink, RaspberryPi Blog, Entwicklungen]
 ---
