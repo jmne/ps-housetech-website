@@ -48,7 +48,7 @@ API-Responses enthalten normalerweise HTTP-Statuscodes, die den Erfolgs- oder Fe
 
 API-Responses enthalten häufig komplexe Datenstrukturen wie JSON oder XML. Unsere Tests sollten sicherstellen, dass unsere Klassen die Daten korrekt verarbeiten und die erwarteten Informationen extrahieren können. Wir können überprüfen, ob die richtigen Schlüssel vorhanden sind und ob die Werte den erwarteten Typen entsprechen. Schauen wir dabei beispielsweise in die Instagram-Klasse, testen wir, ob die latest_posts als JSON zurückkommen.
 
-![Datenformat](./Datenformat.png)
+![Datenformat](./datenformat.png)
 
 ### 4. **Behandlung von Fehlern und Ausnahmen**: 
 
