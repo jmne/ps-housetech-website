@@ -7,26 +7,17 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero hero--primary', styles.heroBanner)} >
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <a href="docs/einleitung">
+          <button className={clsx(styles.mainButton)}>Zur Dokumentation
+          </button>
+            </a>
       </div>
     </header>
   );
-}
-
-function HomepageContent() {
-    const {siteConfig} = useDocusaurusContext();
-    return (
-            <div className="container">
-                <div className="text--center padding-horiz--md margin-top--xl">
-                    <h2>⌛ WIP ⌛</h2>
-                    <p>Check back later for more content!</p>
-                    <p>🙂</p>
-                </div>
-            </div>
-    );
 }
 
 export default function Home() {
@@ -35,9 +26,6 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}`}>
       <HomepageHeader />
-      <main>
-        <HomepageContent />
-      </main>
     </Layout>
   );
 }

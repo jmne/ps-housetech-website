@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
     title: 'PS HouseTech',
-    tagline: 'Smart displays for University of Münster at Information Systems department',
+    tagline: 'Wir sind dabei, die Bildschirme auf dem Leonardo Campus zu modernisieren!😎',
     url: 'https://ml-de.zivgitlabpages.uni-muenster.de',
     baseUrl: '/teaching/ps-housetech/ps-housetech-website',
     onBrokenLinks: 'warn',
@@ -105,7 +105,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 respectPrefersColorScheme: true,
             },
             navbar: {
-                title: 'PS-HouseTech ✅',
+                title: 'PS HouseTech',
                 hideOnScroll: true,
                 logo: {
                     alt: 'Logo',
@@ -125,45 +125,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             },
             footer: {
                 style: 'dark',
-                links: [
-                    {
-                        title: 'Docs',
-                        items: [
-                            {
-                                label: 'Introduction',
-                                to: '/docs/einleitung',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Community',
-                        items: [
-                            {
-                                label: 'Mattermost',
-                                href: 'https://mattermost.uni-muenster.de/lc-housetech/',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
-                        items: [
-                            {
-                                label: 'Blog',
-                                to: 'blog',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Team',
-                        items: [
-                            {
-                                label: 'Contributors',
-                                href: 'https://zivgitlab.uni-muenster.de/groups/ml-de/teaching/ps-housetech/-/contribution_analytics',
-                            },
-                        ],
-                    },
-                ],
-                copyright: `Copyright © ${new Date().getFullYear()} PS HouseTech`,
+                copyright: `Mit ❤️ erstellt in Münster / ${new Date().getFullYear()} `,
             },
             prism: {
                 theme: lightCodeTheme,
