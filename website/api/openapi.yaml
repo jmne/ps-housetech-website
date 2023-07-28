@@ -71,13 +71,21 @@ paths:
                   value: '{"status": "running"}'
       tags:
         - health-check
-  /api/bus:
+  /api/bus/<language>:
     summary: Bus Data - Stadtwerke Münster
     description: Abfragen der Bus Daten von den Stadtwerken Münster.
     get:
       summary: Bus Daten - Stadtwerke
       description: Abfragen der Bus Daten von den Stadtwerken Münster.
       operationId: bus-data
+      parameters:
+        - name: language
+          description: language selector
+          required: true
+          schema:
+            enum:
+              - de
+              - en
       responses:
         '200':
           description: >-
@@ -101,23 +109,20 @@ paths:
         - bus-data
   /api/calendar:
     summary: Calendar Data - Exchange Server
-    description: Get access to Exchange Server and retrieve Exchange Calendar
+    description: Get access to Exchange Server and retrieve Exchange Calendar events
     get:
       summary: Calendar Data - Exchange Server
       description: >-
-        access to exchange server of each room in Leonardo Campus
-        Wirtschaftsinformatik Building and fetch the calendar events of each
-        room
+        Access to exchange server of room in Leonardo Campus and fetch the calendar events from room
       operationId: exchange-data
       responses:
         '200':
           description: >-
-            retrieve exchange calendar data of room in Leonardo Campus 
-             Wirtschaftsinformatik Building
+           Exchange calendar data
           content:
             application/json:
               examples:
-                calendar data:
+                Calendar Data:
                   value:
                     properties:
                       title: string
@@ -125,11 +130,267 @@ paths:
                       organizer_email: string
                       location: string
                       duration: string
-                      start: string
-                      end: string
+                      start: DateTime
 
       tags:
-        - exchange-data
+        - Calendar
+  /api/cris/<language>:
+    summary: CRIS Data
+    description: Get access to CRIS data using the API of Uni-Muenster
+    get:
+      summary: CRIS Data -  API of Uni-Muenster
+      description: >-
+        Get access to CRIS data using the API of Uni-Muenster
+      operationId: cris-data
+      parameters:
+        - name: language
+          description: language selector
+          required: true
+          schema:
+            enum:
+              - de
+              - en
+      responses:
+        '200':
+          description: >-
+           Contact data of each employee in CRIS
+          content:
+            application/json:
+              examples:
+                Cris Data:
+                  value:
+                    properties:
+                      academicTitle: string
+                      cfFirstNames: string
+                      cfFamilyNames: string
+                      roomNumber: integer
+                      emails: string
+                      phones: string
+                      chair: string
+                      image: long
+                      address: string
+      tags:
+        - CRIS
+  /api/mensa/<mensa_name>/<language>:
+    summary: Cafeteria Data
+    description: Get access to cafeteria plans in Münster using XML files
+    get:
+      summary: Cafeteria Data
+      description: >-
+        Get access to cafeteria plans in Münster using XML files
+      operationId: cafeteria-data
+      parameters:
+        - name: mensa_name
+          description: Cafeteria Name
+          required: true
+          schema:
+            enum:
+              - davinci
+              - aasee
+              - ring
+              - bispinghof
+        - name: language
+          description: language selector
+          required: true
+          schema:
+            enum:
+              - de
+              - en
+      responses:
+        '200':
+          description: >-
+           Cafeteria plans in German / English
+          content:
+            application/json:
+              examples:
+                Cafeteria Data:
+                  value:
+                    properties:
+                      date: date
+                      weekday: string
+                    item:
+                      meal: string
+                      price1: float
+                      price3: float
+                      foodicons: string
+                      allergens: string
+      tags:
+        - Cafeteria Plan
+  /api/eink/<room_number>:
+    summary: Generate E-Ink image in HEX Format
+    description: Generate E-Ink image in HEX Format
+    get:
+      summary: E-Ink image generation
+      description: >-
+        Generate E-Ink image in HEX Format
+      operationId: E-Ink image generator
+      parameters:
+        - name: room_number
+          description: room number
+          required: true
+      responses:
+        '200':
+          description: >-
+           E-Ink image in HEX Format
+          content:
+            application/json:
+              examples:
+                E-ink Image Data:
+                  value:
+                    properties:
+                      img: string
+      tags:
+        - Eink Image Generator
+  /api/drupal/<content_type>:
+    summary: Get Events Data using the Drupal URLs
+    description: Get Events Data using the Drupal URLs
+    get:
+      summary: Events data
+      description: >-
+        Retrieve university events using Drupal URLs
+      parameters:
+        - name: content_type
+          description: content type
+          required: true
+          schema:
+            enum:
+              - event
+              - overlay
+      responses:
+        '200':
+          description: >-
+           Events Data
+          content:
+            application/json:
+              examples:
+                Drupal Data:
+                  value:
+                    properties:
+                      description: string
+                      end_date: DateTime
+                      id: integer
+                      image: string
+                      location: string
+                      pubDate: DateTime
+                      start_date: DateTime
+                      subtitle: string
+                      title: string
+      tags:
+        - Drupal
+  /api/picture/<image_id>:
+    summary: Add picture base 64 blob for every employee
+    description: Add picture base 64 blob for every employee
+    get:
+      summary: Picture for every employee
+      description: >-
+        Retrieve picture base 64 blob for every employee
+      parameters:
+        - name: image_id
+          description: image id
+          required: true
+      responses:
+        '200':
+          description: >-
+           Image as bytes
+          content:
+            application/json:
+              examples:
+                Picture Data:
+                  value:
+                    properties:
+                      image/jpeg: {}
+      tags:
+        - Picture
+  /api/instagram:
+    summary: Fetch post data from Instagram API
+    description: Fetch post data from Instagram API
+    get:
+      summary: Post data from Instagram API
+      description: >-
+        Fetch post data from Instagram API
+      responses:
+        '200':
+          description: >-
+           Latest 5 Instagram post data
+          content:
+            application/json:
+              examples:
+                Instagram Data:
+                  value:
+                    properties:
+                      caption: string
+                      media_type: string
+                      media_url: string
+                      timestamp: DateTime
+      tags:
+        - Instagram
+  /api/weather:
+    summary: Get weather data using the API of OpenWeatherMap
+    description: Get weather data using the API of OpenWeatherMap
+    get:
+      summary: Get weather data using the API of OpenWeatherMap
+      description: >-
+        Get weather data using the API of OpenWeatherMap
+      responses:
+        '200':
+          description: >-
+           Weather forecast for the next 24 hours / days
+          content:
+            application/json:
+              examples:
+                Weather Data:
+                  value:
+                    properties:
+                      icon: string
+                      temp: double
+                      pop: double
+                      time: DateTime
+                      day: Date
+                      weekday: string
+      tags:
+        - Weather
+  /api/event:
+    summary: Get special days in a year
+    description: Get special days in a year
+    get:
+      summary: Get special days in a year
+      description: >-
+        Get special days in a year
+      responses:
+        '200':
+          description: >-
+           special days in a year
+          content:
+            application/json:
+              examples:
+                Event Data:
+                  value:
+                    properties:
+                      today.month: byte
+                      today.day: byte
+                      event: string
+      tags:
+        - Event
+  /api/help:
+    summary: Print available API endpoints
+    description: Print available API endpoints
+    get:
+      summary: Print available API endpoints
+      description: >-
+        Print available API endpoints
+      responses:
+        '200':
+          description: >-
+           available API endpoints
+          content:
+            application/json:
+              examples:
+                Help Data:
+                  value:
+                    properties:
+                      func_list: list
+      tags:
+        - Help
   /api:
     summary: Redirect - API Docs
     description: Weiterleitung zu der API Dokumentation.
@@ -149,16 +410,7 @@ tags:
     description: Abfragen der Bus Daten von den Stadtwerken Münster.
   - name: weitere-abfragen
     description: Weitere Abfragen
-x-tagGroups:
-  - name: Health Check
-    tags:
-      - health-check
-  - name: bus-data
-    tags:
-      - bus-data
-  - name: weitere-abfragen
-    tags:
-      - weitere-abfragen
 externalDocs:
   url: /docs
   description: Dokumentation von PS HouseTech.
+
