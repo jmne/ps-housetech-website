@@ -67,7 +67,7 @@ server {
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Prefix /;
         
-        if ($http_origin ~ '^https?:\/\/(localhost|ps-housetech\.uni-muenster\.de|ml-de\.zivgitlabpages\.uni-muenster\.de)') {
+        if ($http_origin ~ '^https?:\/\/(ps-housetech\.uni-muenster\.de|ml-de\.zivgitlabpages\.uni-muenster\.de)') {
 			add_header 'Access-Control-Allow-Origin' "$http_origin" always;
 		} # CORS header für localhost, unsere Domain und die GitLab Pages domain
         

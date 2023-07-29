@@ -2,8 +2,8 @@
 sidebar_position: 1
 ---
 
-# Intro
+# Einleitung
 
-Let's discover **HouseTech**.
+**HouseTech**.
 
-## Getting Started
+## Einleitung
