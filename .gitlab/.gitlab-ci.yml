@@ -6,9 +6,6 @@ pages:
     - cd website
     - yarn install
     - npx docusaurus --version
-    - yarn docusaurus graphql-to-doc
-    - yarn docusaurus clean-api-docs all
-    - yarn docusaurus gen-api-docs all
     - yarn build
     - mv ./build ../public
   artifacts:
@@ -28,9 +25,6 @@ pages-dev:
     - cd website
     - yarn install
     - npx docusaurus --version
-    - yarn docusaurus graphql-to-doc
-    - yarn docusaurus clean-api-docs all
-    - yarn docusaurus gen-api-docs all
     - yarn build
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
