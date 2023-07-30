@@ -176,7 +176,7 @@ paths:
       summary: E-Ink image generation
       description: >-
         Generate E-Ink image in HEX Format
-      operationId: E-Ink image generator
+      operationId: eink-data
       parameters:
         - name: room_number
           in: path
@@ -204,6 +204,7 @@ paths:
       summary: Events data
       description: >-
         Retrieve university events using Drupal URLs
+      operationId: drupal-data
       parameters:
         - name: content_type
           in: path
@@ -241,6 +242,7 @@ paths:
       summary: Picture for every employee
       description: >-
         Retrieve picture base 64 blob for every employee
+      operationId: picture-data
       parameters:
         - name: image_id
           in: path
@@ -268,6 +270,7 @@ paths:
       summary: Post data from Instagram API
       description: >-
         Fetch post data from Instagram API
+      operationId: instagram-data
       responses:
         '200':
           description: >-
@@ -291,6 +294,7 @@ paths:
       summary: Get weather data using the API of OpenWeatherMap
       description: >-
         Get weather data using the API of OpenWeatherMap
+      operationId: weather-data
       responses:
         '200':
           description: >-
@@ -316,6 +320,7 @@ paths:
       summary: Get precipitation data (map)
       description: >-
         Get precipitation data (map) from OpenWeather API
+      operationId: precipitation-data
       parameters:
         - name: z
           in: path
@@ -355,6 +360,7 @@ paths:
       summary: Get special days in a year
       description: >-
         Get special days in a year
+      operationId: event-data
       responses:
         '200':
           description: >-
@@ -377,6 +383,7 @@ paths:
       summary: Print available API endpoints
       description: >-
         Print available API endpoints
+      operationId: help-data
       responses:
         '200':
           description: >-
