@@ -10,7 +10,7 @@ info:
     name: MIT-Lizenz
     url: https://de.wikipedia.org/wiki/MIT-Lizenz
 servers:
-  - url: https://ps-housetech.uni-muenster.de:444/
+  - url: https://ps-housetech.uni-muenster.de/
     description: Production Server (you need to be in the Uni Muenster network)
     variables:
       lang:
@@ -20,58 +20,7 @@ servers:
           - en
         description: Sprache mit der API Anfragen beantwortet werden.
 paths:
-  /api/health-check-flask:
-    summary: Health Check - Flask
-    description: Überprüfen ob das Flask-Backend funktioniert.
-    get:
-      summary: Health Check - Flask
-      description: Status des Flask-Backend abfragen.
-      operationId: status-flask
-      responses:
-        '200':
-          description: Status des Services.
-          content:
-            application/json:
-              examples:
-                Status:
-                  value: '{"status": "running"}'
-      tags:
-        - health-check
-  /api/health-check-nginx:
-    summary: Health Check - Nginx
-    description: Überprüfen ob Nginx funktioniert.
-    get:
-      summary: Health Check - Nginx
-      description: Status von Nginx abfragen.
-      operationId: status-nginx
-      responses:
-        '200':
-          description: Status des Services.
-          content:
-            application/json:
-              examples:
-                Status:
-                  value: '{"status": "running"}'
-      tags:
-        - health-check
-  /api/health-check-next:
-    summary: Health Check - Next
-    description: Überprüfen ob Next funktioniert.
-    get:
-      summary: Health Check - Next
-      description: Status von Next abfragen.
-      operationId: status-next
-      responses:
-        '200':
-          description: Status des Services.
-          content:
-            application/json:
-              examples:
-                Status:
-                  value: '{"status": "running"}'
-      tags:
-        - health-check
-  /api/bus/<language>:
+  /api/bus/{language}:
     summary: Bus Data - Stadtwerke Münster
     description: Abfragen der Bus Daten von den Stadtwerken Münster.
     get:
@@ -79,13 +28,14 @@ paths:
       description: Abfragen der Bus Daten von den Stadtwerken Münster.
       operationId: bus-data
       parameters:
-        - name: language
-          description: language selector
-          required: true
-          schema:
-            enum:
-              - de
-              - en
+          - in: path
+            name: language
+            description: language selector
+            required: true
+            schema:
+              enum:
+                - de
+                - en
       responses:
         '200':
           description: >-
@@ -106,7 +56,7 @@ paths:
                       coordinates:
                         - 0
       tags:
-        - bus-data
+        - Bus Plan
   /api/calendar:
     summary: Calendar Data - Exchange Server
     description: Get access to Exchange Server and retrieve Exchange Calendar events
@@ -134,7 +84,7 @@ paths:
 
       tags:
         - Calendar
-  /api/cris/<language>:
+  /api/cris/{language}:
     summary: CRIS Data
     description: Get access to CRIS data using the API of Uni-Muenster
     get:
@@ -144,6 +94,7 @@ paths:
       operationId: cris-data
       parameters:
         - name: language
+          in: path
           description: language selector
           required: true
           schema:
@@ -167,20 +118,21 @@ paths:
                       emails: string
                       phones: string
                       chair: string
-                      image: long
+                      image: integer
                       address: string
       tags:
         - CRIS
-  /api/mensa/<mensa_name>/<language>:
+  /api/mensa/{mensa_name}/{language}:
     summary: Cafeteria Data
-    description: Get access to cafeteria plans in Münster using XML files
+    description: Get access to cafeteria plans in Münster using XML file URLs
     get:
       summary: Cafeteria Data
       description: >-
-        Get access to cafeteria plans in Münster using XML files
+        Get access to cafeteria plans in Münster using XML file URLs
       operationId: cafeteria-data
       parameters:
         - name: mensa_name
+          in: path
           description: Cafeteria Name
           required: true
           schema:
@@ -190,6 +142,7 @@ paths:
               - ring
               - bispinghof
         - name: language
+          in: path
           description: language selector
           required: true
           schema:
@@ -215,8 +168,8 @@ paths:
                       foodicons: string
                       allergens: string
       tags:
-        - Cafeteria Plan
-  /api/eink/<room_number>:
+        - Mensa Plan
+  /api/eink/{room_number}:
     summary: Generate E-Ink image in HEX Format
     description: Generate E-Ink image in HEX Format
     get:
@@ -226,8 +179,11 @@ paths:
       operationId: E-Ink image generator
       parameters:
         - name: room_number
+          in: path
           description: room number
           required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: >-
@@ -238,10 +194,10 @@ paths:
                 E-ink Image Data:
                   value:
                     properties:
-                      img: string
+                      img: list
       tags:
         - Eink Image Generator
-  /api/drupal/<content_type>:
+  /api/drupal/{content_type}:
     summary: Get Events Data using the Drupal URLs
     description: Get Events Data using the Drupal URLs
     get:
@@ -250,6 +206,7 @@ paths:
         Retrieve university events using Drupal URLs
       parameters:
         - name: content_type
+          in: path
           description: content type
           required: true
           schema:
@@ -277,7 +234,7 @@ paths:
                       title: string
       tags:
         - Drupal
-  /api/picture/<image_id>:
+  /api/picture/{image_id}:
     summary: Add picture base 64 blob for every employee
     description: Add picture base 64 blob for every employee
     get:
@@ -286,8 +243,11 @@ paths:
         Retrieve picture base 64 blob for every employee
       parameters:
         - name: image_id
+          in: path
           description: image id
           required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: >-
@@ -349,6 +309,45 @@ paths:
                       weekday: string
       tags:
         - Weather
+  /api/precipitation/{z}/{x}/{y}:
+    summary: Get precipitation data (map) from OpenWeather API
+    description: Get precipitation data (map) from OpenWeather API
+    get:
+      summary: Get precipitation data (map)
+      description: >-
+        Get precipitation data (map) from OpenWeather API
+      parameters:
+        - name: z
+          in: path
+          description: Number of zoom level
+          required: true
+          schema:
+            type: integer
+        - name: x
+          in: path
+          description: Number of x tile coordinate
+          required: true
+          schema:
+            type: integer
+        - name: y
+          in: path
+          description: Number of y tile coordinate
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: >-
+           Precipitation data
+          content:
+            application/json:
+              examples:
+                Weather Data:
+                  value:
+                    properties:
+                      image/png: {}
+      tags:
+        - Precipitation data
   /api/event:
     summary: Get special days in a year
     description: Get special days in a year
@@ -366,8 +365,8 @@ paths:
                 Event Data:
                   value:
                     properties:
-                      today.month: byte
-                      today.day: byte
+                      today.month: integer
+                      today.day: integer
                       event: string
       tags:
         - Event
@@ -403,14 +402,9 @@ paths:
           description: Weiterleitung zu der API Dokumentation
       tags:
         - weitere-abfragen
-tags:
-  - name: health-check
-    description: Überprüfen ob Services ordentlich funktionieren.
-  - name: bus-data
-    description: Abfragen der Bus Daten von den Stadtwerken Münster.
-  - name: weitere-abfragen
-    description: Weitere Abfragen
+
 externalDocs:
   url: /docs
   description: Dokumentation von PS HouseTech.
+
 
