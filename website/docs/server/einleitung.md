@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: Einleitung
 ---
 # Server Struktur für Backend, Frontend und Nginx
 

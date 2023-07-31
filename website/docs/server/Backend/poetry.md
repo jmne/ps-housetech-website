@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: Poetry
 ---
 # Installation und aufsetzen von Poetry
 
