@@ -4,7 +4,7 @@ title: Exchangelib Blog Update
 authors: jingyi
 tags: [Exchange Server, Blog, Exchange Calendar, exchangelib, python]
 ---
-  Willkommen zu unserem neuesten GitLab-Blogbeitrag! Heute tauchen wir in die Welt von exchangelib ein, eine Python Library, die uns hilft, die Kommunikation mit Exchange Server zu bewältigen. In diesem Blogbeitrag werden wir Ihnen zeigen, wie Sie auf Exchange Server in einem Raum zuzugreifen und die Kalender Events zu erhalten können.
+  Willkommen zu unserem neuesten GitLab-Blogbeitrag! Heute tauchen wir in die Welt von exchangelib ein, eine Python Library, die uns hilft, die Kommunikation mit dem Exchange Server zu bewältigen. In diesem Blogbeitrag werden wir Ihnen zeigen, wie Sie auf Exchange Server in einem Raum zuzugreifen und die Kalender Events zu erhalten können.
 
 ## exchangelib
 
