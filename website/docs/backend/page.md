@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # PS House-Tech Backend 
 Die vorliegende Dokumentation beschreibt das Backend für die Informationsdisplays, E-Ink Displays und den Exchange-Kalender, welche unter Verwendung des Flask-Webframeworks entwickelt wurde. Das Backend spielt in der Applikation eine große Rolle und übernimmt die komplette Konsolidierung und Bereitstellung der meisten  Informationen auf entwickelten Applikationen.
 
