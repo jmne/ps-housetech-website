@@ -1,5 +1,8 @@
-# Connect to the Exchange Server and Build a Calendar API Endpoint
+---
+sidebar_position: 5
+---
 
+# Connect to the Exchange Server and Build a Calendar API Endpoint
 This documentation provides detailed steps on how to connect to an Exchange server and build a calendar API endpoint based on the provided Python files in PS HouseTech Backend GitLab: `exchange.py`, `route.py` and `run.py`.
 
 ## Getting Started
