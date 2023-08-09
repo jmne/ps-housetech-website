@@ -41,6 +41,40 @@ Aufgrund von Restriktionen der Cris API sowie der Zuordnung von Mitarbeitenden a
 
 **Hinzufügen von neuen Lehrstühlen:** Hierzu muss lediglich ein Eintrag in der `self.chairs` Liste, sowie der `self.chair_keys` Liste vorgenommen werden. Außerdem sollte eine Übersetzung des Lehrstuhls in der `cris_en.yml` Datei eingetragen werden. Es wird empfohlen die Priorisierung der Lehrstühle beim hinzufügen zu beachten. Spezifischere Lehrstuhle sollten hinten in der `self.chairs` Liste angehängt werden, während generelle Organisationen an den Anfang angehängt werden sollten. Grund dafür ist die in 2. beschriebene Duplikatentfernung.
 
+#### `drupal.py`:
+Das Drupal-Modul vermittelt den Inhalt der Drupal-Overlays und Events and das Frontend. Dabei wird lediglich der Inhalt von zwei verschiedenen URLs verarbeitet, die im Modul eingesehen werden können. Hinter den URLs befinden sich Drupal-Module, auf die sich verlassen wird.
+
+#### `einkgenerator.py`:
+Dieses Modul erzeugt für einen angegebenen Raum im Leonardo-Campus 3 ein HexArray, aus welchem die E-Ink-Displays das Türschild generieren können. Der Erstellungsprozess eines Türschild im Backend besteht aus mehreren Schritten: 
+
+1. Für den angegebenen Raum sucht das Modul mittels der CRIS-API nach den zugehörigen Mitarbeitenden des Raumes. 
+2. Die Informationen der Mitarbeitenden werden in ein HTML-Template eingefügt, wo auch die Raumnummer ausgetauscht wird.
+3. Das generierte HTML wird mittels der HTML2Image Bibliothek in ein .png Bild verwandelt (per Screenshot).
+4. Aus dem Bild kann nun ein HexArray aus Farbcodes erstellt werden, welches nach einigen weiteren Anpassungen zurückgegeben wird.
+
+Das HTML-Template und das ERCIS-Logo befinden sich im `templates` Ordner.
+
+#### `event.py`:
+Dieses Modul wurde entwickelt, um dem Frontend Feiertage und anderweitige Events mitzuteilen. Mittels eines Enums erhält das Frontend eine Zahl als Rückgabewert für die eine Konfiguration im Frontend hinterlegt sein kann. Aktuell sind im Frontend noch keine Konfigurationen festgelegt.
+
+#### `exchange.py`:
+
+#### `instagram.py`:
+Das Instagram-Modul fragt Informationen der [Instagram-Graph-API](https://developers.facebook.com/docs/instagram-api) an. Zum Einen werden die Bilder und Bildbeschreibungen des WI-Instagram Accounts abgefragt. Außerdem können auch hochgeladenen Videos/Instagram-Reels an das Frontend weitergeleitet werden.
+
+#### `mensa.py`:
+
+
+#### `picture.py`:
+
+#### `proxy_config.py`:
+
+#### `tracker.py`:
+
+#### `weather.py`:
+
+
+
 
 ### Testing 
- Neben einer Konfiguerationsdatei "conftest.py" befindet sich im "test" Ordner für jedes externe Modul, bzw. jeden implementierten API-Endpunkt eine Testdatei, die die gewünschte Funktionalität prüft. Diese Tests werden sowohl bei jedem commit automatisch lokal ausgeführt und zusätzlich bei jedem neuen Deployment des Backend auf dem Server laufen gelassen. Ohne das Bestehen aller Tests kann und sollte also weder gepusht, noch neu deployed werden. 
+ Neben einer Konfiguerationsdatei `conftest.py` befindet sich im "test" Ordner für jedes externe Modul, bzw. jeden implementierten API-Endpunkt eine Testdatei, die die gewünschte Funktionalität prüft. Diese Tests werden sowohl bei jedem commit automatisch lokal ausgeführt und zusätzlich bei jedem neuen Deployment des Backend auf dem Server laufen gelassen. Ohne das Bestehen aller Tests kann und sollte also weder gepusht, noch neu deployed werden. 
