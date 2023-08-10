@@ -23,17 +23,32 @@ Um Bilder auf dem E-Ink darzustellen wird ein System benötigt, welches diese Fu
 
 
 ## Entwicklungsumgebung
-Für die Entwicklung der Software für den ESP32 haben wir die [Arduino IDE](https://docs.arduino.cc/software/ide-v2) verwendet.
+Bei der Entwicklung der Software für den ESP32 haben wir die Arduino IDE verwendet. Im Folgenden wird die Einrichtung erklärt.
 ### Initiale Einrichtung
-Zunächst muss man die Arduino IDE [herunterladen](https://www.arduino.cc/en/software) und installieren.
+Zunächst muss man die [Arduino IDE](https://www.arduino.cc/en/software) herunterladen und installieren.
 
-Danach muss man 
+Um den ESP32 mit der Arduino IDE verwenden zu können, muss der sogenannte Board Manager konfiguriert werden. Dieser ermöglicht die Installation von zusätzlichen Packages für den ESP32. Dazu muss man unter **File** -> **Preferences** -> **Additional boards manager URLs** die folgende URL einfügen:
+
+`
+https://dl.espressif.com/dl/package_esp32_index.json
+`
 
 ![Logo](/img/IDE_config_preferences.png)
 
-- Welche Software
-- Pins
+![Logo](/img/IDE_URL.png)
 
+
+----- Hier fehlt noch die Installation der Packages, aber ich habe Angst, dass meine IDE dann hoppst, deswegen später ------
+
+
+
+Anschließend muss man das passende Board auswählen, um den Code für den ESP32 kompilieren zu können. 
+
+![Logo](/img/IDE_initial_board_selection.png)
+
+Danach muss man das [GitHub-Repository von Waveshare](https://github.com/waveshareteam/e-Paper) herunterladen.
+
+----- Weitere Schritte der Einrichtung fehlen noch -----
 
 ### Code auf ESP32 übertragen
 
