@@ -29,7 +29,7 @@ Zunächst muss man die Arduino IDE [herunterladen](https://www.arduino.cc/en/sof
 
 Danach muss man 
 
-![Logo](static/img/IDE_config_preferences.png)
+![Logo](/img/IDE_config_preferences.png)
 
 - Welche Software
 - Pins
