@@ -64,7 +64,7 @@ paths:
       summary: Calendar Data - Exchange Server
       description: >-
         Access to exchange server of room in Leonardo Campus and fetch the calendar events from room
-      operationId: exchange-data
+      operationId: calendar-data
       responses:
         '200':
           description: >-
