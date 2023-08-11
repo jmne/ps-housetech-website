@@ -63,13 +63,18 @@ Dieses Modul wurde entwickelt, um dem Frontend Feiertage und anderweitige Events
 Das Instagram-Modul fragt Informationen der [Instagram-Graph-API](https://developers.facebook.com/docs/instagram-api) an. Zum Einen werden die Bilder und Bildbeschreibungen des WI-Instagram Accounts abgefragt. Außerdem können auch hochgeladenen Videos/Instagram-Reels an das Frontend weitergeleitet werden.
 
 #### `mensa.py`:
-
+Das Mensa-Modul fragt Informationen zum Speiseplan in verschiedenen Mensen in Münster ab. Unter den Mensen befinden sich: Mensa DaVinci, Mensa Bispinghof, Mensa am Aasee und die Mensa am Ring. Die Informationen werden aus verschiedenen XML-Dateien des Studierendenwerks bezogen. Die URLs können im Mensa-Modul eingesehen werden. Die XML-Dateien werden in Python zu einer JSON-Ausgabe transformiert.
 
 #### `picture.py`:
+Das Picture-Modul wird mit einer Image-ID aufgerufen und hat als Rückgabewert ein Bild der dazugehörigen Person. Die Image-ID wird im CRIS-Modul zu jeder Person abgefragt, mit welcher dann eine URL aufgerufen wird. Der Base-64 blob, der sich auf der aufgerufenen URL in einem XML-Format befindet, kann dann verarbeitet werden.
+Da die Bilder teilweise eine Größe von über 25MB haben, werden sich im Backend aus Gründen der Performance komprimiert und anschließend zurückgegeben.
 
 #### `proxy_config.py`:
+In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für die Anfragen zum Einsatz kommen sollen, die externe Informationen (außerhalb der Uni) abfragen. Dazu gehört beispielsweise die 
+Abfrage für das Wetter.
 
 #### `tracker.py`:
+
 
 #### `weather.py`:
 
