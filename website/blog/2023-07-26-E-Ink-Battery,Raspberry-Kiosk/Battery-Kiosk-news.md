@@ -27,4 +27,4 @@ Für den Kiosk Modus des Raspberry Pi 4 haben wir Fullpageos verwendet. Weil anf
 Wir haben den **Raspberry Pi 3** schon im Kiosk Mode an einen Bildschirm angeschlossen und gesehen das er gut die Webseite anzeigt und wir ein gutes Bild haben. Trotzdem haben wir aber auch schnell gesehen,dass unsere Anzeige der Karte mit den Informationen sehr verzögert anzeigt. Um die performance Probleme zu beheben haben wir erstmal den **Pi 4** übertaktet.
 Leider reicht auch das nicht aus und die Animationen sind weniger flüssig als sie sollten. 
 
-![PixelundBeispiel](./Raspberry.jpg)
+![PixelundBeispiel](./Raspberry.png)
