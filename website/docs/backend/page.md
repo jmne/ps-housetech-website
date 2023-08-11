@@ -58,6 +58,7 @@ Das HTML-Template und das ERCIS-Logo befinden sich im `templates` Ordner.
 Dieses Modul wurde entwickelt, um dem Frontend Feiertage und anderweitige Events mitzuteilen. Mittels eines Enums erhält das Frontend eine Zahl als Rückgabewert für die eine Konfiguration im Frontend hinterlegt sein kann. Aktuell sind im Frontend noch keine Konfigurationen festgelegt.
 
 #### `exchange.py`:
+Das Exchange-Modul baut eine Verbindung zum Exchange-Server mit vorhandenen Credentials auf, und ruft Kalenderereignisse für mindestens fünf Exchange Server Raumressourcen mit diesen Credentials ab. Gibt die Startzeit, die Endzeit, den Titel, den Organisator und die E-Mail-Adresse des Organisators des Kalenderereignisses zurück.
 
 #### `instagram.py`:
 Das Instagram-Modul fragt Informationen der [Instagram-Graph-API](https://developers.facebook.com/docs/instagram-api) an. Zum Einen werden die Bilder und Bildbeschreibungen des WI-Instagram Accounts abgefragt. Außerdem können auch hochgeladenen Videos/Instagram-Reels an das Frontend weitergeleitet werden.
