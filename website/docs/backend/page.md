@@ -75,10 +75,10 @@ In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für
 Abfrage für das Wetter.
 
 #### `tracker.py`:
-
+Dieses Modul stellt eine Basisklasse Tracker bereit, die eine Anwendung für Webanfragen mit bestimmten Proxy-Einstellungen einrichtet. Andere "Tracker"-Klassen sollen von dieser Basisklasse erben und wahrscheinlich spezifische Funktionen hinzufügen, während sie die allgemeine Proxy-Konfiguration nutzen.
 
 #### `weather.py`:
-
+Mit diesem Modul kann man Wetterinformationen, einschließlich stündlicher und täglicher Vorhersagen sowie aktueller Wetterbedingungen, von der OpenWeatherMap API für bestimmte Koordinaten abrufen und verarbeiten. Es ruft auch Niederschlagsdaten in einem Kartenformat ab.
 
 
 
