@@ -7,7 +7,7 @@ Bei der Entwicklung der Software für den ESP32 haben wir die Arduino IDE verwen
 ## Arduino IDE Installieren
 Zunächst muss man die [Arduino IDE](https://www.arduino.cc/en/software) herunterladen und installieren.
 
-## Repository kopieren
+## Repository kopieren und Entwicklungsumgebung öffnen
 Der Code für den ESP32 liegt im [PS Housetech - E-Ink Repository](https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-e-ink). Diese Dateien müssen in einen beliebigen Ordner kopiert werden. Grundsätzlich basiert das Repository auf dem [GitHub-Repository von Waveshare](https://github.com/waveshareteam/e-Paper).
 
 ![Logo](/img/IDE_folder_begin.png)
