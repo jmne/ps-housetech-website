@@ -23,9 +23,18 @@ Um Bilder auf dem E-Ink darzustellen wird ein System benötigt, welches diese Fu
 
 
 ## Entwicklungsumgebung
-Bei der Entwicklung der Software für den ESP32 haben wir die Arduino IDE verwendet. Im Folgenden wird die Einrichtung erklärt.
+Bei der Entwicklung der Software für den ESP32 haben wir die Arduino IDE verwendet. Wir haben in unserem Projekt nur mit der Windows-Version der IDE gearbeitet. Daher kann die Einrichtung für andere Plattformen von der Nachfolgenden abweichen.
 ### Initiale Einrichtung
 Zunächst muss man die [Arduino IDE](https://www.arduino.cc/en/software) herunterladen und installieren.
+
+Der Code für den ESP32 liegt im [PS Housetech - E-Ink Repository](https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/ps-housetech-e-ink). Diese Dateien müssen in einen beliebigen Ordner kopiert werden. Grundsätzlich basiert das Repository auf dem [GitHub-Repository von Waveshare](https://github.com/waveshareteam/e-Paper).
+
+![Logo](/img/IDE_folder_begin.png)
+
+Danach navigiert man durch die Ordnerstruktur in den Pfad `..\Arduino\epd5in83b_V2` und öffnet die `epd5in83b_V2.ino` mit der Arduino IDE.
+
+![Logo](/img/IDE_folder_end.png)
+
 
 Um den ESP32 mit der Arduino IDE verwenden zu können, muss der sogenannte Board Manager konfiguriert werden. Dieser ermöglicht die Installation von zusätzlichen Packages für den ESP32. Dazu muss man unter **File** -> **Preferences** -> **Additional boards manager URLs** die folgende URL einfügen:
 
@@ -33,7 +42,11 @@ Um den ESP32 mit der Arduino IDE verwenden zu können, muss der sogenannte Board
 https://dl.espressif.com/dl/package_esp32_index.json
 `
 
+1. File -> Preferences
+
 ![Logo](/img/IDE_config_preferences.png)
+
+2. Additional boards manager URLs
 
 ![Logo](/img/IDE_URL.png)
 
@@ -46,7 +59,6 @@ Anschließend muss man das passende Board auswählen, um den Code für den ESP32
 
 ![Logo](/img/IDE_initial_board_selection.png)
 
-Danach muss man das [GitHub-Repository von Waveshare](https://github.com/waveshareteam/e-Paper) herunterladen.
 
 ----- Weitere Schritte der Einrichtung fehlen noch -----
 
