@@ -59,8 +59,23 @@ Anschließend muss man das passende Board auswählen, um den Code für den ESP32
 
 ![Logo](/img/IDE_initial_board_selection.png)
 
+Danach muss man die richtigen Pins für den ESP32 hinterlegen. Je nach ESP32 Hersteller und Modell, können diese stark variieren. Die folgenden Pin-Definitionen gelten also nur für unser verwendetes E-Paper ESP32 Driver Board. Die Konfiguration der Pins erfolgt an zwei verschiedenen Stellen. Einerseits werden Pins in der `epdif.h` Datei des `..\Arduino\epd5in83b_V2` Pfades gepflegt. Diese sollten bei Verwendung des Git-Lab-Repositorys bereits folgendermaßen eingetragen sein.
+
+![Logo](/img/IDE_pins_1.png)
+
+Andererseits werden die Pins in dem `C:\Users\%UserName%\AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.0.6\variants\esp32` Pfad in der `pins_arduino.h` Datei gepflegt. Dort müssen die Pins MOSI auf 14 und SCK 13 gesetzt werden.
+
+![Logo](/img/IDE_pins_2.png)
+
+:::danger Update der Entwicklungsumgebung
+
+Sobald die Entwicklungsumgebung geupdated wird, werden die Pins auf die eines Arduinos zurückgesetzt. Daher muss man nach einem Update die Pins erneut einpflegen.
+
+:::
+
 
 ----- Weitere Schritte der Einrichtung fehlen noch -----
+
 
 ### Code auf ESP32 übertragen
 
@@ -69,3 +84,4 @@ Anschließend muss man das passende Board auswählen, um den Code für den ESP32
 
 ## Verkabelung
 
+- Es muss auf dem Board ja ein bestimmter Modus eingestellt sein, A oder B?
