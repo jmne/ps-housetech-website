@@ -14,12 +14,7 @@ Während des Deep Sleeps kann es zu einem gewissen Time Shift kommen, da die int
 
 In der `loop()` Methode verbindet sich der ESP32 bei bestehender WLAN-Verbindung mit dem Server. Bricht die Verbindung zum Server oder WLAN ab, startet der ESP neu und der ganze Prozess startet von vorne. Muss der Server das Bild zunächst erst für den Endpoint generieren oder ist offline, so gibt der Server einen bestimmten Fehlercode zurück. Um ein Einbrennen des Bildes zu verhindern, führt der ESP32 die `Clear()` Funktion aus und geht für 30 Sekunden in den Deep Sleep. Musste der Server nur das Bild für den Endpoint generieren, wird im zweiten Anlauf das Bild abgerufen.
 
-Während der Verbindung mit dem Server wird das Bild in Form eines Hex-Array's abgerufen. Dabei handelt es sich um einen langen String, der Hex-Werte zur Darstellung des Bildes enthält. Da der String sehr lang ist, müssen die Daten in Form eines Buffers von dem ESP32 abgerufen werden.
-
-- Buffer auch weil Char array nur ne bestimmte größe annehmen kann 
-- mit Server verbinden
-- Buffering des Bildes
-- Bild in 4 Teile speichern
+Während der Verbindung mit dem Server wird das Bild in Form eines Hex-Array's abgerufen. Dabei handelt es sich um einen langen String, der Hex-Werte zur Darstellung des Bildes enthält. Da der String sehr lang ist, müssen die Daten in Form eines Buffers von dem ESP32 abgerufen werden. Der String wird auf dem ESP32 in einem Char Array zwischengespeichert. Das Char-Array kann nur eine gewisse Größe annehmen, weshalb der String in vier gleich große Teile unterteilt wird. Dabei handelt es sich um die obere und untere Hälfte jeweils für Layer 1 und 2. Aus jedem Char-Array werden dann die Hex-Werte gezogen und in einem 8-Bit Integer-Array gespeichert. Dieses Array kann das E-Ink-Display darstellen.
 
 :::danger Buffer modularisieren
 
@@ -63,10 +58,10 @@ Mithilfe dieser Funktion wird der Bildschirm des E-Ink's bereinigt. Dies wird un
 In der `epdif.cpp` Datei werden grundsätzliche Konfigurationen für das E-Paper Display vorgenommen. Auch hier ist `epdif.h` die Header Datei von `epdif.cpp` und deklariert Funktionen und Variablen. Daher können bestimmte Pins, über die `epdif.h` gepflegt werden. Die [Konfiugartion von allen Pins](entwicklungsumgebung.md#pins-konfigurieren) wird im obigen Kapitel erläutert.
 
 ## Fehlerquellen
-Bei der Entwicklung für den ESP32 ist häufig guter Programmierstil in Form von Modularisierung nicht möglich. Es ist nicht selten eine Gradwanderung zwischen funktionierendem System und Absturz des ESP32. Zudem stürzt er nicht unbedingt direkt an der Fehlerquelle ab, sondern häufig schon deutlich früher. Daher kann es sinnvoll sein, sich Gedanken über die restriktiven Faktoren eines Mikrocontrollers zu machen. So fällt der Arbeitsspeicher, Prozessor und Sekundärspeicher deutlich kleiner und leistungsärmer aus als der eines konventionellen Computers. Es gibt jedoch auch hardwareseitige Debugging Tools, die jedoch den Rahmen dieser Projektarbeit gesprengt hätten. Hiermit wäre die Software-Entwicklung vermutlich deutlich dynamischer.  
+Bei der Entwicklung für den ESP32 ist häufig guter Programmierstil in Form von Modularisierung nicht möglich. Es ist nicht selten eine Gradwanderung zwischen funktionierendem System und Absturz des ESP32. Zudem stürzt er nicht unbedingt direkt an der Fehlerquelle ab, sondern häufig schon deutlich früher. Daher kann es sinnvoll sein, sich Gedanken über die restriktiven Faktoren eines Mikrocontrollers zu machen. So fällt der Arbeitsspeicher, Prozessor und Sekundärspeicher deutlich kleiner und leistungsärmer aus als der eines konventionellen Computers. Es gibt hardwareseitige Debugging Tools, die jedoch den Rahmen dieser Projektarbeit gesprengt hätten. Hiermit kann die Software-Entwicklung deutlich dynamischer sein.  
 
 :::tip Fehlersuche mit dem Serial Monitor
 
-Grundsätzlich stellt sich das Debugging mit der Arduino IDE als schwierig dar. Häufig stürzt der ESP32 einfach ab, ohne brauchbare Fehlercodes zu liefern. Deshalb empfiehlt es sich bei der Fehlersuche den Serial Monitor zu verwenden. Dazu können mithilfe der Konsolenausgabe `Serial.println("Text");` bestimmte Werte ausgegeben oder Problemstellen ausfindig gemacht werden.
+Grundsätzlich stellt sich das Debugging mit der Arduino IDE als schwierig dar. Häufig stürzt der ESP32 einfach ab, ohne brauchbare Fehlercodes zu liefern. Deshalb empfiehlt es sich bei der Fehlersuche den Serial Monitor zu verwenden. Dazu können in der Konsolenausgabe mithilfe der Funktion `Serial.println("Text");` bestimmte Werte ausgegeben oder Problemstellen ausfindig gemacht werden.
 
 :::

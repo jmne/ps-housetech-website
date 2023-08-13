@@ -5,8 +5,6 @@ sidebar_position: 1
 # Einleitung
 Im Rahmen der Projektarbeit sollte ein Konzept zur Verwendung von digitalen Türschildern für die Räume des Instituts für Wirtschaftsinformatik erarbeitet werden. Dazu wurde als Hardwaregrundlage ein Mikrocontroller in Verbindung mit einem E-Ink Display verwendet. In dieser Dokumentation wird das hard- und softwareseitige Konzept näher erläutert.
 
------ Hier auch Raspberry Pi Doku rein? -----
-
 ## E-Ink
 Für die Darstellung von Rauminformationen in digitaler Form benötigt es ein Display. In unserem Anwendungsfall sollte das Display gut lesbar und energiesparend sein. Zudem sollte es einen kleinen Formfaktor besitzen. Deshalb haben wir uns für einen E-Ink Display entschieden. Genau genommen handelt es sich um das [5.83inch e-Paper HAT (B)](https://www.waveshare.com/wiki/5.83inch_e-Paper_HAT_(B)_Manual) von Waveshare. 
 

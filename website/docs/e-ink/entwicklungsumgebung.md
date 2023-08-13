@@ -34,6 +34,12 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 ----- Hier fehlt noch die Installation der Packages, aber ich habe Angst, dass meine IDE dann hoppst, deswegen später ------
 
+:::danger Update der Boards
+
+Unten rechts wird beim Öffnen der Arduino IDE häufig auf ausstehende Updates der Boards hingewiesen. Da der vorliegende Code nur mit der genannten Version der Library funktioniert, sollte davon abgesehen werden, die Library zu aktualisieren.
+![Logo](/img/IDE_update.png)
+
+:::
 
 ## Board auswählen
 Anschließend muss man das passende Board auswählen, um den Code für den ESP32 kompilieren zu können. 
@@ -62,5 +68,4 @@ Um den Code auf den ESP32 zu übertragen, muss zunächst der ESP32 per USB mit d
 
 Man muss die Baudrate anpassen, um die Ausgaben des ESP32 in dem Serial Monitor lesen zu können
 
------ Serial Monitor vs. Output -----
 ----- Kommunikationsgeschwindigkeit passend einstellen -----
