@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
     title: 'PS HouseTech',
-    tagline: 'Wir sind dabei, die Bildschirme auf dem Leonardo Campus zu modernisieren!😎',
+    tagline: 'Wir helfen dabei, die Bildschirme auf dem Leonardo Campus zu modernisieren!😎',
     url: 'https://ml-de.zivgitlabpages.uni-muenster.de',
     baseUrl: '/teaching/ps-housetech/ps-housetech-website',
     onBrokenLinks: 'warn',
@@ -34,7 +34,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 api: {
                     path: "api/openapi.yaml",
                     routeBasePath: "/api",
-                    // ... other OpenAPI-Generator options
                     sidebarCollapsible: true,
                     sidebarCollapsed: true,
                     apiLayoutComponent: "@theme/ApiPage",
@@ -91,7 +90,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             announcementBar: {
                 id: 'announcement_1', // Increment on change
                 content:
-                    'This website is still under construction.',
+                    'Willkommen in unserer Doku :-)',
                 isCloseable: true,
                 backgroundColor: '#252525',
                 textColor: '#e5e5e5',
@@ -117,9 +116,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                     {to: "/api/", label: "API 🌐", position: 'left'},
                     {to: '/blog', label: 'Blog 📝', position: 'left'},
                     {
-                        href: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/',
+                        to: 'https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/',
                         label: 'Source 📁',
                         position: 'right',
+                        className: "header-github-link",
+
                     },
                 ],
             },

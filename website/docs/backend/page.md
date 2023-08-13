@@ -84,14 +84,12 @@ In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für
 Abfrage für das Wetter.
 
 #### `tracker.py`:
-This module contains the super-class which sets the proxies out of the `proxy_config.py` module and other configurations. Other Modules inherit from the class in this module. 
+Dieses Modul stellt eine Basisklasse Tracker bereit, die eine Anwendung für Webanfragen mit bestimmten Proxy-Einstellungen einrichtet. Andere "Tracker"-Klassen sollen von dieser Basisklasse erben und wahrscheinlich spezifische Funktionen hinzufügen, während sie die allgemeine Proxy-Konfiguration nutzen.
 
 #### `weather.py`:
-This module uses the [OpenWeatherMap API](https://openweathermap.org/api) to extract weather data. In total there are three kinds of weather data we extract: 
+Mit diesem Modul kann man Wetterinformationen, einschließlich stündlicher und täglicher Vorhersagen sowie aktueller Wetterbedingungen, von der OpenWeatherMap API für bestimmte Koordinaten abrufen und verarbeiten. Es ruft auch Niederschlagsdaten in einem Kartenformat ab.
 
-1. The current weather, meaning the degrees.
-2. The weather forecast for the next few hours, including the Probability of Precipitation (PoP) and the expected temperature.
-3. The weather forecast for the next three days, including the expected maximum temperature on each day and the estimated PoP.
+
 
 ### Testing 
  Neben einer Konfiguerationsdatei `conftest.py` befindet sich im "test" Ordner für jedes externe Modul, bzw. jeden implementierten API-Endpunkt eine Testdatei, die die gewünschte Funktionalität prüft. Diese Tests werden sowohl bei jedem commit automatisch lokal ausgeführt und zusätzlich bei jedem neuen Deployment des Backend auf dem Server laufen gelassen. Ohne das Bestehen aller Tests kann und sollte also weder gepusht, noch neu deployed werden. 
