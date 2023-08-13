@@ -5,7 +5,7 @@ info:
   description: These are the docs for the PS HouseTech Backend API.
   contact:
     name: PS HouseTech
-    url: https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-house-tech/
+    url: https://zivgitlab.uni-muenster.de/ml-de/teaching/ps-housetech/
   license:
     name: MIT-Lizenz
     url: https://de.wikipedia.org/wiki/MIT-Lizenz
@@ -408,7 +408,7 @@ paths:
         '302':
           description: Weiterleitung zu der API Dokumentation
       tags:
-        - weitere-abfragen
+        - Weitere Abfragen
 
 externalDocs:
   url: /docs
