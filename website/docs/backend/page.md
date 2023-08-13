@@ -34,12 +34,21 @@ Im Cris-Modul wird die [CRIS Graph-QL-API der Universität Münster](https://con
 Aufgrund von Restriktionen der Cris API sowie der Zuordnung von Mitarbeitenden an mehreren Lehrstühlen stellte sich dieses Modul als durchaus komplex heraus. Der Ablauf der Abfrage ist folgendermaßen implementiert:
 
 1. Zunächst wird durch alle zugehörigen Lehrstühle (chairs) iteriert, die wir zuvor in der Datei fest implementiert haben. Für jeden Lehrstuhl werden alle aktiven `employee_ids`, sowie die dazugehörige `chair_name` der Person der employees-Liste angehangen. 
-2. Nachdem alle Organisationen durchlaufen wurden, befinden sich nun alle Mitarbeitenden in der besagten employee-Liste. Allerdings sind einige Mitarbeitende mehreren Organisationen/Lehrstühlen zugeordnet, weswegen wir im  Duplikate entfernen müssen. Wir haben uns darauf geeignet, dass wir jenes Duplikat entfernen, welches dem weniger spezifischen Lehrstuhl angehörig ist. Wenn eine Person also beispielsweise dem "Institut für Wirtschaftsinformatik" und dem "Lehrstuhl für  Wirtschaftsinformatik und Informationsmanagement (Prof. Becker)" zugeordnet ist, wird der Eintrag mit dem "Institut für Wirtschaftsinformatik" entfernt. Dies ist über die Reihenfolge in der `self.chairs` Liste geregelt.
+2. Nachdem alle Organisationen durchlaufen wurden, befinden sich nun alle Mitarbeitenden in der besagten employee-Liste. Allerdings sind einige Mitarbeitende mehreren Organisationen/Lehrstühlen zugeordnet, weswegen wir im  Duplikate entfernen müssen. Nun können wir davon ausgehen, dass sich jede Person `employee_id` nur ein Mal in unserer Liste befindet
 3. Anschließend an die Duplikatsentfernung werden den Mitarbeitenden personenspezifische Daten zugeordnet. Da die CRIS-API maximal 100 `employee_ids` als Input zulässt, erstellen wir mehrere Listen mit maximal 100 `employee_ids`, für die wir jeweils eine Abfrage ausführen.
-4. Lehrstühle werden ggf. ins Englische übersetzt. Dafür verwenden wir eine `cris_en.yml` Datei, sowie die `get_translation` Methode.
-5. Anschließend fügen wir jeder Person eine Adresse hinzu. Dies wird für die Personensuche auf dem Display, sowie die Raumzuordnung benötigt. Die Zuordnung des Gebäudes ist potenziell ausbaufähig, da lediglich alle Mitarbeitenden des Lehrstuhl von Klein und Berger dem Leonardo-Campus 11 zugeordnet wird, während der Rest dem Leonardo-Campus 3 zugeordnet wird. Nun wird die Rückgabe ausgegeben.
+4. Nun verfügen wir über die personenspezifischen Daten, darunter: Vor- und Nachname, E-Mails, jobTitle, Telefonnummern, eine image-id, card-ids für die aktiven Karten der Person und die Raumnummer. Was wir allerdings noch nicht wissen, ist die genaue Lehrstuhl-Zuordnung einer Person.
+5. Für die Lehrstuhl Zuordnung nutzen wir die card-ids der jeweiligen Personen. Wir haben bereits ausschließlich die aktiven Karten (meistens nur eine pro Person) gespeichert und können uns über diese Karte den Lehrstuhl erschließen. Damit die Schnelligkeit der Abfrage so wenig wie möglich leidet, wird auch hier immer eine Abfrage für 100 card-ids, ähnlich wie bei den Personendaten ausgeführt. Allerdings wird sich hier auch für jede Karte gemerkt, zu welcher Person diese gehört, da einige Personen mehrere Karten haben und somit auch mehreren Lehrstühlen zugeordnet sein können. 
+7. Lehrstühle werden ggf. ins Englische übersetzt. Dafür verwenden wir eine `cris_en.yml` Datei, sowie die `get_translation` Methode.
+8. Es verbleiben drei Herausforderungen: 
+    1. Einige Personen müssen herausgefiltert werden, das sich bei der zuverlässigen Lehstuhl-Zuordnung herausgestellt hat, dass diese Person nicht mehr an einem Lehrstuhl des Institut tätig ist.
+    2. Außerdem sollen Personen mit bestimmten Arbeitsverhältnissen (SHKs) nicht angezeigt werden. 
+    3. Jede Person benötigt zusätzlich eine Adresse, die ihr zugeordnet wird.
 
-**Hinzufügen von neuen Lehrstühlen:** Hierzu muss lediglich ein Eintrag in der `self.chairs` Liste, sowie der `self.chair_keys` Liste vorgenommen werden. Außerdem sollte eine Übersetzung des Lehrstuhls in der `cris_en.yml` Datei eingetragen werden. Es wird empfohlen die Priorisierung der Lehrstühle beim hinzufügen zu beachten. Spezifischere Lehrstuhle sollten hinten in der `self.chairs` Liste angehängt werden, während generelle Organisationen an den Anfang angehängt werden sollten. Grund dafür ist die in 2. beschriebene Duplikatentfernung.
+Für i) ii) und werden Filter angewendet und Personen aussortiert. Für die Lehrstuhl-Zurodnung wird betrachtet, ob eine Person mindestens einem der vordefinierten Lehrstühlen angehörig ist. Für den Filter nach Jobtiteln wird geschaut, ob die Jobtitel einer Person mindestens einem der `valid_job_titles` entsprechen.
+
+Die Zuordnung des Gebäudes ist potenziell ausbaufähig, da lediglich alle Mitarbeitenden der Lehrstühle von Prof. Klein und Prof. Berger dem Leonardo-Campus 11 zugeordnet werden, während der Rest dem Leonardo-Campus 3 zugeordnet wird. 
+
+**Hinzufügen von neuen Lehrstühlen:** Hierzu muss lediglich ein Eintrag in der `self.chairs` Liste vorgenommen werden. Außerdem sollte eine Übersetzung des Lehrstuhls in der `cris_en.yml` Datei eingetragen werden.
 
 #### `drupal.py`:
 Das Drupal-Modul vermittelt den Inhalt der Drupal-Overlays und Events and das Frontend. Dabei wird lediglich der Inhalt von zwei verschiedenen URLs verarbeitet, die im Modul eingesehen werden können. Hinter den URLs befinden sich Drupal-Module, auf die sich verlassen wird.
@@ -75,12 +84,14 @@ In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für
 Abfrage für das Wetter.
 
 #### `tracker.py`:
-
+This module contains the super-class which sets the proxies out of the `proxy_config.py` module and other configurations. Other Modules inherit from the class in this module. 
 
 #### `weather.py`:
+This module uses the [OpenWeatherMap API](https://openweathermap.org/api) to extract weather data. In total there are three kinds of weather data we extract: 
 
-
-
+1. The current weather, meaning the degrees.
+2. The weather forecast for the next few hours, including the Probability of Precipitation (PoP) and the expected temperature.
+3. The weather forecast for the next three days, including the expected maximum temperature on each day and the estimated PoP.
 
 ### Testing 
  Neben einer Konfiguerationsdatei `conftest.py` befindet sich im "test" Ordner für jedes externe Modul, bzw. jeden implementierten API-Endpunkt eine Testdatei, die die gewünschte Funktionalität prüft. Diese Tests werden sowohl bei jedem commit automatisch lokal ausgeführt und zusätzlich bei jedem neuen Deployment des Backend auf dem Server laufen gelassen. Ohne das Bestehen aller Tests kann und sollte also weder gepusht, noch neu deployed werden. 
