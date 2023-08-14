@@ -28,7 +28,7 @@ Außerdem scheint es nötig zu sein den ersten HDMI-Port zu nutzen, um ein Bild 
 
 ## MAC-Adresse ermitteln
  
-Um starten zu können haben wir als erstes die MAC-Adresse für WLAN ausfindig gemacht und sie dann Freischalten lassen damit wir zum SUM Netzwerk Zugang haben. Dafür gibt man beim Raspberry Pi im Terminal „ifconfig“ ein. Bei der Ausgabe bei „wlan0“ steht sie dann als „ether“ bezeichnet. In unserem Fall ist LAN, „eth0“ nicht relevant. 
+Um starten zu können haben wir als erstes die MAC-Adresse für WLAN ausfindig gemacht und sie dann Freischalten lassen damit wir zum SUM Netzwerk Zugang haben. Dafür gibt man beim Raspberry Pi im Terminal „ifconfig“ ein. Bei der Ausgabe bei „wlan0“ steht sie dann als „ether“ bezeichnet. Im Fall der LAN Verbindung, ist die MAC-Adresse bei „eth0“ relevant. 
 Sobald das funktioniert hat, sollte eine Verbindung zum Internet hergestellt sein.
 
  ## Kioskmodus
