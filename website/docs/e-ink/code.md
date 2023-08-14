@@ -3,7 +3,6 @@ sidebar_position: 4
 ---
 
 # Code
-
 ## Logik - epd5in83b_V2.ino
 In dieser Datei befindet sich die Logik vom ESP32. Grundsätzlich erwacht der ESP32 gegen 6 Uhr morgens alle 24 Stunden aus dem sogenannten Deep Sleep. Danach ruft der er das Bild in Form eines Hex-Arrays von dem Server ab. Sobald er das Bild heruntergeladen hat, zeigt er es auf dem E-Ink Display an und geht wieder für 24 Stunden in den Deep Sleep. Da der Bildschirm Gefahr läuft, nach längerem Anzeigen von einem Bild ohne Veränderung einzubrennen, haben wir den Zeitraum von 24 Stunden gewählt.
 
