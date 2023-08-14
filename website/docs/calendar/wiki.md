@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Calendar
 
-This documentation provides detailed steps on how to connect to an Exchange server and build a calendar API endpoint based on the provided Python files in PS HouseTech Backend GitLab: `exchange.py`, `route.py` and `run.py`.
+This documentation provides detailed steps on how to connect to Exchange server and build a calendar API endpoint to get calendar data of rooms from Exchange Server
 
 ## Getting Started
 To get started, we need to finish following steps:
@@ -12,15 +12,13 @@ To get started, we need to finish following steps:
 - Python installed in your environment.
 - Install necessary Python packages:
 ```shell
-pip install python-dotenv
 pip install pytz
 pip install exchangelib
-pip install flask
 ```
 - A `.env` file in the parent directory of these files, containing necessary credentials for each room. In our Exchange Server Setting, one user's username and password can get access to more than one room resource. Here is an example of the entries in the file:
  ```shell
-USERNAME=your_username
-PASSWORD=your_password
+USERNAME='your_username'
+PASSWORD='your_password'
 ```
 
 ## Setup and connecting
@@ -53,19 +51,19 @@ config = Configuration (server=self.server,credentials=credentials)
 # create an account object
 self.a = Account(primary_smtp_address=email, config=config, autodiscover=False,access_type=DELEGATE)
 ```
-## Fetching Calendar Items
-To fetch and return calendar items from an Exchange Server by room, we can define a function `def get_calendar_items(self, room_email)`. Then define time range and timezone in this function:
+## Fetching Calendar Events
+To fetch and return calendar events from an Exchange Server by room, we can define a function `def get_calendar_items(self, room_email)`. Then define time range and timezone in this function:
 ```shell
 # define start time and time zone
-# start time need to be redefined after 31.12.2023. e.g. '2024,1,1,0,0'
-datetime(2023, 1, 1, 0, 0, tzinfo=self.utc)
+datetime(%y,%m,%d,%h,%m, tzinfo=self.utc)
 ```
-
 ```shell
 # define time range
+# start time is defined as 01.01.2023 at 0:0 o'clock in the backend code
+# it needs to be redefined after 31.12.2023. e.g. '2024,1,1,0,0'
 datetime.now(tz=self.utc) + timedelta(days=365)
 ```
-To retrieve calendar items that fall within the specified start and end time range, we load credentials and room emails:
+To retrieve calendar events that fall within the specified start and end time range, we load credentials and room emails:
 ```shell
 username = os.getenv('YOUR_USERNAME')
 password = os.getenv('YOUR_PASSWORD')
@@ -106,7 +104,7 @@ for room in self.ROOMS:
         username = os.getenv('YOUR_USERNAME')
         password = os.getenv('YOUR_PASSWORD')
 ```
-At last, check credentials and Email. If the username, password, and room email are provided (i.e., not None or an empty string), the code calls the `update_credentials` function to update the credentials and room email. Then, return the results list using `self.get_calendar_items` which contains the room-email related calendar items.
+Check credentials and Email. If the username, password, and room email are provided (i.e., not None or an empty string), the code calls the `update_credentials` function to update the credentials and room email. Then, return the results list using `self.get_calendar_items` which contains the room-email related calendar events.
 ```shell
  if username and password and room_email:
     self.update_credentials(username, password, room_email)
@@ -114,7 +112,7 @@ At last, check credentials and Email. If the username, password, and room email 
 ```
 
 ## Calendar API
-In the `route.py` file, an API endpoint is defined for fetching calendar data by room name dynamically. Following steps are to build an Flask API endpoint:
+An API endpoint is defined in the API route file for fetching calendar data by room name dynamically. Following steps are to build an Flask API endpoint:
 
 - Define the Route: 
 The `@api.get('/calendar/<room_name>')` decorator defines the HTTP GET route /calendar.
@@ -137,5 +135,5 @@ def calendar(room_name):
 ## How to run
 
 - Ensure that the `.env` file is properly configured.
-- Run the Flask application: `run.py`
-- Access the `/api/calendar/<room_name>` endpoint from your preferred browser or API client to get the calendar items. Room names can be found in the backend code or in the openAPI.
+- Run the Flask application.
+- Access the `/api/calendar/<room_name>` endpoint from your preferred browser or API client to get the calendar data. Room names can be found in the backend code or in the openAPI.
