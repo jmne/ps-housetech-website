@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Einleitung **PS HouseTech**
+# Einleitung PS HouseTech
 
 ## Projektorganisation
 Die Praxisrelevante Problemstellung war es den Leonardo Campus moderner zu gestallten. Bildschirme and den Eingängen des Leonardo-Campus 3 sollten etwas neues anzeigen. Und außerdem für die Studenten, Beschäftigten und Besucher etwas nützliches anzeigen. Die vorherigen Inhalte sind schon veraltet und eine neue alternative wünschenswert. Außerdem war es auch ein Ziel das unsere Arbeit gut nachvollziehbar ist, so dass man in Zukunft versteht was gemacht wurde und gut Änderungen vornehmen kann.
