@@ -121,3 +121,6 @@ y = Stromverbrauch pro Tag
 
 2999mAh/7,68mA/Tag 
 = **377,6 Tage** erwartete Laufzeit. 
+
+Der ESP32 sollte also für ein Jahr lang in betrieb sein können.
+Eine genaue Messung ist ohne weitere Komponenten nicht möglich.
