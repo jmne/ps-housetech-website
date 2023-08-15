@@ -14,7 +14,8 @@ Um beide mit einem Betriebssystem zu bespielen, nutzt man am besten ein Programm
 ## Anpassungen
 Als nächstes müssen noch einige Einstellungen in Dateien der SD-Karte, am PC, in der „config.txt“ Datei angepasst werden. Die Inhalte der config.txt Datei kann man durch diese Inhalte ersetzen: 
 
-[config.txt Datei](./config.txt)
+[config.txt](./config.txt) 
+
 Alles sollte idealerweise in Notepad++ beispielsweise bearbeitet werden, von anderen Programmen wie Wordpad wird abgeraten da sie die Dateien unbrauchbar machen können.
   
 Letzens fügen wir noch unser LC-housetech Logo ein und ersetzen das Standardbild.  
