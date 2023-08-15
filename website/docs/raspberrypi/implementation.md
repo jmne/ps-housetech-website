@@ -2,7 +2,6 @@
 sidebar_position: 8
 ---
 # Raspberry Pi 4 
-
 Für das Projekt wurde uns zuerst, vorübergehend ein Raspberry Pi 3 zur Verfügung gestellt und anschließend ein Raspberry Pi 4. 
 
 ## Start
