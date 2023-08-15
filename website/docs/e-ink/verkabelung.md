@@ -31,8 +31,9 @@ sidebar_position: 5
 
 ![Logo](/img/esp_eink_pins.jpg)
 
-
-- Es muss auf dem Board ja ein bestimmter Modus eingestellt sein, A oder B?
+### Board Schalter
+Auf unserem ESP32, dem E-Paper ESP32 Driver Board, gibt es einen Schalter, bei dem man A und B aussuchen kann, der Default ist A. In unserem Fall ist es auch A aber es hängt wie man unten sehen kann vom verwendeten Bildschirm ab. Außerdem kann man zwischen ON und OFF aussuchen. Hier kann der USB-Port zum Strom sparen deaktivieren. Zum Hochladen von neuem Code muss es dann natürlich auf ON sein. 
+![A/B Modus](./absetting.png) 
 
 
 ## Batterien
