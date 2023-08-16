@@ -106,7 +106,9 @@ a = 6s
 
 b = 46s 
 
-c = 86.400s - 52s = 86.296s 
+    a+b = 52s
+
+c = 24 x 60 x 60 - 52= 86.400s - 52s = 86.296s 
  
 
 ### Formel  
@@ -115,7 +117,7 @@ S = Stromverbrauch pro Tag
 
 ### S = a x Y1 + b x Y2 + c x Y3 
 
-6 x 0,04167 + 46 x 0,0833 + (24 x 60 x 60 - 52) * (0,15 / 60 / 60)=  **7,68 mA/Tag** bei einmal Refresh pro Tag und dem Worst Case Deep Sleep Wert. 
+6 x 0,04167 + 46 x 0,0833 +  86.296 * (0,15 / 60 / 60)=  **7,68 mA/Tag** bei einmal Refresh pro Tag und dem Worst Case Deep Sleep Wert. 
 
 
 ### maximale Nutzung der Batterien: 
