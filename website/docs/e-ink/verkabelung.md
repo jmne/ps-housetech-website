@@ -94,11 +94,11 @@ Die Batterien haben insgesamt eine Kapazität von 2900mAh
 
 ### Verbrauch je nach Phase 
 
-x1 = esp32 Idle = 150mAh/60/60 = 0,04167 mAs 
+Y1 = esp32 Idle = 150mAh/60/60 = 0,04167 mAs 
 
-x2 = Refreshphase = 300mAh/60/60 = 0,0833 mAs 
+Y2 = Refreshphase = 300mAh/60/60 = 0,0833 mAs 
 
-x3 = Deep Sleep = 0,01 - 0,15 mAh/60/60 = 2,778e^-6 mAs - 4,167/*e^-5 
+Y3 = Deep Sleep = 0,01 - 0,15 mAh/60/60 = 2,778e^-6 mAs - 4,167/*e^-5 
 
 ## Praktische Phasenlaufzeit: 
 
@@ -111,11 +111,11 @@ c = 86.400s - 52s = 86.296s
 
 ### Formel  
 
-y = Stromverbrauch pro Tag 
+S = Stromverbrauch pro Tag 
 
-### y = a * x1 + b * x2 + c*x3 
+### S = a x Y1 + b x Y2 + c x Y3 
 
-6 * 0,04167+46 * 0,0833+(24 * 60* 60-52)*(0,15/60/60)=  **7,68 mA/Tag** bei einmal Refresh pro Tag und dem Worst Case Deep Sleep Wert. 
+6 x 0,04167 + 46 x 0,0833 + (24 x 60 x 60 - 52) * (0,15 / 60 / 60)=  **7,68 mA/Tag** bei einmal Refresh pro Tag und dem Worst Case Deep Sleep Wert. 
 
 
 ### maximale Nutzung der Batterien: 
