@@ -93,6 +93,7 @@ Die Batterien haben insgesamt eine Kapazität von 2900mAh
 ## Rechnung: 
 
 ### Verbrauch je nach Phase 
+(man rechnet hier den Verbrauch pro Stunde in Verbrauch pro Sekunde um)
 
 Y1 = esp32 Idle = 150mAh/60/60 = 0,04167 mAs 
 
