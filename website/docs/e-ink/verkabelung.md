@@ -102,13 +102,13 @@ Y3 = Deep Sleep = 0,01 - 0,15 mAh/60/60 = 2,778e^-6 mAs - 4,167/*e^-5
 
 ## Praktische Phasenlaufzeit: 
 
-a = 6s 
+a = Zeit Idle = 6s 
 
-b = 46s 
+b = Refresh Zeit = 46s 
 
     a+b = 52s
 
-c = 24 x 60 x 60 - 52= 86.400s - 52s = 86.296s 
+c = Zeit im Deep Sleep = 1 Tag - (a+b) = 24 x 60 x 60 - 52= 86.400s - 52s = 86.296s 
  
 
 ### Formel  
