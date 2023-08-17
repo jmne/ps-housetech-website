@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Root-Directory
 
-- **`.eslintrc.json`:** Diese Datei enthält Konfigurationen für ESLint, ein Tool zur statischen Code-Analyse. Sie definiert Regeln für den Code-Stil, die Formatierung und die Fehlererkennung im JavaScript- oder TypeScript-Code.
+- **`.eslintrc.json`:** Diese Datei enthält Konfigurationen für ESLint, ein Tool zur statischen Code-Analyse. Sie definiert Regeln für den Code-Stil, die Formatierung und die Fehlererkennung im TypeScript-Code.
 
 - **`.dockerignore`:** Ähnlich wie `.gitignore` wird diese Datei verwendet, um Docker mitzuteilen, welche Dateien oder Verzeichnisse beim Erstellen von Docker-Images ignoriert werden sollen. Dies ist wichtig, um unerwünschte oder temporäre Dateien auszuschließen.
 
