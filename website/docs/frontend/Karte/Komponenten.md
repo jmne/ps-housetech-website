@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Komponenten
 
 Der Aufbau der integrierten Komponente "Wayfinder" ist in zwei Teile unterteilt. Die Darstellung und eigenständige Navigation der Karte sind hierbei im Ordner "Map" zu finden, während sich die Suchleiste aus "PersonResult" und "SearchBar" zusammensetzt.
