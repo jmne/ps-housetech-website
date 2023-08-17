@@ -45,7 +45,7 @@ Unten rechts wird beim Öffnen der Arduino IDE häufig auf ausstehende Updates d
 ## Schritt 4: Board auswählen
 Anschließend muss man das passende Board auswählen, um den Code für den ESP32 kompilieren zu können. 
 
-![Logo](/img/IDE_initial_board_selection.png
+![Logo](/img/IDE_initial_board_selection.png)
 
 Tritt folgende Fehlermeldung auf, müssen die nachfolgenden Schritte gemacht werden.
 
@@ -73,6 +73,7 @@ Sobald die Entwicklungsumgebung geupdated wird, werden die Pins zurückgesetzt. 
 ## Schritt 6: Code auf ESP32 übertragen
 
 Um den Code auf den ESP32 zu übertragen, muss zunächst der ESP32 per USB mit dem Computer verbunden werden. Danach kann man über folgende Schaltfläche das kompilieren und übertragen des Codes auf den ESP32 anstoßen. 
+
 ![Logo](/img/IDE_upload_code.png)
 
 Man muss die Baudrate anpassen, um die Ausgaben des ESP32 in dem Serial Monitor lesen zu können
