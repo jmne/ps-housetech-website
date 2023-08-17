@@ -20,4 +20,4 @@ In diesem Kapitel werden folgende Themen behandelt:
 
 ## Animationen
 
-In diesem Kapitel werden die spezifischen Animations-Funktionen behandelt, die für die Karte von den Komponenten genutzt werden. Hierfür wird auch auf die [allgemeinen Animations-Funktionen](../utils.md) zurückgegriffen.
+In diesem Kapitel werden die spezifischen Animations-Funktionen behandelt, die für die Karte von den Komponenten genutzt werden.
