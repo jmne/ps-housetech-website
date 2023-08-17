@@ -68,11 +68,11 @@ Bei 3v3 ist eine Spannungsversorgung von 2,5V bis 3,6 V zu gewährleisten. Bei m
 
 In jedem Modus verbraucht der ESP32 unterschiedlich viel Strom. Daher haben wir folgendermaßen die mAh pro Tag ermittelt. Dabei ist x der Verbrauch des Modus in mAh, t die Dauer des Modus in Sekunden und y der Gesamte Verbrauch pro Tag in mAh.
 
-![Logo](/img/battery1.jpg)
+![Logo](/img/battery1.png)
 
-![Logo](/img/battery3.jpg)
+![Logo](/img/battery2.png)
 
 Bei einer Batterielaufzeit von 2900 mAh lässt sich somit eine Laufzeit von ca. 377 Tagen. Diese Zahl ist jedoch mit Vorsicht zu genießen, da aufgrund von Entladung der Batterien durch Umwelteinflüsse und andere Einflussfaktoren der tatsächliche Wert davon abweichen kann.
 
-![Logo](/img/battery2.jpg)
+![Logo](/img/battery3.png)
 
