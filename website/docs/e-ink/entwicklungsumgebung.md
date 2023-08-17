@@ -32,7 +32,9 @@ https://dl.espressif.com/dl/package_esp32_index.json
 ![Logo](/img/IDE_URL.png)
 
 
------ Hier fehlt noch die Installation der Packages, aber ich habe Angst, dass meine IDE dann hoppst, deswegen später ------
+Zudem muss das richtige Package des Board Managers installiert werden. Wenn man in der Suchleiste esp32 eingibt, sollte das folgende Package sichtbar sein. Wichtig dabei ist es die Version 1.0.6 auszuwählen, das sonst der Programmcode nicht funktioniert.
+
+![Logo](/img/IDE_board_manager.png)
 
 :::danger Update der Boards
 
@@ -76,8 +78,6 @@ Um den Code auf den ESP32 zu übertragen, muss zunächst der ESP32 per USB mit d
 
 ![Logo](/img/IDE_upload_code.png)
 
-Man muss die Baudrate anpassen, um die Ausgaben des ESP32 in dem Serial Monitor lesen zu können
+Zudem muss man die Baudrate anpassen, um die Ausgaben des ESP32 in dem Serial Monitor lesen zu können.
 
 ![Logo](/img/IDE_baud.png)
-
------ Kommunikationsgeschwindigkeit passend einstellen -----

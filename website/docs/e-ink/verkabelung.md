@@ -2,6 +2,7 @@
 ---
 sidebar_position: 5
 ---
+# Verkabelung
 
 ## E-Ink von oben 
 
@@ -11,15 +12,17 @@ sidebar_position: 5
 
 ![Logo](/img/esp_top.jpg)
 
-## Akkus
-
-![Logo](/img/akkus.jpg)
+### Board Schalter
+Auf unserem ESP32, dem E-Paper ESP32 Driver Board, gibt es einen Schalter, bei dem man A und B aussuchen kann, der Default ist A. In unserem Fall ist es auch A aber es hängt wie man unten sehen kann vom verwendeten Bildschirm ab. Außerdem kann man zwischen ON und OFF aussuchen. Hier kann der USB-Port zum Strom sparen deaktivieren. Zum Hochladen von neuem Code muss es dann natürlich auf ON sein. 
+![A/B Modus](./absetting.png) 
 
 ## Kabel zur Verbindung zwischen E-Ink und ESP32
 
 ![Logo](/img/esp_eink_cable.jpg)
 
 ## Verkabelung ESP32, E-Ink und Computer
+
+Um den Programmcode auf den ESP32 zu laden, muss der ESP32 per Mikro-USB-Kabel mit dem Computer verbunden werden.
 
 ![Logo](/img/esp_eink_laptop.jpg)
 
@@ -30,17 +33,14 @@ sidebar_position: 5
 
 ![Logo](/img/esp_pins.jpg)
 
+Das schwarze Kabel muss an den oberen linken Pin "GND" und das rote Kabel muss an den rechten Pin 3V3.
+
 ![Logo](/img/esp_eink_pins.jpg)
 
-### Board Schalter
-Auf unserem ESP32, dem E-Paper ESP32 Driver Board, gibt es einen Schalter, bei dem man A und B aussuchen kann, der Default ist A. In unserem Fall ist es auch A aber es hängt wie man unten sehen kann vom verwendeten Bildschirm ab. Außerdem kann man zwischen ON und OFF aussuchen. Hier kann der USB-Port zum Strom sparen deaktivieren. Zum Hochladen von neuem Code muss es dann natürlich auf ON sein. 
-![A/B Modus](./absetting.png) 
 
+## Akkus und Batterien
 
-## Batterien
-### Stromversorgung 
-
-## Auswahl 
+### Arten
 
 Es gibt viele Arten von Batterien, die in Frage kommen aber gute Optionen gibt es in unserem Fall nicht so viele.  
 
@@ -54,78 +54,25 @@ Am Ende haben wir uns für Lithium AA Batterien entscheiden. Lithium Batterien h
 
 Alternativ gibt es auch LiFePo Akkus, die eine wiederverwendbare Alternative wären. 
 
- 
+![Logo](/img/akkus.jpg)
 
-## Verbindungsart 
+### Verbindungsart 
 
 Es gibt zwei Arten den ESP32 mit Strom zu versorgen, durch den Micro USB 5V oder direkt durch den 3v3 Pin (auch VDD) (+ / Rotes Kabel) und den GND-Pin (Ground) (- / Schwarzes Kabel). 
 
 Die USB-Schnittstelle (5V) verlangt zwischen 3.6V und 5.5V [(1)](https://www.waveshare.com/wiki/E-Paper_ESP32_Driver_Board). 
 
-Bei 3v3 ist eine Spannungsversorgung von 2,5V bis 3,6 V zu gewährleisten. Bei mehr können Komponenten geschädigt werden da der ESP32 Spannungsumwandler umgangen wird. [(1)](https://www.radioshuttle.de/media/tech-infos/esp32-mit-batteriebetrieb/) [(2)](https://diyi0t.com/best-battery-for-esp32/) 
+Bei 3v3 ist eine Spannungsversorgung von 2,5V bis 3,6 V zu gewährleisten. Bei mehr können Komponenten geschädigt werden da der ESP32 Spannungsumwandler umgangen wird. [(1)](https://www.radioshuttle.de/media/tech-infos/esp32-mit-batteriebetrieb/) [(2)](https://diyi0t.com/best-battery-for-esp32/)
 
+### Erwarteter Stromverbrauch ESP32 Driver Board: 
 
-![Batterien](./batterien.jpg) 
+In jedem Modus verbraucht der ESP32 unterschiedlich viel Strom. Daher haben wir folgendermaßen die mAh pro Tag ermittelt. Dabei ist x der Verbrauch des Modus in mAh, t die Dauer des Modus in Sekunden und y der Gesamte Verbrauch pro Tag in mAh.
 
-## Erwarteter Stromverbrauch ESP32 Driver Board: 
+![Logo](/img/battery1.jpg)
 
-[E-Ink:](https://www.waveshare.com/wiki/5.83inch_e-Paper_HAT_(B)_Manual#Overview) 
+![Logo](/img/battery3.jpg)
 
-Idle= 0,01 MikroA= vernachlässigbar 
+Bei einer Batterielaufzeit von 2900 mAh lässt sich somit eine Laufzeit von ca. 377 Tagen. Diese Zahl ist jedoch mit Vorsicht zu genießen, da aufgrund von Entladung der Batterien durch Umwelteinflüsse und andere Einflussfaktoren der tatsächliche Wert davon abweichen kann.
 
-Refresh= 26.4mW = 150 mA 
+![Logo](/img/battery2.jpg)
 
- 
-
-[ESP32:](https://www.waveshare.com/wiki/E-Paper_ESP32_Driver_Board) 
-
-Idle = 150mAh 
-
-Deep Sleep= 0,15 bis 0,01 mA 
-
- 
-
-Während E-Ink Refresh + esp32 also 300 mA 
-
-Die Batterien haben insgesamt eine Kapazität von 2900mAh 
-
- 
-
-## Rechnung: 
-
-### Verbrauch je nach Phase 
-(man rechnet hier den Verbrauch pro Stunde in Verbrauch pro Sekunde um)
-
-Y1 = esp32 Idle = 150mAh/60/60 = 0,04167 mAs 
-
-Y2 = Refreshphase = 300mAh/60/60 = 0,0833 mAs 
-
-Y3 = Deep Sleep = 0,01 - 0,15 mAh/60/60 = 2,778e^-6 mAs - 4,167/*e^-5 
-
-## Praktische Phasenlaufzeit: 
-
-a = Zeit Idle = 6s 
-
-b = Refresh Zeit = 46s 
-
-    a+b = 52s
-
-c = Zeit im Deep Sleep = 1 Tag - (a+b) = 24 x 60 x 60 - 52= 86.400s - 52s = 86.296s 
- 
-
-### Formel  
-
-S = Stromverbrauch pro Tag 
-
-### S = a x Y1 + b x Y2 + c x Y3 
-
-6 x 0,04167 + 46 x 0,0833 +  86.296 * (0,15 / 60 / 60)=  **7,68 mA/Tag** bei einmal Refresh pro Tag und dem Worst Case Deep Sleep Wert. 
-
-
-### maximale Nutzung der Batterien: 
-
-2999mAh/7,68mA/Tag 
-= **377,6 Tage** erwartete Laufzeit. 
-
-Der ESP32 sollte also für ein Jahr lang in betrieb sein können.
-Eine genaue Messung ist ohne weitere Komponenten nicht möglich.

@@ -50,9 +50,6 @@ Diese Funktion kombiniert `GeneratePictureUpperAndLowerHalf()`  mit `WaitUntilId
 
 Mithilfe dieser Funktion wird der Bildschirm des E-Ink's bereinigt. Dies wird unter anderem benötigt, um das Einbrennen eines Bildes zu verhindern. 
 
-
------ Kann Sleep, DisplayPictureDemo, DisplayFrame Raus aus ...V2.cpp? -----
-
 ## E-Paper Display / Pins - epdif.cpp & epdif.h
 In der `epdif.cpp` Datei werden grundsätzliche Konfigurationen für das E-Paper Display vorgenommen. Auch hier ist `epdif.h` die Header Datei von `epdif.cpp` und deklariert Funktionen und Variablen. Daher können bestimmte Pins, über die `epdif.h` gepflegt werden. Die [Konfiugartion von allen Pins](entwicklungsumgebung.md#pins-konfigurieren) wird im obigen Kapitel erläutert.
 
