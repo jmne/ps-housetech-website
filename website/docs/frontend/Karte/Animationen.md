@@ -1,5 +1,7 @@
 # Animationen
 
+Die folgenden Dateien und Ordner sind unter `utils/wayfinderAnimation` zu finden.
+
 ## AnimationQueue
 
 Hier ist eine Queue implementiert, die für Animations-Arrays aus den in `transitions` implementierten Funktionen genutzt werden kann. Animationen werden hierbei sequenziell ausgeführt.
