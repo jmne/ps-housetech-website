@@ -30,9 +30,12 @@ Auf dem Bild ist unser Projektseminarraum 222 zu sehen, in dem wir uns während 
 
 ![Projektplan](./d1projektplan.jpg)
 
-Dann haben wir uns in Teams aufgeteilt, um die verschiedenen Teile des Projektes abzudecken.
-Simon und Kevin waren am Frontend beteiligt, Florian und Jingyi waren Backend, Christoph und Ulrich E-Ink Türschildanzeige und Jan hat sich mit dem Server und der GitLab Pipeline beschäftigt. In dieser Aufteilung haben wir auch größtenteils am Projekt gearbeitet wir waren aber auch mehrmals pro Woche in Kontakt und des Weiteren sonst auch sowieso immer über Teams und GitLab erreichbar. Wir haben auch gruppen übergreifend aufgaben verteilt auch, welche für die es keine ursprünglich definierte gruppe gab wie die Raspberry Pi 3 und 4 zur Anzeige unserer neuen Inhalte zu benutzen. Bei der Aufteilung in die Untergruppen haben wir uns sowie an persönlichen Interessen und Stärken als auch am geschätzten Bedarf orientiert.
-Wir haben am Anfang gehört das es mit der Dokumentation immer länger braucht als mit dem Projekt an sich, und haben uns deswegen am Anfang, um das zu vermeiden, dazu entschieden die Dokumentation des Codes zum Beispiel von Anfang an mit anzufertigen.
+Wir haben uns anschließend in Teams aufgeteilt, um die verschiedenen Teile des Projektes abzudecken.
+Während sich Simon und Kevin vorwiegend mit den Frontends beschäftigten, haben sich Florian und Jingyi mit dem Backend beschäftigt.
+Christoph und Ulrich haben sich überwiegend mit dem Raspberry Pis beschäftigt und sich zusätzlich um die digitalen Türschilder gekümmert.
+Jan hat sich um den Gitlab CI/CD Prozess gekümmert, den Uni-Server verwaltet und ist bei Bedarf bei den anderem Themen eingesprungen. 
+
+Außerdem haben wir wöchentlich die Moderation des JourFixe gewechselt und jede Person war dafür verantwortlich die Geschehnisse der letztsen Woche für das JourFixe vorzubereiten und zu präsentieren.
 
 ## Vorgehensweise
 Die ausgewählten Ziele haben wir dann je nach Bedarf in kleinere Schritte unterteilt und diese dann Schritt für Schritt Implementiert, getestet und in das Projekt integriert. Bei der Anzeige von Türschildern auf E-Ink Displays haben wir beispielsweise erst ein Demo Bild anzeigen lassen, dann ein von uns generiertes und dann später daran gearbeitet die Generierung der Türschilder zu automatisieren.
