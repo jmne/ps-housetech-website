@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Animationen
 
 Die folgenden Dateien und Ordner sind unter `utils/wayfinderAnimation` zu finden.

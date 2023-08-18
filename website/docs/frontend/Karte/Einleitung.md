@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Karte - Navigation
+# Navigation
 
 Das vorliegende Kapitel dokumentiert den strukturellen Aufbau der Campus-Navigation und die implementierten Funktionen zum ausführen der Animationen. Es folgt zunächst ein Überblick über die verschiedenen Kapitel.
 
