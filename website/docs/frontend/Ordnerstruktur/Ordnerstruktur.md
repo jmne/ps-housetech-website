@@ -16,8 +16,6 @@ Next.js bietet die Möglichkeit, sowohl serverseitiges Rendern als auch statisch
 
 Die Struktur des Frontends in Next.js folgt einer vordefinierten Ordnerstruktur, die von Next.js empfohlen wird. Diese Struktur fördert die Trennung von Logik, Komponenten und Seiten, was die Skalierbarkeit, Wartbarkeit und Organisation Ihres Projekts erleichtert. Mehr dazu finden Sie [hier](https://nextjs.org/docs/getting-started/project-structure). Hier ist unsere Ordnerstruktur für das Frontend:
 
-![Struktur1](./structure1.png)
-
 ![Struktur2](./structure2.png)
 
 ## Root-Directory
