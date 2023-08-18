@@ -65,7 +65,7 @@ Bei 3v3 ist eine Spannungsversorgung von 2,5V bis 3,6 V zu gewährleisten. Bei m
 
 ### Erwarteter Stromverbrauch ESP32 Driver Board: 
 
-In jedem Modus verbraucht der ESP32 unterschiedlich viel Strom. Daher haben wir folgendermaßen die mAh pro Tag ermittelt. Dabei ist x der Verbrauch des Modus in mAh, t die Dauer des Modus in Sekunden und y der Gesamte Verbrauch pro Tag in mAh.
+In jedem Modus verbraucht der ESP32 unterschiedlich viel Strom. Daher haben wir folgendermaßen die mAh pro Tag ermittelt. Dabei ist x der erwarteter Verbrauch des Modus in mAh, t die Dauer des Modus in Sekunden und y der Gesamte Verbrauch pro Tag in mAh.
 
 ![Logo](/img/battery1.png)
 
