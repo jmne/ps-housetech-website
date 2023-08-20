@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
+title: Einleitung
 ---
 
 # Einleitung
@@ -10,7 +11,7 @@ Die vorliegende Dokumentation beschreibt das Frontend für die Informationsdispl
 
 Next.js bietet die Möglichkeit, sowohl serverseitiges Rendern als auch statisches Rendern zu nutzen. Das ist besonders nützlich für eine schnellere Initialisierung der Seiten und eine verbesserte Benutzererfahrung, da Inhalte schneller angezeigt werden können. Das ist gerade in Bezug auf unser Projekt wichtig, da die Displays viele Interaktionsmöglichkeiten bieten.
 
-## Die Struktur des Backends?
+## Die Struktur des Frontends?
 
 **Anmerkung**: Blaue Rechtecke sind Ordner, blau hinterlegte Textfelder Unterordner. Der Übersicht geschuldet sind nicht alle einzelnen Dateien und Unterordner abgebildet. Die einzelnen Ordner werden in seperaten Seiten behandelt, sodass diese Einleitung lediglich zur Übersicht dient.
 
@@ -27,11 +28,11 @@ Im Wurzelverzeichnis (auch Root Directory genannt) ps-housetech-frontend unseres
 
 Der assets-Ordner dient dazu, alle Arten von statischen Ressourcen zu speichern, die von der Anwendung benötigt werden. Statische Ressourcen sind Dateien, die nicht durch den Server oder die Anwendung generiert werden, sondern unverändert an die Displays gesendet werden. Der assets-Ordner hilft dabei, diese Ressourcen zu organisieren und leicht zugänglich zu machen. Hier liegen beispielsweise Bilder und Schriftarten, aber auch scss-Dateien für das Styling drin.
 
-## __mocks__-Directory
+## \__mocks__-Directory
 
 Ein mocks-Directory (Doppelunterstrich "mocks" Doppelunterstrich) ist ein spezieller Ordner, der dazu dient, Mock-Implementierungen von Modulen oder Abhängigkeiten zu speichern. Mocks werden verwendet, um während des Testens reale Implementierungen von Modulen zu ersetzen und vorhersehbare Verhaltensweisen für Testzwecke zu simulieren.
 
-## __tests__-Directory
+## \__tests__-Directory
 
 Der Zweck dieses Ordners ist es, einen zentralen Ort für alle Testdateien und Test-Suiten bereitzustellen, um die Wartbarkeit, Übersichtlichkeit und Struktur der Tests zu verbessern.
 
