@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Code
 ## Logik - epd5in83b_V2.ino
-In dieser Datei befindet sich die Logik vom ESP32. Grundsätzlich erwacht der ESP32 gegen 6 Uhr morgens alle 24 Stunden aus dem sogenannten Deep Sleep. Danach ruft der er das Bild in Form eines Hex-Arrays von dem Server ab. Sobald er das Bild heruntergeladen hat, zeigt er es auf dem E-Ink Display an und geht wieder für 24 Stunden in den Deep Sleep. Da der Bildschirm Gefahr läuft, nach längerem Anzeigen von einem Bild ohne Veränderung einzubrennen, haben wir den Zeitraum von 24 Stunden gewählt.
+In dieser Datei befindet sich die Logik vom ESP32. Grundsätzlich erwacht der ESP32 gegen 6 Uhr morgens alle 24 Stunden aus dem sogenannten Deep Sleep. Danach ruft er das Bild in Form eines Hex-Arrays von dem Server ab. Sobald er das Bild heruntergeladen hat, zeigt er es auf dem E-Ink Display an und geht wieder für 24 Stunden in den Deep Sleep. Da der Bildschirm Gefahr läuft, nach längerem Anzeigen von einem Bild ohne Veränderung einzubrennen, haben wir den Zeitraum von 24 Stunden gewählt.
 
 ### Abruf des Bildes vom Server
 Zunächst muss festgelegt werden, für welchen Raum das E-Ink-Display zuständig sein soll. Dazu legt man die Raumnummer über folgende Variable fest `String room = "320";`. Somit kann der ESP32 den Endpoint vom Server abrufen, der sich aus `https://ps-housetech.uni-muenster.de/api/eink/" + room` zusammensetzt. Hierzu muss der ESP32 sich zunächst mit dem WLAN verbinden. Dies geschieht in der `setup()` Methode. Benötigt der ESP32 mehr als 10 Versuche, um sich mit dem WLAN zu verbinden, wird er neu gestartet.
@@ -36,7 +36,7 @@ Wenn man zu der Datei `epd5in83b_V2.cpp` eine Funktion hinzufügt, muss diese in
 
 ### `GeneratePictureUpperAndLowerHalf()` 
 
-In diesem Teil wird das Hex-Array in den Programmspeicher geschrieben. Dabei wird erst der Schwarz/Weiß und danach der Rot/Weiß Layer generiert. Dabei signalisiert `SendCommand(0x10)` das der Input als Schwarz/Weiß und `SendCommand(0x13)` als Rot/Weiß interpretiert werden soll. Jede Layer ist aufgrund von Speicherplatzgründen des ESP32 in einen oberen und unteren Teil aufgeteilt.  Input dieser Funktion sind die oberen und untere Hälfte der beiden Layers. 
+In diesem Teil wird das Hex-Array in den Programmspeicher geschrieben. Dabei wird erst der Schwarz/Weiß und danach der Rot/Weiß Layer generiert. Dabei signalisiert `SendCommand(0x10)` dass der Input als Schwarz/Weiß und `SendCommand(0x13)` als Rot/Weiß interpretiert werden soll. Jede Layer ist aufgrund von Speicherplatzgründen des ESP32 in einen oberen und unteren Teil aufgeteilt. Input dieser Funktion sind die obere und untere Hälfte der beiden Layers. 
 
 ### `WaitUntilIdle()`
 
@@ -48,10 +48,10 @@ Diese Funktion kombiniert `GeneratePictureUpperAndLowerHalf()`  mit `WaitUntilId
 
 ### `Clear()`
 
-Mithilfe dieser Funktion wird der Bildschirm des E-Ink's bereinigt. Dies wird unter anderem benötigt, um das Einbrennen eines Bildes zu verhindern. Es wird empfohlen diese Funktion einmal pro Tag aufzurufen um das Risiko zu minimieren.
+Mithilfe dieser Funktion wird der Bildschirm des E-Ink's bereinigt. Dies wird unter anderem benötigt, um das Einbrennen eines Bildes zu verhindern. Es wird empfohlen diese Funktion einmal pro Tag aufzurufen, um das Risiko zu minimieren.
 
 ## E-Paper Display / Pins - epdif.cpp & epdif.h
-In der `epdif.cpp` Datei werden grundsätzliche Konfigurationen für das E-Paper Display vorgenommen. Auch hier ist `epdif.h` die Header Datei von `epdif.cpp` und deklariert Funktionen und Variablen. Daher können bestimmte Pins, über die `epdif.h` gepflegt werden. Die [Konfiugartion von allen Pins](entwicklungsumgebung.md#pins-konfigurieren) wird im obigen Kapitel erläutert.
+In der `epdif.cpp` Datei werden grundsätzliche Konfigurationen für das E-Paper Display vorgenommen. Auch hier ist `epdif.h` die Header Datei von `epdif.cpp` und deklariert Funktionen und Variablen. Daher können bestimmte Pins, über die `epdif.h` gepflegt werden. Die [Konfiugartion von allen Pins](entwicklungsumgebung.md#schritt-5:-pins-konfigurieren) wird im obigen Kapitel erläutert.
 
 ## Fehlerquellen
 Bei der Entwicklung für den ESP32 ist häufig guter Programmierstil in Form von Modularisierung nicht möglich. Es ist nicht selten eine Gradwanderung zwischen funktionierendem System und Absturz des ESP32. Zudem stürzt er nicht unbedingt direkt an der Fehlerquelle ab, sondern häufig schon deutlich früher. Daher kann es sinnvoll sein, sich Gedanken über die restriktiven Faktoren eines Mikrocontrollers zu machen. So fällt der Arbeitsspeicher, Prozessor und Sekundärspeicher deutlich kleiner und leistungsärmer aus als der eines konventionellen Computers. Es gibt hardwareseitige Debugging Tools, die jedoch den Rahmen dieser Projektarbeit gesprengt hätten. Hiermit kann die Software-Entwicklung deutlich dynamischer sein.  

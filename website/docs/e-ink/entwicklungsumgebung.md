@@ -32,7 +32,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 ![Logo](/img/IDE_URL.png)
 
 
-Zudem muss das richtige Package des Board Managers installiert werden. Wenn man in der Suchleiste esp32 eingibt, sollte das folgende Package sichtbar sein. Wichtig dabei ist es die Version 1.0.6 auszuwählen, das sonst der Programmcode nicht funktioniert.
+Zudem muss das richtige Package des Board Managers installiert werden. Wenn man in der Suchleiste esp32 eingibt, sollte das folgende Package sichtbar sein. Wichtig dabei ist es die Version 1.0.6 auszuwählen, da sonst der Programmcode nicht funktioniert.
 
 ![Logo](/img/IDE_board_manager.png)
 
