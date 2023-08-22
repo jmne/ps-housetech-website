@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Einleitung 
+# Backend
 Die vorliegende Dokumentation beschreibt das Backend für die Informationsdisplays, E-Ink Displays und den Exchange-Kalender, welche unter Verwendung des Flask-Webframeworks entwickelt wurde. Das Backend spielt in der Applikation eine große Rolle und übernimmt die komplette Konsolidierung und Bereitstellung der meisten  Informationen auf entwickelten Applikationen.
 
 ## Warum Flask?
@@ -33,22 +33,22 @@ Im Bustracker-Modul wird die [Bus-API der Stadtwerke Münster](https://api.busra
 Im Cris-Modul wird die [CRIS Graph-QL-API der Universität Münster](https://confluence.uni-muenster.de/display/CRISWWU/CRIS-GraphQL-API) abgefragt. Diese API hat für die Informationsdisplays zwei übergeordnete Zwecke. Erstens werden Personenabfragen zu Mitarbeitenden des Instituts durchgeführt, da für das Informationsdisplay Daten wie Vorname, Nachname, Titel, Email, Telefonnummer und Raumnummer benötigt werden um eine geeignete Personensuche implementieren zu können. Außerdem wird die CRIS-API für die Erstellung von digitalen Türschildern mittels der E-Ink Displays genutzt um die richtigen Personen einem bestimmten Raum zuordnen zu können. 
 Aufgrund von Restriktionen der Cris API sowie der Zuordnung von Mitarbeitenden an mehreren Lehrstühlen stellte sich dieses Modul als durchaus komplex heraus. Der Ablauf der Abfrage ist folgendermaßen implementiert:
 
-1. Zunächst wird durch alle zugehörigen Lehrstühle (chairs) iteriert, die wir zuvor in der Datei fest implementiert haben. Für jeden Lehrstuhl werden alle aktiven `employee_ids`, sowie die dazugehörige `chair_name` der Person der employees-Liste angehangen. 
-2. Nachdem alle Organisationen durchlaufen wurden, befinden sich nun alle Mitarbeitenden in der besagten employee-Liste. Allerdings sind einige Mitarbeitende mehreren Organisationen/Lehrstühlen zugeordnet, weswegen wir im  Duplikate entfernen müssen. Nun können wir davon ausgehen, dass sich jede Person `employee_id` nur ein Mal in unserer Liste befindet
+1. Zunächst wird durch alle zugehörigen Lehrstühle (chairs) iteriert, die wir zuvor in der Datei fest implementiert haben. Für jeden Lehrstuhl werden alle aktiven `employee_ids` der employees-Liste angehangen. 
+2. Nachdem alle Organisationen durchlaufen wurden, befinden sich nun alle Mitarbeitenden in der besagten employee-Liste. Allerdings sind einige Mitarbeitende mehreren Organisationen/Lehrstühlen zugeordnet, weswegen wir Duplikate entfernen müssen. Nun können wir davon ausgehen, dass sich jede `employee_id` nur ein Mal in unserer Liste befindet
 3. Anschließend an die Duplikatsentfernung werden den Mitarbeitenden personenspezifische Daten zugeordnet. Da die CRIS-API maximal 100 `employee_ids` als Input zulässt, erstellen wir mehrere Listen mit maximal 100 `employee_ids`, für die wir jeweils eine Abfrage ausführen.
 4. Nun verfügen wir über die personenspezifischen Daten, darunter: Vor- und Nachname, E-Mails, jobTitle, Telefonnummern, eine image-id, card-ids für die aktiven Karten der Person und die Raumnummer. Was wir allerdings noch nicht wissen, ist die genaue Lehrstuhl-Zuordnung einer Person.
 5. Für die Lehrstuhl Zuordnung nutzen wir die card-ids der jeweiligen Personen. Wir haben bereits ausschließlich die aktiven Karten (meistens nur eine pro Person) gespeichert und können uns über diese Karte den Lehrstuhl erschließen. Damit die Schnelligkeit der Abfrage so wenig wie möglich leidet, wird auch hier immer eine Abfrage für 100 card-ids, ähnlich wie bei den Personendaten ausgeführt. Allerdings wird sich hier auch für jede Karte gemerkt, zu welcher Person diese gehört, da einige Personen mehrere Karten haben und somit auch mehreren Lehrstühlen zugeordnet sein können. 
-7. Lehrstühle werden ggf. ins Englische übersetzt. Dafür verwenden wir eine `cris_en.yml` Datei, sowie die `get_translation` Methode.
+7. Lehrstühle werden ggf. ins Englische übersetzt. Dafür verwenden wir eine `cris_en.yml` Datei, sowie die `translate` Methode.
 8. Es verbleiben drei Herausforderungen: 
     1. Einige Personen müssen herausgefiltert werden, das sich bei der zuverlässigen Lehstuhl-Zuordnung herausgestellt hat, dass diese Person nicht mehr an einem Lehrstuhl des Institut tätig ist.
     2. Außerdem sollen Personen mit bestimmten Arbeitsverhältnissen (SHKs) nicht angezeigt werden. 
     3. Jede Person benötigt zusätzlich eine Adresse, die ihr zugeordnet wird.
 
-Für i) ii) und werden Filter angewendet und Personen aussortiert. Für die Lehrstuhl-Zurodnung wird betrachtet, ob eine Person mindestens einem der vordefinierten Lehrstühlen angehörig ist. Für den Filter nach Jobtiteln wird geschaut, ob die Jobtitel einer Person mindestens einem der `valid_job_titles` entsprechen.
+Für i) ii) und werden Filter angewendet und Personen aussortiert. Für die Lehrstuhl-Zuordnung wird betrachtet, ob eine Person mindestens einem der vordefinierten Lehrstühlen angehörig ist. Für den Filter nach Jobtiteln wird geschaut, ob die Jobtitel einer Person mindestens einem der `valid_job_titles` entsprechen.
 
 Die Zuordnung des Gebäudes ist potenziell ausbaufähig, da lediglich alle Mitarbeitenden der Lehrstühle von Prof. Klein und Prof. Berger dem Leonardo-Campus 11 zugeordnet werden, während der Rest dem Leonardo-Campus 3 zugeordnet wird. 
 
-**Hinzufügen von neuen Lehrstühlen:** Hierzu muss lediglich ein Eintrag in der `self.chairs` Liste vorgenommen werden. Außerdem sollte eine Übersetzung des Lehrstuhls in der `cris_en.yml` Datei eingetragen werden.
+**Hinzufügen von neuen Lehrstühlen:** Hierzu muss lediglich ein Eintrag in der `self.chairs` Liste vorgenommen werden. Außerdem sollte eine Übersetzung des Lehrstuhls in der `cris_en.yml` Datei eingetragen werden. Da der Filter auf den Namen der Lehrstühle angewendet wird ist es wichtig, dass der `chair_name` in `self.chairs` exakt dem Namen in der CRIS-Graph API entspricht.
 
 #### `drupal.py`:
 Das Drupal-Modul vermittelt den Inhalt der Drupal-Overlays und Events and das Frontend. Dabei wird lediglich der Inhalt von zwei verschiedenen URLs verarbeitet, die im Modul eingesehen werden können. Hinter den URLs befinden sich Drupal-Module, auf die sich verlassen wird.
@@ -80,8 +80,7 @@ Das Picture-Modul wird mit einer Image-ID aufgerufen und hat als Rückgabewert e
 Da die Bilder teilweise eine Größe von über 25MB haben, werden sich im Backend aus Gründen der Performance komprimiert und anschließend zurückgegeben.
 
 #### `proxy_config.py`:
-In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für die Anfragen zum Einsatz kommen sollen, die externe Informationen (außerhalb der Uni) abfragen. Dazu gehört beispielsweise die 
-Abfrage für das Wetter.
+In der proxy_config Datei werden die HTTP und HTTPS proxies gesetzt, welche für die Anfragen zum Einsatz kommen sollen, die externe Informationen (außerhalb der Uni) abfragen. Dazu gehört beispielsweise die Abfrage für das Wetter. Allerdings haben wir die Erfahrung gemacht, dass die Proxy bei einigen URLS (bspw. Mensa) Probleme bereitet, weswegen wir diese dann entfernt haben. Die Verwendung der proxy_config ist also etwas inkonsistent und wird vereinfacht gesagt dort verwendet, wo es keine Probleme bereitet. 
 
 #### `tracker.py`:
 Dieses Modul stellt eine Basisklasse Tracker bereit, die eine Anwendung für Webanfragen mit bestimmten Proxy-Einstellungen einrichtet. Andere "Tracker"-Klassen sollen von dieser Basisklasse erben und wahrscheinlich spezifische Funktionen hinzufügen, während sie die allgemeine Proxy-Konfiguration nutzen.
