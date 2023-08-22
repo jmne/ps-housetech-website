@@ -73,3 +73,11 @@ Dort liegt lediglich eine Datei, in der die Bilder der Personen von https://ps-h
 ## utils-Directory
 
 In diesem Ordner können Hilfsfunktionen, Konstanten oder Dienstprogramme abgelegt werden, die in verschiedenen Teilen der Anwendung verwendet werden können, wie beispielsweise API-Requests oder Datenverarbeitung wie es beim Cafeteriaplan der Fall ist. Dort wandeln wir z.B. das Datumsformat um.
+
+## .husky-Directory
+
+Der .husky-Ordner im Root-Verzeichnis unseres Projekts wird verwendet, um die Git-Hooks-Konfiguration zu speichern. Git Hooks sind Skripte, die automatisch ausgeführt werden, wenn bestimmte Git-Ereignisse auftreten. Bei unserem Projekt werden in der pre-commit Datei (die einzige Datei des Ordners) automatische Tests oder Linting-Überprüfungen ausgeführt werden, um sicherzustellen, dass der Code den Standards entspricht, bevor er committet wird.
+
+## .gitlab-Directory
+
+Der .gitlab-Ordner im Wurzelverzeichnis unseres Projekts wird verwendet, um spezifische Konfigurationen und Einstellungen für die CI/CD-Pipelines zu speichern. GitLab CI/CD ist ein Tool, das uns ermöglicht, automatisierte Prozesse für die Integration, Tests und Bereitstellung von Code in einem GitLab-Repository einzurichten.
