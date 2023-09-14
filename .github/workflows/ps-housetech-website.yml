@@ -1,0 +1,37 @@
+name: ps-housetech-website
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+concurrency:
+  group: "${{ github.ref }}"
+  cancel-in-progress: true
+env:
+  RELEASE_CI: "${{ secrets.RELEASE_CI }}"
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v3.5.0
+      with:
+        fetch-depth: 10
+        lfs: true
+    - run: cd website
+    - run: yarn install
+    - run: npx docusaurus --version
+    - run: yarn build
+    - run: mv ./build ../public
+    - uses: actions/upload-artifact@v3.1.1
+      if: success()
+      with:
+        name: "${{ github.job }}"
+        retention-days: 14
+        path: public
+    - uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        branch: gh-pages
+        folder: public
